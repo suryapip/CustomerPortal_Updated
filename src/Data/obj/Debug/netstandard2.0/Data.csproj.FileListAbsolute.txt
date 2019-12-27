@@ -1,0 +1,12 @@
+C:\TPScentAir\0.2\src\Data\bin\Debug\netstandard2.0\ScentAir.Payment.Data.deps.json
+C:\TPScentAir\0.2\src\Data\bin\Debug\netstandard2.0\ScentAir.Payment.Data.dll
+C:\TPScentAir\0.2\src\Data\bin\Debug\netstandard2.0\ScentAir.Payment.Data.pdb
+C:\TPScentAir\0.2\src\Data\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\TPScentAir\0.2\src\Data\bin\Debug\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\TPScentAir\0.2\src\Data\obj\Debug\netstandard2.0\Data.csprojAssemblyReference.cache
+C:\TPScentAir\0.2\src\Data\obj\Debug\netstandard2.0\Data.csproj.CoreCompileInputs.cache
+C:\TPScentAir\0.2\src\Data\obj\Debug\netstandard2.0\Data.AssemblyInfoInputs.cache
+C:\TPScentAir\0.2\src\Data\obj\Debug\netstandard2.0\Data.AssemblyInfo.cs
+C:\TPScentAir\0.2\src\Data\obj\Debug\netstandard2.0\Data.csproj.CopyComplete
+C:\TPScentAir\0.2\src\Data\obj\Debug\netstandard2.0\ScentAir.Payment.Data.dll
+C:\TPScentAir\0.2\src\Data\obj\Debug\netstandard2.0\ScentAir.Payment.Data.pdb

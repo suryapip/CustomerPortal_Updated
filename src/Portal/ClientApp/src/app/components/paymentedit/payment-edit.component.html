@@ -1,0 +1,794 @@
+<div class="container sa-container-minsize sa-header-margin-loggedin">
+  <header class="pageHeader"></header>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="sa-heading-text">
+        {{'PaymentProfile.PAYMENTPROFILE' | translate}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 has-feedback has-error">
+      <div *ngFor="let err of errors" class="errorMessage">{{ err | translate }}</div>
+    </div>
+  </div>
+
+
+  <form class="form-horizontal"
+        name="editpaymenform"
+        #f="ngForm"
+        novalidate>
+
+
+
+    <div class="form-group">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="paymentName">  {{'PaymentProfile.FriendlyName' | translate}}<span class="sa-required-text">*</span></label>
+      </div>
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': paymentName.dirty && paymentName.valid, 'has-error' : paymentName.dirty && !paymentName.valid}">
+          <input class="form-control"
+                 id="paymentName"
+                 name="paymentName"
+                 type="text"
+                 #paymentName="ngModel"
+                 [(ngModel)]="paymentProfile.name"
+                 required />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': paymentName.valid, 'glyphicon-remove' : !paymentName.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="paymentName.dirty && !paymentName.valid">{{'PaymentProfile.InvalidProfilePaymentName' | translate}} {{paymentName?.messages}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="paymentType">{{'PaymentProfile.PaymentType' | translate}}<span class="sa-required-text">*</span></label>
+        <div class="has-feedback"
+             [ngClass]="{'has-success': paymentType.dirty && paymentType.valid, 'has-error' : paymentType.dirty && !paymentType.valid}">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div style="margin-top: 6px;">
+          <div class="sa-inline-field" style="width: 100px; float: left;">
+            <input class="form-control"
+                   id="paymentType"
+                   name="paymentType"
+                   type="radio"
+                   value="Credit"
+                   style="width: 20px; height: 20px;"
+                   #paymentType="ngModel"
+                   [(ngModel)]="paymentProfile.paymentType"
+                   (click)="changePaymentType('Credit')"
+                   [disabled]="isEdit"
+                   required />
+            <label style="margin-left: 8px; font-weight: normal;" class="sa-gray-text">{{'PaymentProfile.Credit' | translate}}</label>
+          </div>
+
+          <div class="sa-inline-field" style="width: 100px; float: left;">
+            <input class="form-control"
+                   id="paymentType"
+                   name="paymentType"
+                   type="radio"
+                   value="ECP"
+                   style="width: 20px; height: 20px;"
+                   #paymentType="ngModel"
+                   [(ngModel)]="paymentProfile.paymentType"
+                   (click)="changePaymentType('ECP')"
+                   [disabled]="isEdit"
+                   required />
+            <label style="margin-left: 8px; font-weight: normal;" class="sa-gray-text">{{'PaymentProfile.ACHandECP' | translate}}</label>
+          </div>
+        </div>
+
+        <span class="glyphicon form-control-feedback"
+              [ngClass]="{'glyphicon-ok ': paymentType.valid, 'glyphicon-remove' : !paymentType.valid}"
+              *ngIf="f.submitted"
+              aria-hidden="true"></span>
+        <span class="errorMessage" *ngIf="paymentType.dirty && !paymentType.valid">{{'PaymentProfile.InvalidPin' | translate}}</span>
+      </div>
+    </div>
+
+
+    <div class="form-group" *ngIf="isAccount">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="achAccountType">{{'PaymentProfile.AccountType' | translate}}<span class="sa-required-text">*</span></label>
+        <div class="has-feedback"
+             [ngClass]="{'has-success': achAccountType.dirty && achAccountType.valid, 'has-error' : achAccountType.dirty && !achAccountType.valid}">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div style="margin-top: 6px; width: 100px; float: left;">
+          <div class="sa-inline-field">
+            <input class="form-control"
+                   id="achAccountType"
+                   name="achAccountType"
+                   type="radio"
+                   value="BusinessChecking"
+                   style="width: 20px; height: 20px;"
+                   #achAccountType="ngModel"
+                   [(ngModel)]="paymentProfile.achAccountType"
+                   [disabled]="isEdit"
+                   required />
+            <label style="margin-left: 8px; font-weight: normal;" class="sa-gray-text">{{'PaymentProfile.BusinessChecking' | translate}}</label>
+          </div>
+        </div>
+
+        <div style="margin-top: 6px; width: 100px; float: left;">
+          <div class="sa-inline-field">
+            <input class="form-control"
+                   id="achAccountType"
+                   name="achAccountType"
+                   type="radio"
+                   value="Checking"
+                   style="width: 20px; height: 20px;"
+                   #achAccountType="ngModel"
+                   [(ngModel)]="paymentProfile.achAccountType"
+                   [disabled]="isEdit"
+                   required />
+            <label style="margin-left: 8px; font-weight: normal;" class="sa-gray-text">{{'PaymentProfile.PersonalChecking' | translate}}</label>
+          </div>
+        </div>
+
+        <div style="margin-top: 6px; width: 150px; float: left;">
+          <div class="sa-inline-field">
+            <input class="form-control"
+                   id="achAccountType"
+                   name="achAccountType"
+                   type="radio"
+                   value="Savings"
+                   style="width: 20px; height: 20px;"
+                   #achAccountType="ngModel"
+                   [(ngModel)]="paymentProfile.achAccountType"
+                   [disabled]="isEdit"
+                   required />
+            <label style="margin-left: 8px; font-weight: normal;" class="sa-gray-text">{{'PaymentProfile.Savings' | translate}}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="isAccount">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="achAccountNumber">{{'PaymentProfile.AccountNumber' | translate}}<span class="sa-required-text">*</span></label>
+        <span class="fa fa-question-circle sa-enroll-auto-pay-button-info-icon sa-popup" (mouseenter)="toggleAchAcctNoPopover($event)" (mouseleave)="toggleAchAcctNoPopover($event)">
+          <span class="sa-popuptext-b" [class.sa-show]="isAchAcctNoPopoverVisible" id="AchAcctNoPopover"><img src="../../../assets/images/AcctNoImg.png" /></span>
+        </span>
+      </div>
+
+
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': achAccountNumber.dirty && achAccountNumber.valid, 'has-error' : achAccountNumber.dirty && !achAccountNumber.valid}">
+          <input class="form-control"
+                 id="achAccountNumber"
+                 name="achAccountNumber"
+                 type="text"
+                 #achAccountNumber="ngModel"
+                 [(ngModel)]="paymentProfile.achAccountNumber"
+                 [disabled]="isEdit"
+                 required />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': achAccountNumber.valid, 'glyphicon-remove' : !achAccountNumber.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="achAccountNumber.dirty && !achAccountNumber.valid">{{'PaymentProfile.InvalidAccountNumber' | translate}} {{achAccountNumber?.messages}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" *ngIf="isAccount">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="achRoutingNumber">{{'PaymentProfile.RoutingNumber' | translate}}<span class="sa-required-text">*</span></label>
+        <span class="fa fa-question-circle sa-enroll-auto-pay-button-info-icon sa-popup" (mouseenter)="toggleRoutingNoPopover($event)" (mouseleave)="toggleRoutingNoPopover($event)">
+          <span class="sa-popuptext-b" [class.sa-show]="isRoutingNoPopoverVisible" id="RoutingNoPopover"><img src="../../../assets/images/RoutingImg.png" /></span>
+        </span>
+      </div>
+
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': achRoutingNumber.dirty && achRoutingNumber.valid, 'has-error' : achRoutingNumber.dirty && !achRoutingNumber.valid}">
+          <input class="form-control"
+                 id="achRoutingNumber"
+                 name="achRoutingNumber"
+                 type="text"
+                 #achRoutingNumber="ngModel"
+                 [(ngModel)]="paymentProfile.achRoutingNumber"
+                 [disabled]="isEdit"
+                 required />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': achRoutingNumber.valid, 'glyphicon-remove' : !achRoutingNumber.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="achRoutingNumber.dirty && !achRoutingNumber.valid">{{'PaymentProfile.InvalidRoutingNumber' | translate}} {{achRoutingNumber?.messages}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" *ngIf="isAccount">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="bank">{{'PaymentProfile.BankName' | translate}}<span class="sa-required-text">*</span></label>
+      </div>
+
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': bank.dirty && bank.valid, 'has-error' : bank.dirty && !bank.valid}">
+          <input class="form-control"
+                 id="bank"
+                 name="bank"
+                 type="text"
+                 #bank="ngModel"
+                 [(ngModel)]="paymentProfile.bank"
+                 [disabled]="isEdit"
+                 required />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': bank.valid, 'glyphicon-remove' : !bank.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="bank.dirty && !bank.valid">{{'PaymentProfile.InvalidBankName' | translate}} {{bank?.messages}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="!isAccount">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="cardType">{{'PaymentProfile.CardType' | translate}}<span class="sa-required-text">*</span></label>
+        <div class="has-feedback"
+             [ngClass]="{'has-success': cardType.valid, 'has-error' : !cardType.valid}">
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <div style="margin-top: 6px; width: 100px; float: left;">
+          <div class="sa-inline-field">
+            <input class="form-control"
+                   id="cardType"
+                   name="cardType"
+                   type="radio"
+                   value="Visa"
+                   style="width: 20px; height: 20px;"
+                   #cardType="ngModel"
+                   [(ngModel)]="paymentProfile.cardType"
+                   [disabled]="isEdit"
+                   required />
+            <label style="margin-left: 8px; font-weight: normal;" class="sa-gray-text">{{'PaymentProfile.Visa' | translate}}</label>
+          </div>
+        </div>
+
+        <div style="margin-top: 6px; width: 150px; float: left;">
+          <div class="sa-inline-field">
+            <input class="form-control"
+                   id="cardType"
+                   name="cardType"
+                   type="radio"
+                   value="MasterCard"
+                   style="width: 20px; height: 20px;"
+                   #cardType="ngModel"
+                   [(ngModel)]="paymentProfile.cardType"
+                   [disabled]="isEdit"
+                   required />
+            <label style="margin-left: 8px; font-weight: normal;" class="sa-gray-text">{{'PaymentProfile.MC' | translate}}</label>
+          </div>
+        </div>
+
+        <div style="margin-top: 6px; width: 150px; float: left;">
+          <div class="sa-inline-field">
+            <input class="form-control"
+                   id="cardType"
+                   name="cardType"
+                   type="radio"
+                   value="Discover"
+                   style="width: 20px; height: 20px;"
+                   #cardType="ngModel"
+                   [(ngModel)]="paymentProfile.cardType"
+                   [disabled]="isEdit"
+                   required />
+            <label style="margin-left: 8px; font-weight: normal;" class="sa-gray-text">{{'PaymentProfile.Discover' | translate}}</label>
+          </div>
+        </div>
+
+        <div style="margin-top: 6px; width: 150px; float: left;">
+          <div class="sa-inline-field">
+            <input class="form-control"
+                   id="cardType"
+                   name="cardType"
+                   type="radio"
+                   value="AmericanExpress"
+                   style="width: 20px; height: 20px;"
+                   #cardType="ngModel"
+                   [(ngModel)]="paymentProfile.cardType"
+                   [disabled]="isEdit"
+                   required />
+            <label style="margin-left: 8px; font-weight: normal;" class="sa-gray-text">{{'PaymentProfile.AMEX' | translate}}</label>
+          </div>
+        </div>
+
+        <div style="margin-top: 6px; width: 150px; float: left;">
+          <div class="sa-inline-field">
+            <input class="form-control"
+                   id="cardType"
+                   name="cardType"
+                   type="radio"
+                   value="JCB"
+                   style="width: 20px; height: 20px;"
+                   #cardType="ngModel"
+                   [(ngModel)]="paymentProfile.cardType"
+                   [disabled]="isEdit"
+                   required />
+            <label style="margin-left: 8px; font-weight: normal;" class="sa-gray-text">{{'PaymentProfile.JCB' | translate}}</label>
+          </div>
+        </div>
+
+        <div style="margin-top: 6px; width: 150px; float: left;">
+          <div class="sa-inline-field">
+            <input class="form-control"
+                   id="cardType"
+                   name="cardType"
+                   type="radio"
+                   value="Diners"
+                   style="width: 20px; height: 20px;"
+                   #cardType="ngModel"
+                   [(ngModel)]="paymentProfile.cardType"
+                   [disabled]="isEdit"
+                   required />
+            <label style="margin-left: 8px; font-weight: normal;" class="sa-gray-text">{{'PaymentProfile.DinersClub' | translate}}</label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="form-group" *ngIf="!isAccount">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="cardNumber">{{'PaymentProfile.CreditCardNumber' | translate}}<span class="sa-required-text">*</span></label>
+      </div>
+
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': cardNumber.dirty && cardNumber.valid, 'has-error' : cardNumber.dirty && !cardNumber.valid}">
+          <input class="form-control"
+                 id="cardNumber"
+                 name="cardNumber"
+                 type="text"
+                 #cardNumber="ngModel"
+                 [(ngModel)]="paymentProfile.cardNumber"
+                 [disabled]="isEdit"
+                 required
+                 pattern="((\d{4}[\s\-]?){3}\d{4})|(\d{4}[\s\-]?\d{6}[\s\-]?\d{5})" />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': cardNumber.valid, 'glyphicon-remove' : !cardNumber.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="cardNumber.dirty && !cardNumber.valid">{{'PaymentProfile.InvalidCreditCardNumber' | translate}} {{cardNumber?.messages}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" *ngIf="!isAccount">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="cardExpirationMonth">{{'PaymentProfile.ExpirationDate' | translate}}<span class="sa-required-text">*</span></label>
+      </div>
+
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': (cardExpirationMonth.dirty && cardExpirationYear.dirty && (cardExpirationYear.value > thisYear || (cardExpirationYear.value == thisYear && cardExpirationMonth.value >= thisMonth))), 'has-error' : (cardExpirationMonth.dirty && cardExpirationMonth.value == 0) ||  (cardExpirationYear.dirty && cardExpirationYear.value == 0) || (cardExpirationMonth.dirty && cardExpirationYear.dirty && !(cardExpirationYear.value > thisYear || (cardExpirationYear.value == thisYear && cardExpirationMonth.value >= thisMonth)))}">
+
+          <select class="form-control bootstrap-select"
+                  style="width: 50px; float: left; margin-top: 3px; margin-bottom: 3px; padding-top:10px; padding-bottom:10px"
+                  id="cardExpirationMonth"
+                  name="cardExpirationMonth"
+                  required
+                  #cardExpirationMonth="ngModel"
+                  [(ngModel)]="paymentProfile.cardExpirationMonth">
+            <option value="0"></option>
+            <option value="1">Jan</option>
+            <option value="2">Feb</option>
+            <option value="3">Mar</option>
+            <option value="4">Apr</option>
+            <option value="5">May</option>
+            <option value="6">Jun</option>
+            <option value="7">Jul</option>
+            <option value="8">Aug</option>
+            <option value="9">Sep</option>
+            <option value="10">Oct</option>
+            <option value="11">Nov</option>
+            <option value="12">Dec</option>
+          </select>
+
+          <span style="width: 10px;">&nbsp;</span>
+
+          <select class="form-control bootstrap-select"
+                  style="width: 75px; margin-top: 3px; margin-bottom: 3px; padding-top:10px; padding-bottom:10px"
+                  id="cardExpirationYear"
+                  name="cardExpirationYear"
+                  required
+                  #cardExpirationYear="ngModel"
+                  [(ngModel)]="paymentProfile.cardExpirationYear">
+            <option value="0"></option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" *ngIf="!isAccount">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="cardCCV">{{'PaymentProfile.CVV' | translate}}<span class="sa-required-text">*</span></label>
+      </div>
+
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': cardCCV.dirty && cardCCV.valid, 'has-error' : cardCCV.dirty && !cardCCV.valid}">
+          <input class="form-control"
+                 id="cardCCV"
+                 name="cardCCV"
+                 type="text"
+                 #cardCCV="ngModel"
+                 [(ngModel)]="paymentProfile.cardCCV"
+                 [disabled]="isEdit"
+                 required
+                 pattern="\d{3,5}" />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': cardCCV.valid, 'glyphicon-remove' : !cardCCV.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="cardCCV.dirty && !cardCCV.valid">{{'PaymentProfile.InvalidCVV' | translate}} {{cardCCV?.messages}}</span>
+        </div>
+      </div>
+
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="billToName">{{'PaymentProfile.NameOnAccount' | translate}}<span class="sa-required-text">*</span></label>
+      </div>
+
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': billToName.dirty && billToName.valid, 'has-error' : billToName.dirty && !billToName.valid}">
+          <input class="form-control"
+                 id="billToName"
+                 name="billToName"
+                 type="text"
+                 #billToName="ngModel"
+                 [(ngModel)]="paymentProfile.paymentBillToName"
+                 [disabled]="isEdit"
+                 required />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': billToName.valid, 'glyphicon-remove' : !billToName.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="billToName.dirty && !billToName.valid">{{'PaymentProfile.InvalidName' | translate}} {{name?.messages}}</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="form-group">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="address_line1">{{'PaymentProfile.Address' | translate}}<span class="sa-required-text">*</span></label>
+      </div>
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': address_line1.dirty && address_line1.valid, 'has-error' : address_line1.dirty && !address_line1.valid}">
+          <input class="form-control"
+                 id="address_line1"
+                 name="address_line1"
+                 type="text"
+                 #address_line1="ngModel"
+                 [(ngModel)]="paymentProfile.address.line1"
+                 required />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': address_line1.valid, 'glyphicon-remove' : !address_line1.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="address_line1.dirty && !address_line1.valid">{{'PaymentProfile.InvalidAddress' | translate}} {{address_line1?.messages}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="address_line2">{{'PaymentProfile.Address2' | translate}}<span class="sa-required-text"></span></label>
+      </div>
+      <div class="col-md-4">
+        <div class="has-feedback">
+          <input class="form-control"
+                 id="address_line2"
+                 name="address_line2"
+                 type="text"
+                 #address_line2="ngModel"
+                 [(ngModel)]="paymentProfile.address.line2" />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': address_line2.valid, 'glyphicon-remove' : !address_line2.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="address_line2.dirty && !address_line2.valid">{{'PaymentProfile.InvalidAddress' | translate}} {{address_line2?.messages}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="address_line3">{{'PaymentProfile.Address3' | translate}}<span class="sa-required-text"></span></label>
+      </div>
+      <div class="col-md-4">
+        <div class="has-feedback">
+          <input class="form-control"
+                 id="address_line3"
+                 name="address_line3"
+                 type="text"
+                 #address_line3="ngModel"
+                 [(ngModel)]="paymentProfile.address.line3" />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': address_line3.valid, 'glyphicon-remove' : !address_line3.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="address_line3.dirty && !address_line3.valid">{{'PaymentProfile.InvalidAddress' | translate}} {{address_line3?.messages}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="address_city">{{'PaymentProfile.City' | translate}}<span class="sa-required-text">*</span></label>
+      </div>
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': address_city.dirty && address_city.valid, 'has-error' : address_city.dirty && !address_city.valid}">
+          <input class="form-control"
+                 id="address_city"
+                 name="address_city"
+                 type="text"
+                 #address_city="ngModel"
+                 [(ngModel)]="paymentProfile.address.municipality"
+                 required />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': address_city.valid, 'glyphicon-remove' : !address_city.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="address_city.dirty && !address_city.valid">{{'PaymentProfile.InvalidCity' | translate}} {{address_city?.messages}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" *ngIf="isUS">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="address_state">{{'PaymentProfile.StateOrProvince' | translate}}<span class="sa-required-text">*</span></label>
+      </div>
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': address_state.dirty && address_state.valid, 'has-error' : address_state.dirty && !address_state.valid}">
+          <select class="form-control bootstrap-select"
+                  style="width: 150px; float: left; margin-top: 3px; margin-bottom: 3px; padding-top:10px; padding-bottom:10px"
+                  id="address_state"
+                  name="address_state"
+                  required
+                  #address_state="ngModel"
+                  [(ngModel)]="paymentProfile.address.stateOrProvince">
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+
+          </select>
+
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': address_state.valid, 'glyphicon-remove' : !address_state.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="address_state.dirty && !address_state.valid">{{'PaymentProfile.InvalidState' | translate}} {{address_state?.messages}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group" *ngIf="!isUS">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="address_state">{{'PaymentProfile.StateOrProvince' | translate}}<span class="sa-required-text">*</span></label>
+      </div>
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': address_state.dirty && address_state.valid, 'has-error' : address_state.dirty && !address_state.valid}">
+          <select class="form-control bootstrap-select"
+                  style="width: 150px; float: left; margin-top: 3px; margin-bottom: 3px; padding-top:10px; padding-bottom:10px"
+                  id="address_state"
+                  name="address_state"
+                  required
+                  #address_state="ngModel"
+                  [(ngModel)]="paymentProfile.address.stateOrProvince">
+            <option value="AB">Alberta</option>
+            <option value="BC">British Columbia</option>
+            <option value="MB">Manitoba</option>
+            <option value="NB">New Brunswick</option>
+            <option value="NL">Newfoundland and Labrador</option>
+            <option value="NS">Nova Scotia</option>
+            <option value="ON">Ontario</option>
+            <option value="PE">Prince Edward Island</option>
+            <option value="QC">Quebec</option>
+            <option value="SK">Saskatchewan</option>
+            <option value="NT">Northwest Territories</option>
+            <option value="NU">Nunavut</option>
+
+          </select>
+
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': address_state.valid, 'glyphicon-remove' : !address_state.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="address_state.dirty && !address_state.valid">{{'PaymentProfile.InvalidState' | translate}} {{address_state?.messages}}</span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="address_zip">{{'PaymentProfile.PostalCode' | translate}}<span class="sa-required-text">*</span></label>
+      </div>
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': address_zip.dirty && address_zip.valid, 'has-error' : address_zip.dirty && !address_zip.valid}">
+          <input class="form-control"
+                 id="address_zip"
+                 name="address_zip"
+                 type="text"
+                 #address_zip="ngModel"
+                 [(ngModel)]="paymentProfile.address.postalCode"
+                 required
+                 minlength="5" />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': address_zip.valid, 'glyphicon-remove' : !address_zip.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="address_zip.dirty && !address_zip.valid">{{'PaymentProfile.InvalidPostalCode' | translate}} {{address_zip?.messages}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="address_country">{{'PaymentProfile.Country' | translate}}<span class="sa-required-text">*</span></label>
+      </div>
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': address_country.dirty && address_country.valid, 'has-error' : address_country.dirty && !address_country.valid}">
+          <select class="form-control bootstrap-select"
+                  style="width: 150px; float: left; margin-top: 3px; margin-bottom: 3px; padding-top:10px; padding-bottom:10px"
+                  id="address_country"
+                  name="address_country"
+                  required
+                  (change)="changeCountry($event.target.value)"
+                  #address_country="ngModel"
+                  [(ngModel)]="paymentProfile.address.country">
+            <option value="CA">Canada</option>
+            <option value="US" selected>United States</option>
+          </select>
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': address_country.valid, 'glyphicon-remove' : !address_country.valid}"
+                aria-hidden="true"
+                *ngIf="f.submitted"></span>
+          <span class="errorMessage" *ngIf="address_country.dirty && !address_country.valid">{{'PaymentProfile.InvalidCountry' | translate}} {{address_country?.messages}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="isAutoEnabled">
+      <div class="col-md-3 text-right">
+        <label class="control-label" for="currentAutoPayMethod">{{'PaymentProfile.AutoPay' | translate}}</label>
+      </div>
+      <div class="col-md-4">
+        <div class="has-feedback"
+             [ngClass]="{'has-success': isAutoEnabled, 'has-error' : !isAutoEnabled}">
+          <input class="form-control"
+                 id="currentAutoPayMethod"
+                 name="currentAutoPayMethod"
+                 type="checkbox"
+                 value="true"
+                 [disabled]="!isAutoEnabled"
+                 #currentAutoPayMethod="ngModel"
+                 [(ngModel)]="paymentProfile.currentAutoPayMethod" />
+          <span class="glyphicon form-control-feedback"
+                [ngClass]="{'glyphicon-ok ': isAutoEnabled, 'glyphicon-remove' : (!isAutoEnabled && currentAutoPayMethod) }"
+                aria-hidden="true"
+                *ngIf="f.dirty"></span>
+          <span class="errorMessage" *ngIf="!isAutoEnabled">{{'PaymentProfile.AutoPayDisabledDesc' | translate}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="!isEdit">
+      <div class="col-md-3 text-right">
+      </div>
+      <div class="col-md-4 text-right">
+        <ngx-recaptcha2 #captchaElem
+                        [siteKey]="siteKey"
+                        (reset)="captchaHandleReset()"
+                        (expire)="captchaHandleExpire()"
+                        (load)="captchaHandleLoad()"
+                        (success)="CaptchaHandleSuccess($event)"
+                        [useGlobalDomain]="useGlobalDomain"
+                        [size]="size"
+                        [hl]="selectedLanguage"
+                        [theme]="theme"
+                        [type]="type" [(ngModel)]="paymentProfile.captcha" [ngModelOptions]="{standalone: true}">
+        </ngx-recaptcha2>
+
+      </div>
+    </div>
+
+    <br />
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn-primary btn btn-lg sa-btn-header-color" *ngIf="!isEdit"
+                [disabled]="(isLoading || !f.dirty || (f.dirty && !f.valid) || !captchaSuccess)"
+                (click)="savePayment();">
+          {{'PaymentProfile.SAVE' | translate}}
+        </button>&nbsp;
+
+        <button class="btn-primary btn btn-lg sa-btn-header-color" *ngIf="isEdit"
+                [disabled]="(isLoading || !f.dirty || (f.dirty && !f.valid))"
+                (click)="savePayment();">
+          {{'PaymentProfile.SAVE' | translate}}
+        </button>&nbsp;
+
+        <button class="btn-primary btn btn-lg sa-btn-header-color"
+                [disabled]="(isLoading || !isEdit || paymentProfile.currentAutoPayMethod)"
+                (click)="deletePayment();">
+          {{'PaymentProfile.DELETE' | translate}}
+        </button>&nbsp;
+        <button (click)="cancel()" class="btn-primary btn btn-lg sa-btn-header-color">{{'PaymentProfile.CANCEL' | translate}}</button>
+      </div>
+    </div>
+  </form>
+
+</div>

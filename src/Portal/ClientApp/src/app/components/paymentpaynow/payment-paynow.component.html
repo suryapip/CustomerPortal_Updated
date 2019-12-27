@@ -1,0 +1,188 @@
+<div class="container sa-container-minsize sa-header-margin-loggedin">
+  <header class="pageHeader"></header>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="sa-heading-text">
+        Pay Now
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 has-feedback has-error">
+      <div *ngFor="let err of errors" class="errorMessage">{{ err | translate }}</div>
+    </div>
+  </div>
+
+
+  <br />
+  <div class="row">
+    <div class="col-md-12">
+      <div style="font-style: italic; font-weight: bold; margin-bottom: 4px;">
+        {{ 'PayNow.PaymentInvoices' | translate }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr style="background-color: #D3D3D3;">
+            <th style="text-align: center;">
+              {{ 'PayNow.InvoiceNumber' | translate }}
+            </th>
+            <th style="text-align: center;">
+              {{ 'PayNow.DueDate' | translate }}
+            </th>
+            <th style="text-align: center;">
+              {{ 'PayNow.InvoiceAmount' | translate }}
+            </th>
+            <th style="text-align: center;">
+              {{ 'PayNow.PaymentAmount' | translate }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let invoice of this.invoicesToPay">
+            <tr>
+              <td>
+                {{invoice.invoiceNumber}}
+              </td>
+              <td align="center">
+                {{formatDate(invoice.dateDue)}}
+              </td>
+              <td align="right">
+                {{formatAmount(invoice.totalAmount)}} {{invoice.currency}}
+              </td>
+              <td align="right">
+                {{formatAmount(invoice.userPaymentAmount)}} {{invoice.currency}}
+              </td>
+            </tr>
+
+          </ng-container>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <span style="font-size: x-large;">
+        {{ 'PayNow.TotalPaymentAmount' | translate }} {{ formatAmount(selectedPaymentAmount) }} {{ invoiceCurrency }}
+      </span>
+    </div>
+  </div>
+  <br />
+
+  <div class="row">
+    <div class="col-md-12">
+      <div style="font-style: italic; font-weight: bold;">
+        {{ 'PayNow.SelectPaymentMethod' | translate }} <a routerLink="/secure/payment">{{ 'PayNow.SetupNewProfile' | translate }}</a>
+      </div>
+    </div>
+  </div>
+  <br />
+
+  <br />
+  <ng-container *ngFor="let paymentMethod of paymentMethods, index as i">
+
+    <div *ngIf="i > 0" class="row">
+      <div class="col-md-12">
+        <hr class="sa-blue-hr" />
+      </div>
+    </div>
+
+    <div class="row" *ngIf="formResetToggle">
+      <div class="col-md-8" style="font-size: large;">
+        <div class="sa-inline-field">
+          <input type="radio" id="paymentRowRadio" style="width: 20px; height: 20px;" name="paymentRowRadio" value="paymentMethod.id" (change)="setPaymentMethod(paymentMethod.id)" />
+          <label for="paymentRowRadio" style="margin-left: 8px; margin-top: 8px; font-weight: normal;">
+            {{paymentMethod.name}} <span style="font-style: italic">({{paymentMethod.paymentType}} ending with {{paymentMethod.accountNumber.substring(paymentMethod.accountNumber.length - 4, paymentMethod.accountNumber.length)}})</span>
+
+            <span *ngIf="paymentMethod.currentAutoPayMethod" class="sa-auto-pay-text">
+              {{ 'paymentMethod.CurrentPaymentMethod' | translate }}
+              <span class="fa fa-question-circle sa-enroll-auto-pay-button-info-icon sa-popup" (mouseenter)="togglePopover($event)" (mouseleave)="togglePopover($event)">
+                <span class="sa-popuptext-b" [class.sa-show]="isAutoEnrollPopoverVisible" id="autpPayPopover">{{ 'PayNow.selectedServiceCharge' | translate }}</span>
+              </span>
+            </span>
+          </label>
+
+
+
+
+
+        </div>
+
+      </div>
+      <div class="col-md-4 text-right" style="font-size: large;">
+        <a routerLink="/secure/payment/{{paymentMethod.id}}" class="sa-pipe-divider">{{'PayNow.EDIT' | translate }}</a>
+      </div>
+
+    </div>
+
+  </ng-container>
+
+  <br /><br />
+        <div class="row" *ngIf="isTermsVisible">
+          <div class="row" style="text-align:center;"><span style="font-size:large;font-weight:bold;">{{ 'PayNow.ElectronicPaymentTermsAndCondition' | translate }}</span></div>
+          <br />
+          <span style="font-weight:bold;">{{ 'PayNow.ByCheckingBox' | translate }}</span> {{ 'PayNow.AuthorizedAgent' | translate }} <span style="font-weight:bold;">{{ 'PayNow.Certifies' | translate }}</span> {{ 'PayNow.AgentAuthority' | translate }} <span style="font-weight:bold;">{{ 'PayNow.Signs' | translate }}</span> {{ 'PayNow.EnrollmentAndAuth1' | translate }}<span style="font-weight:bold;">{{ 'PayNow.Authorization' | translate }}</span>{{ 'PayNow.EnrollmentAndAuth2' | translate }}
+          <br />
+          <span style="font-weight:bold;">{{ 'PayNow.Certifies2' | translate }}</span> {{ 'PayNow.description1' | translate }} <span style="font-weight:bold;">{{ 'PayNow.Consents' | translate }}</span>{{ 'PayNow.description2' | translate }}
+          <br /><br /> <div class="row" style="text-align:center;"> <span style="text-align:center;font-size:large;font-style:italic;">{{ 'PayNow.description3' | translate }}</span><br /><br /></div>
+          <span style="font-weight:bold;color:red;">{{ 'PayNow.GeneralTerms' | translate }}</span> {{ 'PayNow.description4' | translate }} <span style="font-weight:bold;"> {{ 'PayNow.InvoiceAmounts' | translate }} </span>{{ 'PayNow.description5' | translate }}<span style="font-weight:bold;">{{ 'PayNow.EnrollmentScreens' | translate }}</span>{{ 'PayNow.description6' | translate }}<a href="mailto:customercare@scentair.com">customercare@scentair.com</a>{{ 'PayNow.description7' | translate }}
+          <br /><br />
+          {{ 'PayNow.SubscriberAgrees' | translate }}
+          <br /><br />
+          <span style="font-weight:bold;color:red;">{{ 'PayNow.ACHAuthorization' | translate }}</span> {{ 'PayNow.description8' | translate }}
+          <br /><br /><span style="font-weight:bold;color:red;">{{ 'PayNow.CreditCardAuth' | translate }} </span>{{ 'PayNow.description9' | translate }}
+          {{ 'PayNow.description10' | translate }}
+
+          <br /><br /><span style="font-weight:bold;color:red;">{{ 'PayNow.Privacy' | translate }}</span>{{ 'PayNow.description11' | translate }}
+
+
+        </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <span style="margin-right: 8px; width: 50px;"><img src="../../../assets/images/visa.png" /></span>
+      <span style="margin-right: 8px; width: 50px;"><img src="../../../assets/images/mastercard.png" /></span>
+      <span style="margin-right: 8px; width: 50px;"><img src="../../../assets/images/discover.png" /></span>
+      <span style="margin-right: 8px; width: 50px;"><img src="../../../assets/images/amex.png" /></span>
+    </div>
+    <div class="col-md-6 text-right" *ngIf="formResetToggle">
+      <button (click)="cancel()" class="btn-primary btn btn-lg sa-btn-header-color">{{ 'PayNow.CANCEL' | translate }}</button>&nbsp;
+      <span *ngIf="!isTermsVisible">
+        <button (click)="paynow();"
+                [disabled]="(isLoading)"
+                class="btn-primary btn btn-lg sa-btn-header-color">
+          {{ 'PayNow.SUBMIT' | translate }}
+        </button>
+      </span>
+      <span *ngIf="isTermsVisible">
+        <button (click)="paynow();"
+                [disabled]="(isLoading)"
+                class="btn-primary btn btn-lg sa-btn-header-color">
+          {{ 'PayNow.ACCEPT' | translate }} &amp; {{ 'PayNow.SUBMIT' | translate }}
+        </button>
+      </span>
+    </div>
+
+  </div><div class="row" style="text-align:right;" *ngIf="isLoading">{{ 'PayNow.PaymentCompleteWarning' | translate }}</div>
+  <br />
+  <div class="row">
+    <div class="col-md-12" style="font-style: italic;">
+      {{ 'PayNow.AutopayMethodCannotDeleted' | translate }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" style="font-style: italic;">
+      {{ 'PayNow.PaymentAlert' | translate }}
+    </div>
+  </div>
+
+
+</div>

@@ -1,0 +1,118 @@
+<div class="container sa-container-minsize sa-header-margin-loggedin">
+
+  <header class="pageHeader">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sa-heading-text">
+          {{'PaymentAutoPay.ManageAutoPay' | translate}}
+        </div>
+      </div>
+    </div>
+    <div style="color: red; font-style: italic;">
+      {{'PaymentAutoPay.AccountOptionDesc' | translate}}
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-12">
+        <h4>
+          {{'PaymentAutoPay.AutoPayDesc' | translate}}
+        </h4>
+        <br />
+        <h4>
+          {{'PaymentAutoPay.PaymentTermsNote' | translate}}
+        </h4>
+      </div>
+    </div>
+  </header>
+  <br />
+
+  <ng-container *ngFor="let paymentMethod of paymentMethods, index as i">
+    <div *ngIf="i > 0" class="row">
+      <div class="col-md-12">
+        <hr class="sa-blue-hr" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-9" style="font-size: large;">
+        <a routerLink="/secure/payment/{{paymentMethod.id}}" class="sa-pipe-divider">
+          {{ paymentMethod.name }} <span style="font-style: italic">({{paymentMethod.paymentType}} {{'PaymentAutoPay.EndingWith' | translate}} {{paymentMethod.accountNumber.substring(paymentMethod.accountNumber.length - 4, paymentMethod.accountNumber.length)}})</span>
+        </a>
+        <span *ngIf="paymentMethod.currentAutoPayMethod && !isEnrolling" class="sa-auto-pay-text">
+          {{ "Current AutoPay Payment Method" | translate }}
+          <span class="fa fa-question-circle sa-enroll-auto-pay-button-info-icon sa-popup" (mouseenter)="togglePopover($event)" (mouseleave)="togglePopover($event)">
+            <span class="sa-popuptext-b" [class.sa-show]="isAutoEnrollPopoverVisible" id="autpPayPopover">{{'PaymentAutoPay.PaymentMethodChargesDesc' | translate}}</span>
+          </span>
+        </span>
+      </div>
+      <div class="col-md-3 text-right">
+        <div class="sa-inline-field"
+             [ngClass]="{'has-error' : !isAutoPayEnabled }"
+             *ngIf="!paymentMethod.currentAutoPayMethod || isEnrolling">
+          <label style="margin-left: 8px; font-weight: normal;" class="sa-pipe-divider">{{'PaymentAutoPay.AUTOPAY' | translate}}</label>
+          <input type="radio" class="form-control sa-radio-button" style="width: 20px; height: 20px"
+                 (click)="changeAutoPay(i);" name="paymentRowRadio"
+                 [disabled]="(!isAutoPayEnabled || isUnenrolling)" />
+          <span class="glyphicon form-control-feedback glyphicon-remove"
+                aria-hidden="true"
+                *ngIf="!isAutoPayEnabled"></span>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+  <br />
+  <br />
+
+
+  <div class="row" *ngIf="isTermsVisible">
+    <div class="row" style="text-align:center;"><span style="font-size:large;font-weight:bold;">{{'PaymentAutoPay.ScentAirTermsConditionDesc' | translate}}</span></div>
+    <br />
+    <span style="font-weight:bold;">{{'PaymentAutoPay.BYCHECKING' | translate}}</span>{{'PaymentAutoPay.AuthorizedAgent' | translate}}<span style="font-weight:bold;">{{'PaymentAutoPay.certifies' | translate}}</span>{{'PaymentAutoPay.AuthorizedCertifiesDesc1' | translate}} <span style="font-weight:bold;">{{'PaymentAutoPay.AuthorizedCertifiesDesc2' | translate}}</span>{{'PaymentAutoPay.AuthorizedCertifiesDesc3' | translate}} <span style="font-weight:bold;">{{'PaymentAutoPay.Authorization' | translate}}</span>{{'PaymentAutoPay.AuthorizedCertifiesDesc4' | translate}}
+    <br />
+    <span style="font-weight:bold;">{{'PaymentAutoPay.certifies' | translate}}</span>{{'PaymentAutoPay.AuthorizedCertifiesDesc6' | translate}}  <span style="font-weight:bold;">{{'PaymentAutoPay.AuthorizedCertifiesDesc7' | translate}}</span> {{'PaymentAutoPay.AuthorizedCertifiesDesc8' | translate}}
+    <br /><br /> <div class="row" style="text-align:center;"> <span style="text-align:center;font-size:large;font-style:italic;">{{'PaymentAutoPay.AuthorizedCertifiesDesc9' | translate}}</span><br /><br /></div>
+    <span style="font-weight:bold;color:red;">{{'PaymentAutoPay.GeneralTerms' | translate}}</span> {{'PaymentAutoPay.AuthorizedCertifiesDesc10' | translate}}<span style="font-weight:bold;">{{'PaymentAutoPay.InvoiceAmounts' | translate}}</span>{{'PaymentAutoPay.AuthorizedCertifiesDesc11' | translate}}<span style="font-weight:bold;">{{'PaymentAutoPay.EnrollmentScreens' | translate}}</span>{{'PaymentAutoPay.AuthorizedCertifiesDesc12' | translate}}<a href="mailto:customercare@scentair.com">{{'PaymentAutoPay.CustomerCare' | translate}}</a>{{'PaymentAutoPay.AuthorizedCertifiesDesc13' | translate}}
+    <br /><br />
+    {{'PaymentAutoPay.SubscriberFurtherAgrees' | translate}}
+    <br /><br />
+    <span style="font-weight:bold;color:red;">{{'PaymentAutoPay.ACHAuthorization' | translate}} </span>{{'PaymentAutoPay.ACHAuthorizationDesc1' | translate}}
+    <br /><br /><span style="font-weight:bold;color:red;">{{'PaymentAutoPay.CreditCardAuthorization' | translate}} </span> {{'PaymentAutoPay.PaymentTypeDesc' | translate}}
+    {{'PaymentAutoPay.PaymentTypeDesc1' | translate}}
+
+    <br /><br /><span style="font-weight:bold;color:red;"> {{'PaymentAutoPay.Privacy' | translate}}</span>{{'PaymentAutoPay.PrivacySubscriberDesc' | translate}}
+    <br />
+
+    <a href="../../../assets/images/TermsandConditions.png" target="_blank">{{'PaymentAutoPay.PrintTermsConditions' | translate}}</a>
+
+  </div>
+
+  <div class="row">
+    <div class="col-md-12" *ngIf="canPayOnSite">
+      <a routerLink="/secure/payment" *ngIf="!isTermsVisible" fragment="auto" class="btn-primary btn btn-lg sa-btn-header-color">{{'PaymentAutoPay.ADDNEWPAYMENTMETHOD' | translate}}</a>
+      <button (click)="unenrollAutoPay();" *ngIf="!isTermsVisible" [disabled]="(!isAutoPayEnabled || isUnenrolling || !isAutoPayActive)" class="btn-primary btn btn-lg sa-btn-header-color" style="margin-left: 10px">{{'PaymentAutoPay.UNENROLLINAUTOPAY' | translate}}</button>
+      <button (click)="saveAutoPay();" *ngIf="!isTermsVisible" [disabled]="(!isAutoPayEnabled || isUnenrolling || !isAutoPayActive || !isEnrolling)" class="btn-primary btn btn-lg sa-btn-header-color" style="float: right;">{{'PaymentAutoPay.SAVE' | translate}}</button>
+
+      <button (click)="saveAutoPay();" *ngIf="isTermsVisible" [disabled]="(isLoading)" class="btn-primary btn btn-lg sa-btn-header-color" style="float: right;"> {{'PaymentAutoPay.ACCEPT' | translate}} &amp; {{'PaymentAutoPay.SUBMIT' | translate}}</button>&nbsp;&nbsp;
+      <button (click)="cancel()" *ngIf="isTermsVisible" class="btn-primary btn btn-lg sa-btn-header-color" style="float: right;">{{'PaymentAutoPay.CANCEL' | translate}}</button>&nbsp;&nbsp;&nbsp;
+    </div>
+  </div>
+  <br />
+  <div>
+    {{'PaymentAutoPay.ChargesDesc' | translate}}
+  </div>
+
+  <br />
+  <div class="row" *ngIf="!isAutoPayEnabled">
+    <div class="col-md-12 errorMessage">
+      {{'PaymentAutoPay.OpenInvoicesDesc' | translate}}
+    </div>
+  </div>
+  <div class="row" *ngIf="(isUnenrolling)">
+    <div style="color: red;font-size:large;" class="col-md-12 errorMessage">
+      {{'PaymentAutoPay.AUTOPAYUnenrollmentRequestDesc' | translate}}
+    </div>
+  </div>
+  <br />
+
+</div>

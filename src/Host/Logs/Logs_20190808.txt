@@ -1,0 +1,97 @@
+INFO  08-44-2019 19:44:18 ScentAir.Payment.Program [1] - Initializing... 
+INFO  08-44-2019 19:44:21 ScentAir.Payment.Program [1] - Creating services... 
+INFO  08-44-2019 19:44:24 ScentAir.Payment.Program [1] - Started... 
+DEBUG 08-44-2019 19:44:27 ScentAir.Payment.Program [1] -  Time : 08-08-2019 07:44:27, Retrieving accounts...starting 
+ERROR 08-44-2019 19:44:43 Microsoft.EntityFrameworkCore.Database.Connection [1] - An error occurred using the connection to database 'Portal' on server '10.8.0.109'. System.Data.SqlClient.SqlException (0x80131904): Cannot open database "Portal" requested by the login. The login failed.
+Login failed for user 'vpatil'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+ClientConnectionId:58c3e6e8-4259-4ed4-865b-205f065b4862
+Error Number:4060,State:1,Class:11
+
+ERROR 08-44-2019 19:44:43 Microsoft.EntityFrameworkCore.Query [1] - An exception occurred in the database while iterating the results of a query for context type 'ScentAir.Payment.Impl.PortalDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "Portal" requested by the login. The login failed.
+Login failed for user 'vpatil'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:58c3e6e8-4259-4ed4-865b-205f065b4862
+Error Number:4060,State:1,Class:11 System.Data.SqlClient.SqlException (0x80131904): Cannot open database "Portal" requested by the login. The login failed.
+Login failed for user 'vpatil'.
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(DbContext _, Boolean buffer)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+ClientConnectionId:58c3e6e8-4259-4ed4-865b-205f065b4862
+Error Number:4060,State:1,Class:11
+
+INFO  08-45-2019 19:45:54 ScentAir.Payment.Program [1] - Initializing... 
+INFO  08-45-2019 19:45:56 ScentAir.Payment.Program [1] - Creating services... 
+INFO  08-45-2019 19:45:57 ScentAir.Payment.Program [1] - Started... 
+DEBUG 08-45-2019 19:45:59 ScentAir.Payment.Program [1] -  Time : 08-08-2019 07:45:59, Retrieving accounts...starting 
+INFO  08-46-2019 19:46:07 ScentAir.Payment.Impl.AccountManager [1] -  Total 5109  populated to check the eligible import invoices customer 
+DEBUG 08-46-2019 19:46:07 ScentAir.Payment.Program [1] - Calculating accounts to import...starting 
+INFO  08-47-2019 19:47:00 ScentAir.Payment.Program [1] - Initializing... 
+INFO  08-47-2019 19:47:01 ScentAir.Payment.Program [1] - Creating services... 
+INFO  08-47-2019 19:47:01 ScentAir.Payment.Program [1] - Started... 
+DEBUG 08-47-2019 19:47:03 ScentAir.Payment.Program [1] -  Time : 08-08-2019 07:47:03, Retrieving accounts...starting 
+INFO  08-47-2019 19:47:08 ScentAir.Payment.Impl.AccountManager [1] -  Total 5109  populated to check the eligible import invoices customer 
+DEBUG 08-47-2019 19:47:08 ScentAir.Payment.Program [1] - Calculating accounts to import...starting 
+INFO  08-47-2019 19:47:35 ScentAir.Payment.Program [1] - Initializing... 
+INFO  08-47-2019 19:47:36 ScentAir.Payment.Program [1] - Creating services... 
+INFO  08-47-2019 19:47:36 ScentAir.Payment.Program [1] - Started... 
+DEBUG 08-47-2019 19:47:37 ScentAir.Payment.Program [1] -  Time : 08-08-2019 07:47:37, Retrieving accounts...starting 
+INFO  08-47-2019 19:47:49 ScentAir.Payment.Impl.AccountManager [1] -  Total 5109  populated to check the eligible import invoices customer 
+DEBUG 08-47-2019 19:47:55 ScentAir.Payment.Program [1] - Calculating accounts to import...starting 
+INFO  08-49-2019 19:49:23 ScentAir.Payment.Program [1] - Initializing... 
+INFO  08-49-2019 19:49:24 ScentAir.Payment.Program [1] - Creating services... 
+INFO  08-49-2019 19:49:24 ScentAir.Payment.Program [1] - Started... 
+DEBUG 08-49-2019 19:49:25 ScentAir.Payment.Program [1] -  Time : 08-08-2019 07:49:25, Retrieving accounts...starting 
+INFO  08-49-2019 19:49:32 ScentAir.Payment.Impl.AccountManager [1] -  Total 5109  populated to check the eligible import invoices customer 
+DEBUG 08-49-2019 19:49:41 ScentAir.Payment.Program [1] - Calculating accounts to import...starting 
+INFO  08-56-2019 19:56:28 ScentAir.Payment.Program [1] - Initializing... 
+INFO  08-56-2019 19:56:29 ScentAir.Payment.Program [1] - Creating services... 
+INFO  08-56-2019 19:56:29 ScentAir.Payment.Program [1] - Started... 
+DEBUG 08-56-2019 19:56:31 ScentAir.Payment.Program [1] -  Time : 08-08-2019 07:56:31, Retrieving accounts...starting 
+INFO  08-56-2019 19:56:40 ScentAir.Payment.Impl.AccountManager [1] -  Total 5109  populated to check the eligible import invoices customer 
+INFO  08-06-2019 20:06:21 ScentAir.Payment.Program [1] - Initializing... 

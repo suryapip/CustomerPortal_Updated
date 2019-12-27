@@ -1,0 +1,749 @@
+INFO  18-30-2019 14:30:11 OpenIddict.Server.OpenIddictServerProvider [37] - An ad hoc authorization was automatically created and associated with an unknown application: caca5666-097a-48d3-95a4-52af5b33449a. 
+DEBUG 18-30-2019 14:30:11 OpenIddict.Server.OpenIddictServerHandler [37] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-30-2019 14:30:11 OpenIddict.Server.OpenIddictServerHandler [37] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-30-2019 14:30:11 OpenIddict.Server.OpenIddictServerHandler [37] - 'email' was excluded from the access token claims. 
+DEBUG 18-30-2019 14:30:11 OpenIddict.Server.OpenIddictServerHandler [37] - 'phone' was excluded from the access token claims. 
+DEBUG 18-30-2019 14:30:12 OpenIddict.Server.OpenIddictServerHandler [37] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-30-2019 14:30:12 OpenIddict.Server.OpenIddictServerHandler [37] - 'acct' was excluded from the identity token claims. 
+INFO  18-30-2019 14:30:12 OpenIddict.Server.OpenIddictServerHandler [37] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+DEBUG 18-30-2019 14:30:12 OpenIddict.Validation.OpenIddictValidationHandler [33] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:12 OpenIddict.Validation.OpenIddictValidationHandler [37] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:13 OpenIddict.Validation.OpenIddictValidationHandler [32] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:13 OpenIddict.Validation.OpenIddictValidationHandler [32] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:13 OpenIddict.Validation.OpenIddictValidationHandler [32] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:13 OpenIddict.Validation.OpenIddictValidationHandler [37] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:13 OpenIddict.Validation.OpenIddictValidationHandler [37] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:13 OpenIddict.Validation.OpenIddictValidationHandler [37] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:14 OpenIddict.Validation.OpenIddictValidationHandler [3] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:14 OpenIddict.Validation.OpenIddictValidationHandler [3] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:14 OpenIddict.Validation.OpenIddictValidationHandler [3] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:14 OpenIddict.Validation.OpenIddictValidationHandler [3] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:14 OpenIddict.Validation.OpenIddictValidationHandler [3] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:21 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:21 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:21 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:21 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:21 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:21 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:21 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [17] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [17] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [17] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [17] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [17] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [17] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [17] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [17] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [17] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [32] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [32] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [32] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [32] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [32] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [32] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [32] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [32] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:22 OpenIddict.Validation.OpenIddictValidationHandler [32] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:42 OpenIddict.Validation.OpenIddictValidationHandler [52] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:42 OpenIddict.Validation.OpenIddictValidationHandler [52] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:42 OpenIddict.Validation.OpenIddictValidationHandler [52] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:42 OpenIddict.Validation.OpenIddictValidationHandler [52] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:42 OpenIddict.Validation.OpenIddictValidationHandler [52] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:42 OpenIddict.Validation.OpenIddictValidationHandler [52] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:42 OpenIddict.Validation.OpenIddictValidationHandler [52] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:42 OpenIddict.Validation.OpenIddictValidationHandler [52] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:42 OpenIddict.Validation.OpenIddictValidationHandler [52] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:42 OpenIddict.Validation.OpenIddictValidationHandler [52] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:42 OpenIddict.Validation.OpenIddictValidationHandler [52] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [54] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [54] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [54] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [54] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [54] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [54] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [54] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [54] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [54] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [54] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [54] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [54] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-30-2019 14:30:43 OpenIddict.Validation.OpenIddictValidationHandler [58] - AuthenticationScheme: Bearer was successfully authenticated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully extracted from the HTTP request: {
+  "username": "bschauf247250",
+  "password": "[removed for security reasons]",
+  "grant_type": "password",
+  "scope": "openid email phone profile offline_access roles"
+}. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerProvider [58] - The token request validation process was partially skipped because the 'client_id' parameter was missing or empty. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+INFO  18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The token request was successfully validated. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+DEBUG 18-31-2019 14:31:06 OpenIddict.Server.OpenIddictServerHandler [58] - The default token request handling was skipped from user code. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+INFO  18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerProvider [53] - An ad hoc authorization was automatically created and associated with an unknown application: aeaec067-ffea-4322-bdf9-c1af42fe87ea. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'AspNet.Identity.SecurityStamp' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'fullname' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'configuration' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'email' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:16 OpenIddict.Server.OpenIddictServerHandler [53] - 'phone' was excluded from the access token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'AspNet.Identity.SecurityStamp' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - 'acct' was excluded from the identity token claims. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+INFO  18-31-2019 14:31:18 OpenIddict.Server.OpenIddictServerHandler [62] - The token response was successfully returned: {
+  "token_type": "Bearer",
+  "access_token": "[removed for security reasons]",
+  "expires_in": 3600,
+  "refresh_token": "[removed for security reasons]",
+  "id_token": "[removed for security reasons]"
+}. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-31-2019 14:31:18 OpenIddict.Validation.OpenIddictValidationHandler [62] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:01 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [56] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:14 OpenIddict.Validation.OpenIddictValidationHandler [53] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [40] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [45] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-32-2019 14:32:15 OpenIddict.Validation.OpenIddictValidationHandler [57] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [43] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 
+DEBUG 18-34-2019 14:34:06 OpenIddict.Validation.OpenIddictValidationHandler [60] - AuthenticationScheme: Bearer was successfully authenticated. 

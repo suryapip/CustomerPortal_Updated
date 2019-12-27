@@ -1,0 +1,72 @@
+﻿<html>
+  <body>
+    <table border="0" >
+      <tr>
+        <td style="background-color:#56B2CB;" align="center" >
+          <img src="https://www.scentair.com/web_resources/themes/www-scentair-percussion-com/images/ScentAir_Logo_whiteWEB_white.png"></img>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <p>
+              Nom du client: {customerName}<br/>
+              Identifiant du client: {accountNumber}
+            </p>
+        <p> </p>
+        <p> </p>
+        <p>Cher(e) {name},</p>
+        <p> </p>
+        <p>
+          Merci de vous être inscrit sur le portail client ScentAir. 
+Votre inscription est maintenant terminée. Pour accéder à vos informations, connectez vous sur <a href="{url}">myaccount.scentair.com</a> et identifiez vous.
+        </p>
+        <p> </p>
+        <p>
+          <strong>Du portail ScentAir, vous pouvez:</strong>
+        </p>
+        <p> </p>
+        <ul>
+          <li>Voir, télécharger, et imprimer des factures</li>
+          <li>Accéder à l'historique des factures</li>
+          <li>S'inscrire à AutoPay*</li>
+          <li>Payer une facture*</li>
+          <li>Et bien plus</li>
+		   <li style="color:red">*Option actuellement disponible pour les comptes USA & Canada</li>
+        </ul>
+        <p>
+          Si vous avez des questions concernant votre compte Scentair et votre profil, vous pouvez <a href="{urlContactUs}">nous contacter</a>. Merci d'avoir choisi Scentair pour offrir la puissance du parfum dans votre entreprise et à vos clients.
+        </p>
+        <p> </p>
+            <p>
+              Bien cordialement,<br/> ScentAir
+            </p>
+            <p> </p>
+            <div style="font-size: 10px;">
+              <strong>Veuillez ne pas répondre à ce message. Les réponses à cette adresse sont acheminées vers une boîte aux lettres non surveillée. </strong>
+              <br/>Cette transmission de courriels contient des informations destinées uniquement à l'utilisation du ou des destinataires nommés ci-dessus. En outre, il contient des informations qui peuvent être confidentielles. Si vous n'êtes pas le destinataire visé, vous êtes informé que toute diffusion, distribution ou copie de ce message (y compris les pièces jointes) est strictement interdite.
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <br/>
+          <br/>
+          <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+            <span>
+              2019 ScentAir. Tous droits réservés
+            </span>
+          </div>
+          <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+            <span>Corportation: 3810 Shutterfly Rd., Charlotte, NC 28217</span><span style="margin-left: 8px; margin-right: 8px;">|</span>+1 (704) 504-2320
+          </div>
+          <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+            
+          </div>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>

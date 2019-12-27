@@ -1,0 +1,80 @@
+<div class="container sa-container-minsize sa-header-margin">
+
+  <header class="pageHeader">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sa-heading-text">
+          {{'ForgotUsername.ForgotUsername' | translate}}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <br />
+  <div class="row">
+    <div class="col-md-12">
+      {{'ForgotUsername.HeaderLabel' | translate}}
+    </div>
+  </div>
+
+  <form class="form"
+        name="f"
+        #f="ngForm"
+        novalidate
+        (ngSubmit)="formSubmit();">
+
+    <br />
+    <div class="row">
+      <div class="col-md-4">
+        <label class="control-label" for="account-number"> {{'ForgotUsername.CustomerIdNumber' | translate}}<span class="sa-required-text">*</span></label>
+        <span class="fa fa-question-circle sa-enroll-auto-pay-button-info-icon sa-popup" (mouseenter)="toggleAcctNoPopover($event)" (mouseleave)="toggleAcctNoPopover($event)">
+          <span class="sa-popuptext-b" [class.sa-show]="isAcctNoPopoverVisible" id="AcctNoPopover">{{'ForgotUsername.AccountPopOver' | translate}}</span>
+        </span>
+
+        <div [ngClass]="{'has-error' :f.submitted && !accountNumber?.valid}">
+          <input type="text"
+                 class="form-control"
+                 id="account-number"
+                 name="accountNumber"
+                 #accountNumber="ngModel"
+                 required
+                 [(ngModel)]="formModel.accountNumber" />
+        </div>
+        <span class="errorMessage" *ngIf="f.submitted && !accountNumber?.valid"> >{{'ForgotUsername.InvalidAccountNumber' | translate}}</span>
+      </div>
+    </div>
+
+    <br />
+    <div class="row">
+      <div class="col-md-4">
+        <label class="control-label" for="email-address">{{'ForgotUsername.EmailAddress' | translate}}<span class="sa-required-text">*</span></label>
+        <span class="fa fa-question-circle sa-enroll-auto-pay-button-info-icon sa-popup" (mouseenter)="toggleEmailPopover($event)" (mouseleave)="toggleEmailPopover($event)">
+          <span class="sa-popuptext-b" [class.sa-show]="isEmailPopoverVisible" id="EmailPopover">{{'ForgotUsername.EmailAddressPopOver' | translate}}</span>
+        </span>
+
+        <div [ngClass]="{'has-error' :f.submitted && !emailAddress?.valid}">
+          <input type="email"
+                 class="form-control"
+                 id="emailAddress"
+                 name="emailAddress"
+                 #emailAddress="ngModel"
+                 [(ngModel)]="formModel.emailAddress"
+                 required email minlength="5" />
+
+        </div>
+        <span class="errorMessage" [hidden]="!(emailAddress.dirty && (!emailAddress.valid || emailAddress.errors))">{{ 'ForgotUsername.EmailAddressValidation' | translate }}</span>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-md-6">
+        <button type="submit" [disabled]="isLoading || !f.valid" class="btn btn-lg btn-primary sa-btn-header-color">{{ 'ForgotUsername.SendEmailBtn' | translate }}</button>
+        <button class="btn-primary btn btn-lg sa-btn-header-color" style="margin-left: 15px;" (click)="cancel()">{{ 'ForgotUsername.CancelBtn' | translate }}</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+

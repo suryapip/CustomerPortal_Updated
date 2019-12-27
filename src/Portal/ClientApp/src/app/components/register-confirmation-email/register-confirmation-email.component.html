@@ -1,0 +1,92 @@
+<div class="container sa-container-minsize sa-header-margin">
+
+  <header class="pageHeader">
+
+    <div class="row">
+      <div class="col-md=12">
+        <div class="sa-heading-text">{{ 'Email Confirmation' | translate }}</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 has-feedback has-error">
+        <div *ngFor="let err of errors" class="errorMessage">{{ err | translate }}</div>
+      </div>
+    </div>
+
+  </header>
+
+  <br />
+  <div class="row" *ngIf="isLoading">
+    <div class="col-md-12">
+      <div>
+        Confirming your email... <br /><br />
+      </div>
+    </div>
+    <br />
+    <br />
+  </div>
+
+  <div class="row" *ngIf="confirmed">
+    <div class="col-md-12">
+      <div>
+        Your email is confirmed. <br /><br />
+      </div>
+      <div>
+        <p>
+          <a routerLink="/login">{{ 'Login' | translate }}</a> to view account details, make payments and add additional users.
+        </p>
+      </div>
+    </div>
+    <br />
+    <br />
+  </div>
+
+  <div class="row" *ngIf="confirmed">
+    <div class="col-md-12">
+      <div>
+        <a routerLink="/login" title="{{ 'Login' | translate }}" class="btn btn-lg btn-primary sa-btn-header-color">{{ 'Login' | translate }}</a>
+      </div>
+    </div>
+    <br />
+    <br />
+  </div>
+  <div class="row" *ngIf="!confirmed">
+    <div class="col-md-12">
+      <div>
+        Your email is not confirmed.  Please delete the email.  A new email will be sent to you.  If you did not register, please contact support.
+      </div>
+    </div>
+    <br />
+    <br />
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div>
+        AMERICAS: Toll free: <a href="tel:+8667236824">+866-723-6824</a> or <a href="tel:+17045042320">+1 704-504-2320</a>
+      </div>
+      <br />
+      <div>
+        EMEA: <a href="tel:+330562576320">+33 (0)5 62 57 63 20</a>
+      </div>
+      <br />
+      <div>
+        UK: <a href="tel:+4401628601650">+44 (0) 1628-601650</a>
+      </div>
+      <br />
+      <div>
+        APAC: <a href="tel:+85362625256">+(853) 626-25256</a> or <a href="tel:+(852) 356-35566">(852) 356-35566</a>
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <div class="row">
+    <div class="col-md-12">
+      <a routerLink="/login" class="btn btn-lg btn-primary sa-btn-header-color">{{ 'RETURN TO LOGIN' | translate }}</a>
+    </div>
+  </div>
+
+</div>
+

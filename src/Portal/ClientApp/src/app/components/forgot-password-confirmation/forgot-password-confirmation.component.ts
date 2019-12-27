@@ -1,0 +1,27 @@
+import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs/operators';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AccountService } from '../../services/account.service';
+
+@Component({
+  selector: 'forgot-password-confirmation',
+  templateUrl: './forgot-password-confirmation.component.html',
+  styleUrls: ['./forgot-password-confirmation.component.css']
+})
+export class ForgotPasswordConfirmationComponent implements OnInit {
+    id: string;
+
+  constructor(
+    private accountService: AccountService,
+    private route: ActivatedRoute,
+    private router: Router) { }
+
+  ngOnInit() {
+    let id = this.route.snapshot.paramMap.get('id');
+    this.id = id;
+
+
+    //this.accountService.confirmForgotPassword(id)
+    //change password
+  }
+}

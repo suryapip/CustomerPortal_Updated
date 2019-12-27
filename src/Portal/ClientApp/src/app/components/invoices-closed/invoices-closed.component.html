@@ -1,0 +1,82 @@
+<div class="container" style="min-height: 500px; margin-top: 35px;">
+  <header class="pageHeader"></header>
+  <br />
+  <div class="row">
+    <div class="col-md-12">
+      <span class="sa-heading-text">
+        {{ 'InvoiceHistory.INVOICEHISTORY' | translate }}
+      </span>
+      <span style="font-size: x-large; margin-left: 20px;">
+        <button class="btn-primary btn sa-btn-header-color" routerLink="/secure">{{ 'InvoiceHistory.OPENINVOICES' | translate }}</button>
+      </span>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-12">
+      <p>
+        {{ 'InvoiceHistory.InvoiceNote' | translate }}
+      </p>
+    </div>
+  </div>
+
+  <br />
+  <br />
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr style="background-color: #D3D3D3;">
+            <th style="text-align: center;">
+              {{ 'InvoiceHistory.Invoice#' | translate }}
+            </th>
+            <th style="text-align: center;">
+              {{ 'InvoiceHistory.Status' | translate }}
+            </th>
+            <th style="text-align: center;">
+              {{ 'InvoiceHistory.InvoiceDate' | translate }}
+            </th>
+            <!--<th style="text-align: center;">
+              Date Paid
+            </th>-->
+            <th style="text-align: center;">
+              {{ 'InvoiceHistory.InvoiceAmount' | translate }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let invoice of invoices, index as i">
+            <tr>
+              <td align="center">
+                <div style="margin-top: 5px;" (click)="getInvoicePdf(invoice.invoiceNumber)" class="sa-hover-text">
+                  {{invoice.invoiceNumber}}
+                </div>
+              </td>
+              <td align="center">
+                <div style="margin-top: 5px;">
+                  {{getInvoiceStatus(invoice) | translate}}
+                </div>
+              </td>
+              <td align="center">
+                {{getFormatedDate(invoice.date)}}
+              </td>
+              <!--<td align="center">
+                  {{getFormatedDate(invoice.dateDue)}}
+              </td>-->
+              <td align="right">
+                <div style="margin-top: 5px;">
+                  {{getInvoiceAmountF(invoice)}} {{invoice.currency}}
+                </div>
+              </td>
+            </tr>
+
+          </ng-container>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>

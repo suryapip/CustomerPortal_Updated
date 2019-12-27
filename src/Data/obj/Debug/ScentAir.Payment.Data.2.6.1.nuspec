@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ScentAir.Payment.Data</id>
+    <version>2.6.1</version>
+    <authors>ScentAir.Payment.Data</authors>
+    <owners>ScentAir.Payment.Data</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Data Access Layer</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp2.1">
+        <dependency id="MailKit" version="2.0.5" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.DataProtection" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.DataProtection.Abstractions" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.DataProtection.Extensions" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Identity.EntityFrameworkCore" version="2.1.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="2.1.4" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer.Design" version="1.1.6" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Localization" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.NETCore.Platforms" version="2.1.0" exclude="Build,Analyzers" />
+        <dependency id="OpenIddict.EntityFrameworkCore" version="2.0.0-rc3-final" exclude="Build,Analyzers" />
+        <dependency id="PDFsharpNetStandard2" version="1.51.4845" exclude="Build,Analyzers" />
+        <dependency id="System.ServiceModel.Http" version="4.5.3" exclude="Build,Analyzers" />
+        <dependency id="System.ServiceModel.Primitives" version="4.5.3" exclude="Build,Analyzers" />
+        <dependency id="System.ServiceModel.Security" version="4.5.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="MailKit" version="2.0.5" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.DataProtection" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.DataProtection.Abstractions" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.DataProtection.Extensions" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Identity.EntityFrameworkCore" version="2.1.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer" version="2.1.4" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.SqlServer.Design" version="1.1.6" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Localization" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.NETCore.Platforms" version="2.1.0" exclude="Build,Analyzers" />
+        <dependency id="OpenIddict.EntityFrameworkCore" version="2.0.0-rc3-final" exclude="Build,Analyzers" />
+        <dependency id="PDFsharpNetStandard2" version="1.51.4845" exclude="Build,Analyzers" />
+        <dependency id="System.ServiceModel.Http" version="4.5.3" exclude="Build,Analyzers" />
+        <dependency id="System.ServiceModel.Primitives" version="4.5.3" exclude="Build,Analyzers" />
+        <dependency id="System.ServiceModel.Security" version="4.5.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\WorkPlace\Projects\Client\ScentAir\ScentAirPaymentCustomerPortalGIT-APR\src\Data\bin\Debug\netcoreapp2.1\ScentAir.Payment.Data.runtimeconfig.json" target="lib\netcoreapp2.1\ScentAir.Payment.Data.runtimeconfig.json" />
+    <file src="D:\WorkPlace\Projects\Client\ScentAir\ScentAirPaymentCustomerPortalGIT-APR\src\Data\bin\Debug\netcoreapp2.1\ScentAir.Payment.Data.dll" target="lib\netcoreapp2.1\ScentAir.Payment.Data.dll" />
+    <file src="D:\WorkPlace\Projects\Client\ScentAir\ScentAirPaymentCustomerPortalGIT-APR\src\Data\bin\Debug\netstandard2.0\ScentAir.Payment.Data.dll" target="lib\netstandard2.0\ScentAir.Payment.Data.dll" />
+  </files>
+</package>

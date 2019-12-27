@@ -1,0 +1,571 @@
+INFO  03-49-2019 12:49:57 ScentAir.Payment.Program [1] - Initializing... 
+INFO  03-49-2019 12:49:57 ScentAir.Payment.Program [1] - Starting... 
+INFO  03-49-2019 12:49:57 ScentAir.Payment.Program [1] - Retrieving settings... 
+INFO  03-49-2019 12:49:57 ScentAir.Payment.Program [1] - Setting timers... 
+INFO  03-49-2019 12:49:57 ScentAir.Payment.Program [1] - paymentTimer.Interval in Milli seconds - 60000 
+INFO  03-49-2019 12:49:57 ScentAir.Payment.Program [1] - Creating services... 
+INFO  03-49-2019 12:49:57 ScentAir.Payment.Program [1] - Disabling lookup timer... 
+INFO  03-49-2019 12:49:57 ScentAir.Payment.Program [1] - Started... 
+INFO  03-50-2019 12:50:19 ScentAir.Payment.Program [1] - Initializing... 
+INFO  03-50-2019 12:50:19 ScentAir.Payment.Program [1] - Starting... 
+INFO  03-50-2019 12:50:19 ScentAir.Payment.Program [1] - Retrieving settings... 
+INFO  03-50-2019 12:50:19 ScentAir.Payment.Program [1] - Setting timers... 
+INFO  03-50-2019 12:50:19 ScentAir.Payment.Program [1] - paymentTimer.Interval in Milli seconds - 60000 
+INFO  03-50-2019 12:50:19 ScentAir.Payment.Program [1] - Creating services... 
+INFO  03-50-2019 12:50:19 ScentAir.Payment.Program [1] - Disabling lookup timer... 
+INFO  03-50-2019 12:50:19 ScentAir.Payment.Program [1] - Started... 
+INFO  03-50-2019 12:50:24 ScentAir.Payment.Program [6] - Disabling import timer... 
+INFO  03-50-2019 12:50:29 ScentAir.Payment.Program [12] - Enabling payment timer... 
+DEBUG 03-51-2019 12:51:29 ScentAir.Payment.Program [17] -  Time : 03-06-2019 12:51:29, payment timer triggered... 
+DEBUG 03-51-2019 12:51:29 ScentAir.Payment.Program [17] -  Time : 03-06-2019 12:51:29, Retrieving invoices to pay...starting 
+DEBUG 03-52-2019 12:52:29 ScentAir.Payment.Program [24] -  Time : 03-06-2019 12:52:29, payment timer triggered... 
+DEBUG 03-52-2019 12:52:29 ScentAir.Payment.Program [24] -  Time : 03-06-2019 12:52:29, Retrieving invoices to pay...starting 
+INFO  03-53-2019 12:53:30 ScentAir.Payment.Program [1] - Initializing... 
+INFO  03-53-2019 12:53:30 ScentAir.Payment.Program [1] - Starting... 
+INFO  03-53-2019 12:53:30 ScentAir.Payment.Program [1] - Retrieving settings... 
+INFO  03-53-2019 12:53:30 ScentAir.Payment.Program [1] - Setting timers... 
+INFO  03-53-2019 12:53:30 ScentAir.Payment.Program [1] - paymentTimer.Interval in Milli seconds - 60000 
+INFO  03-53-2019 12:53:30 ScentAir.Payment.Program [1] - Creating services... 
+INFO  03-53-2019 12:53:30 ScentAir.Payment.Program [1] - Disabling lookup timer... 
+INFO  03-53-2019 12:53:30 ScentAir.Payment.Program [1] - Started... 
+INFO  03-53-2019 12:53:35 ScentAir.Payment.Program [16] - Disabling import timer... 
+INFO  03-53-2019 12:53:40 ScentAir.Payment.Program [13] - Enabling payment timer... 
+DEBUG 03-54-2019 12:54:40 ScentAir.Payment.Program [7] -  Time : 03-06-2019 12:54:40, payment timer triggered... 
+DEBUG 03-54-2019 12:54:40 ScentAir.Payment.Program [7] -  Time : 03-06-2019 12:54:40, Retrieving invoices to pay...starting 
+DEBUG 03-55-2019 12:55:40 ScentAir.Payment.Program [20] -  Time : 03-06-2019 12:55:40, payment timer triggered... 
+DEBUG 03-55-2019 12:55:40 ScentAir.Payment.Program [20] -  Time : 03-06-2019 12:55:40, Retrieving invoices to pay...starting 
+DEBUG 03-56-2019 12:56:40 ScentAir.Payment.Program [20] -  Time : 03-06-2019 12:56:40, payment timer triggered... 
+DEBUG 03-56-2019 12:56:40 ScentAir.Payment.Program [20] -  Time : 03-06-2019 12:56:40, Retrieving invoices to pay...starting 
+DEBUG 03-57-2019 12:57:40 ScentAir.Payment.Program [22] -  Time : 03-06-2019 12:57:40, payment timer triggered... 
+DEBUG 03-57-2019 12:57:40 ScentAir.Payment.Program [22] -  Time : 03-06-2019 12:57:40, Retrieving invoices to pay...starting 
+DEBUG 03-58-2019 12:58:40 ScentAir.Payment.Program [22] -  Time : 03-06-2019 12:58:40, payment timer triggered... 
+DEBUG 03-58-2019 12:58:40 ScentAir.Payment.Program [22] -  Time : 03-06-2019 12:58:40, Retrieving invoices to pay...starting 
+DEBUG 03-59-2019 12:59:40 ScentAir.Payment.Program [13] -  Time : 03-06-2019 12:59:40, payment timer triggered... 
+DEBUG 03-59-2019 12:59:40 ScentAir.Payment.Program [13] -  Time : 03-06-2019 12:59:40, Retrieving invoices to pay...starting 
+DEBUG 03-00-2019 13:00:40 ScentAir.Payment.Program [20] -  Time : 03-06-2019 01:00:40, payment timer triggered... 
+DEBUG 03-00-2019 13:00:40 ScentAir.Payment.Program [20] -  Time : 03-06-2019 01:00:40, Retrieving invoices to pay...starting 
+DEBUG 03-01-2019 13:01:22 ScentAir.Payment.Impl.AccountManager [13] - Invoice Data  count : 41 
+DEBUG 03-01-2019 13:01:22 ScentAir.Payment.Program [13] - Total UnScheduled Invoices : 41 
+DEBUG 03-19-2019 13:19:49 ScentAir.Payment.Program [25] -  Time : 03-06-2019 01:19:49, payment timer triggered... 
+DEBUG 03-19-2019 13:19:49 ScentAir.Payment.Program [20] -  Time : 03-06-2019 01:19:49, payment timer triggered... 
+DEBUG 03-19-2019 13:19:49 ScentAir.Payment.Program [25] -  Time : 03-06-2019 01:19:49, Retrieving invoices to pay...starting 
+DEBUG 03-19-2019 13:19:49 ScentAir.Payment.Program [20] -  Time : 03-06-2019 01:19:49, Retrieving invoices to pay...starting 
+DEBUG 03-19-2019 13:19:50 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110281757 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110294910 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110297845 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110301181 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110311834 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110325996 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110329735 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110341556 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110346745 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110346874 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110347220 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110349418 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110349504 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110372502 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110391227 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110396551 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110397281 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110397291 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110421552 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110426930 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110428247 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110428926 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110438608 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110439749 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110439814 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110443208 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110443357 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110444255 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110444380 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110444412 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110445659 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110446442 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110446939 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110447280 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110447302 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110447416 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110447659 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110447982 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110447992 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110450252 
+DEBUG 03-19-2019 13:19:54 ScentAir.Payment.Program [13] - Invoice Payment status Failed , Invoice Number : INV1110450597 
+INFO  03-42-2019 14:42:39 ScentAir.Payment.Program [1] - Initializing... 
+INFO  03-42-2019 14:42:39 ScentAir.Payment.Program [1] - Starting... 
+INFO  03-42-2019 14:42:39 ScentAir.Payment.Program [1] - Retrieving settings... 
+INFO  03-42-2019 14:42:39 ScentAir.Payment.Program [1] - Setting timers... 
+INFO  03-42-2019 14:42:39 ScentAir.Payment.Program [1] - paymentTimer.Interval in Milli seconds - 60000 
+INFO  03-42-2019 14:42:39 ScentAir.Payment.Program [1] - Creating services... 
+INFO  03-42-2019 14:42:39 ScentAir.Payment.Program [1] - Disabling lookup timer... 
+INFO  03-42-2019 14:42:39 ScentAir.Payment.Program [1] - Started... 
+INFO  03-42-2019 14:42:44 ScentAir.Payment.Program [13] - Disabling import timer... 
+INFO  03-42-2019 14:42:49 ScentAir.Payment.Program [7] - Enabling payment timer... 
+DEBUG 03-43-2019 14:43:49 ScentAir.Payment.Program [12] -  Time : 03-06-2019 02:43:49, payment timer triggered... 
+DEBUG 03-43-2019 14:43:49 ScentAir.Payment.Program [12] -  Time : 03-06-2019 02:43:49, Retrieving invoices to pay...starting 
+ERROR 03-44-2019 14:44:37 Microsoft.EntityFrameworkCore.Database.Connection [6] - An error occurred using the connection to database 'Portal' on server '192.168.168.222'. System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): The network path was not found
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+
+ERROR 03-44-2019 14:44:37 Microsoft.EntityFrameworkCore.Query [6] - An exception occurred in the database while iterating the results of a query for context type 'ScentAir.Payment.Impl.PortalDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): The network path was not found
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.WhereEnumerableAsyncIterator`1.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20 System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): The network path was not found
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.WhereEnumerableAsyncIterator`1.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+
+ERROR 03-44-2019 14:44:37 ScentAir.Payment.Program [6] - Retrieving invoices to pay...failed System.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server) ---> System.ComponentModel.Win32Exception (53): The network path was not found
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenDbConnectionAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.WhereEnumerableAsyncIterator`1.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at ScentAir.Payment.Impl.AccountManager.GetUnScheduledInvoicesAsync(String accountNumber, Boolean full, CancellationToken cancellationToken) in D:\WorkPlace\Projects\Client\ScentAir\ScentAirPaymentCustomerPortalGIT-APR\src\Data\Impl\AccountManager.cs:line 1996
+   at ScentAir.Payment.Host.paymentTimer_Elapsed(Object sender, ElapsedEventArgs e) in D:\WorkPlace\Projects\Client\ScentAir\ScentAirPaymentCustomerPortalGIT-APR\src\Host\Host.cs:line 286
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:53,State:0,Class:20
+
+INFO  03-44-2019 14:44:37 ScentAir.Payment.Program [6] -  Time : 03-06-2019 02:44:37, payment timer ended 
+INFO  03-44-2019 14:44:37 ScentAir.Payment.Program [6] -  Payment Timer Interval configured on 06-03-2019 04:30 PM  
+INFO  03-44-2019 14:44:37 ScentAir.Payment.Program [6] - paymentTimer.Interval in Milli seconds - 6322199.8269 
+INFO  03-46-2019 14:46:47 ScentAir.Payment.Program [1] - Initializing... 
+INFO  03-46-2019 14:46:47 ScentAir.Payment.Program [1] - Starting... 
+INFO  03-46-2019 14:46:47 ScentAir.Payment.Program [1] - Retrieving settings... 
+INFO  03-46-2019 14:46:47 ScentAir.Payment.Program [1] - Setting timers... 
+INFO  03-46-2019 14:46:47 ScentAir.Payment.Program [1] - paymentTimer.Interval in Milli seconds - 60000 
+INFO  03-46-2019 14:46:47 ScentAir.Payment.Program [1] - Creating services... 
+INFO  03-46-2019 14:46:47 ScentAir.Payment.Program [1] - Disabling lookup timer... 
+INFO  03-46-2019 14:46:47 ScentAir.Payment.Program [1] - Started... 
+INFO  03-46-2019 14:46:52 ScentAir.Payment.Program [7] - Disabling import timer... 
+INFO  03-46-2019 14:46:57 ScentAir.Payment.Program [6] - Enabling payment timer... 
+DEBUG 03-47-2019 14:47:58 ScentAir.Payment.Program [7] -  Time : 03-06-2019 02:47:58, payment timer triggered... 
+DEBUG 03-47-2019 14:47:58 ScentAir.Payment.Program [7] -  Time : 03-06-2019 02:47:58, Retrieving invoices to pay...starting 
+DEBUG 03-48-2019 14:48:57 ScentAir.Payment.Program [21] -  Time : 03-06-2019 02:48:57, payment timer triggered... 
+DEBUG 03-48-2019 14:48:57 ScentAir.Payment.Program [21] -  Time : 03-06-2019 02:48:57, Retrieving invoices to pay...starting 
+DEBUG 03-49-2019 14:49:58 ScentAir.Payment.Program [28] -  Time : 03-06-2019 02:49:57, payment timer triggered... 
+DEBUG 03-49-2019 14:49:58 ScentAir.Payment.Program [28] -  Time : 03-06-2019 02:49:58, Retrieving invoices to pay...starting 
+DEBUG 03-50-2019 14:50:57 ScentAir.Payment.Program [28] -  Time : 03-06-2019 02:50:57, payment timer triggered... 
+DEBUG 03-50-2019 14:50:57 ScentAir.Payment.Program [28] -  Time : 03-06-2019 02:50:57, Retrieving invoices to pay...starting 
+DEBUG 03-51-2019 14:51:57 ScentAir.Payment.Program [33] -  Time : 03-06-2019 02:51:57, payment timer triggered... 
+DEBUG 03-51-2019 14:51:57 ScentAir.Payment.Program [33] -  Time : 03-06-2019 02:51:57, Retrieving invoices to pay...starting 
+DEBUG 03-52-2019 14:52:57 ScentAir.Payment.Program [3] -  Time : 03-06-2019 02:52:57, payment timer triggered... 
+DEBUG 03-52-2019 14:52:58 ScentAir.Payment.Program [3] -  Time : 03-06-2019 02:52:57, Retrieving invoices to pay...starting 
+DEBUG 03-53-2019 14:53:58 ScentAir.Payment.Program [3] -  Time : 03-06-2019 02:53:57, payment timer triggered... 
+DEBUG 03-53-2019 14:53:58 ScentAir.Payment.Program [3] -  Time : 03-06-2019 02:53:58, Retrieving invoices to pay...starting 
+DEBUG 03-54-2019 14:54:58 ScentAir.Payment.Program [35] -  Time : 03-06-2019 02:54:57, payment timer triggered... 
+DEBUG 03-54-2019 14:54:58 ScentAir.Payment.Program [35] -  Time : 03-06-2019 02:54:58, Retrieving invoices to pay...starting 
+DEBUG 03-55-2019 14:55:58 ScentAir.Payment.Program [11] -  Time : 03-06-2019 02:55:58, payment timer triggered... 
+DEBUG 03-55-2019 14:55:58 ScentAir.Payment.Program [11] -  Time : 03-06-2019 02:55:58, Retrieving invoices to pay...starting 
+DEBUG 03-56-2019 14:56:57 ScentAir.Payment.Program [7] -  Time : 03-06-2019 02:56:57, payment timer triggered... 
+DEBUG 03-56-2019 14:56:57 ScentAir.Payment.Program [7] -  Time : 03-06-2019 02:56:57, Retrieving invoices to pay...starting 
+DEBUG 03-57-2019 14:57:58 ScentAir.Payment.Program [11] -  Time : 03-06-2019 02:57:57, payment timer triggered... 
+DEBUG 03-57-2019 14:57:58 ScentAir.Payment.Program [11] -  Time : 03-06-2019 02:57:58, Retrieving invoices to pay...starting 
+DEBUG 03-58-2019 14:58:58 ScentAir.Payment.Program [12] -  Time : 03-06-2019 02:58:57, payment timer triggered... 
+DEBUG 03-58-2019 14:58:58 ScentAir.Payment.Program [12] -  Time : 03-06-2019 02:58:58, Retrieving invoices to pay...starting 
+DEBUG 03-59-2019 14:59:58 ScentAir.Payment.Program [33] -  Time : 03-06-2019 02:59:57, payment timer triggered... 
+DEBUG 03-59-2019 14:59:58 ScentAir.Payment.Program [33] -  Time : 03-06-2019 02:59:58, Retrieving invoices to pay...starting 
+DEBUG 03-00-2019 15:00:58 ScentAir.Payment.Program [6] -  Time : 03-06-2019 03:00:57, payment timer triggered... 
+DEBUG 03-00-2019 15:00:58 ScentAir.Payment.Program [6] -  Time : 03-06-2019 03:00:58, Retrieving invoices to pay...starting 
+ERROR 03-01-2019 15:01:02 Microsoft.EntityFrameworkCore.Database.Command [6] - Failed executing DbCommand (19,250ms) [Parameters=[@_outer_InvoiceNumber8='?' (Size = 20)], CommandType='Text', CommandTimeout='30']
+SELECT SUM([p22].[Amount])
+FROM [InvoicePayments] AS [p22]
+WHERE ([p22].[Status] = 32) AND (@_outer_InvoiceNumber8 = [p22].[InvoiceNumber]) System.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:2cdd1409-337c-42a2-9f0a-510ec88d9b83
+Error Number:-1,State:0,Class:20
+
+ERROR 03-01-2019 15:01:02 Microsoft.EntityFrameworkCore.Query [11] - An exception occurred in the database while iterating the results of a query for context type 'ScentAir.Payment.Impl.PortalDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.JoinAsyncIterator`4.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.Initialize(CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.IncludeCollectionAsync[TEntity,TRelated,TElement](Int32 includeId, INavigation navigation, INavigation inverseNavigation, IEntityType targetEntityType, IClrCollectionAccessor clrCollectionAccessor, IClrPropertySetter inverseClrPropertySetter, Boolean tracking, TEntity entity, Func`1 relatedEntitiesFactory, Func`3 joinPredicate, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.IncludeLoadTreeNodeBase._AwaitMany(IReadOnlyList`1 taskFactories)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler._IncludeAsync[TEntity](QueryContext queryContext, TEntity entity, Object[] included, Func`5 fixup, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor._ExecuteAsync[T](IReadOnlyList`1 taskFactories, Func`2 selector)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:e83abe1f-327b-4917-9160-cee93d42086f
+Error Number:-1,State:0,Class:20 System.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.JoinAsyncIterator`4.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.Initialize(CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.IncludeCollectionAsync[TEntity,TRelated,TElement](Int32 includeId, INavigation navigation, INavigation inverseNavigation, IEntityType targetEntityType, IClrCollectionAccessor clrCollectionAccessor, IClrPropertySetter inverseClrPropertySetter, Boolean tracking, TEntity entity, Func`1 relatedEntitiesFactory, Func`3 joinPredicate, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.IncludeLoadTreeNodeBase._AwaitMany(IReadOnlyList`1 taskFactories)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler._IncludeAsync[TEntity](QueryContext queryContext, TEntity entity, Object[] included, Func`5 fixup, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor._ExecuteAsync[T](IReadOnlyList`1 taskFactories, Func`2 selector)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:e83abe1f-327b-4917-9160-cee93d42086f
+Error Number:-1,State:0,Class:20
+
+ERROR 03-01-2019 15:01:02 Microsoft.EntityFrameworkCore.Query [15] - An exception occurred in the database while iterating the results of a query for context type 'ScentAir.Payment.Impl.PortalDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadAsyncCallbackCaptureException(TaskCompletionSource`1 source)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.JoinAsyncIterator`4.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.Initialize(CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.IncludeCollectionAsync[TEntity,TRelated,TElement](Int32 includeId, INavigation navigation, INavigation inverseNavigation, IEntityType targetEntityType, IClrCollectionAccessor clrCollectionAccessor, IClrPropertySetter inverseClrPropertySetter, Boolean tracking, TEntity entity, Func`1 relatedEntitiesFactory, Func`3 joinPredicate, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.IncludeLoadTreeNodeBase._AwaitMany(IReadOnlyList`1 taskFactories)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler._IncludeAsync[TEntity](QueryContext queryContext, TEntity entity, Object[] included, Func`5 fixup, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor._ExecuteAsync[T](IReadOnlyList`1 taskFactories, Func`2 selector)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:3ec3b27e-137a-4a43-8d9d-c27beb142df9
+Error Number:-1,State:0,Class:20 System.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadAsyncCallbackCaptureException(TaskCompletionSource`1 source)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.JoinAsyncIterator`4.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.Initialize(CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.IncludeCollectionAsync[TEntity,TRelated,TElement](Int32 includeId, INavigation navigation, INavigation inverseNavigation, IEntityType targetEntityType, IClrCollectionAccessor clrCollectionAccessor, IClrPropertySetter inverseClrPropertySetter, Boolean tracking, TEntity entity, Func`1 relatedEntitiesFactory, Func`3 joinPredicate, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.IncludeLoadTreeNodeBase._AwaitMany(IReadOnlyList`1 taskFactories)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler._IncludeAsync[TEntity](QueryContext queryContext, TEntity entity, Object[] included, Func`5 fixup, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor._ExecuteAsync[T](IReadOnlyList`1 taskFactories, Func`2 selector)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:3ec3b27e-137a-4a43-8d9d-c27beb142df9
+Error Number:-1,State:0,Class:20
+
+ERROR 03-01-2019 15:01:02 Microsoft.EntityFrameworkCore.Query [24] - An exception occurred in the database while iterating the results of a query for context type 'ScentAir.Payment.Impl.PortalDbContext'.
+System.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.ParameterInjector`1.InjectParametersEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at lambda_method(Closure , TransparentIdentifier`2 )
+   at System.Linq.AsyncEnumerable.<>c__DisplayClass468_0`1.<CombinePredicates>b__0(TSource x)
+   at System.Linq.AsyncEnumerable.<>c__DisplayClass468_0`1.<CombinePredicates>b__0(TSource x)
+   at System.Linq.AsyncEnumerable.<>c__DisplayClass468_0`1.<CombinePredicates>b__0(TSource x)
+   at System.Linq.AsyncEnumerable.WhereSelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.DistinctAsyncIterator`1.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.Internal.Lookup`2.CreateForJoinAsync(IAsyncEnumerable`1 source, Func`2 keySelector, IEqualityComparer`1 comparer, CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.JoinAsyncIterator`4.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.Initialize(CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.IncludeCollectionAsync[TEntity,TRelated,TElement](Int32 includeId, INavigation navigation, INavigation inverseNavigation, IEntityType targetEntityType, IClrCollectionAccessor clrCollectionAccessor, IClrPropertySetter inverseClrPropertySetter, Boolean tracking, TEntity entity, Func`1 relatedEntitiesFactory, Func`3 joinPredicate, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.IncludeLoadTreeNodeBase._AwaitMany(IReadOnlyList`1 taskFactories)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler._IncludeAsync[TEntity](QueryContext queryContext, TEntity entity, Object[] included, Func`5 fixup, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor._ExecuteAsync[T](IReadOnlyList`1 taskFactories, Func`2 selector)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:2cdd1409-337c-42a2-9f0a-510ec88d9b83
+Error Number:-1,State:0,Class:20 System.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.ParameterInjector`1.InjectParametersEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at lambda_method(Closure , TransparentIdentifier`2 )
+   at System.Linq.AsyncEnumerable.<>c__DisplayClass468_0`1.<CombinePredicates>b__0(TSource x)
+   at System.Linq.AsyncEnumerable.<>c__DisplayClass468_0`1.<CombinePredicates>b__0(TSource x)
+   at System.Linq.AsyncEnumerable.<>c__DisplayClass468_0`1.<CombinePredicates>b__0(TSource x)
+   at System.Linq.AsyncEnumerable.WhereSelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.DistinctAsyncIterator`1.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.Internal.Lookup`2.CreateForJoinAsync(IAsyncEnumerable`1 source, Func`2 keySelector, IEqualityComparer`1 comparer, CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.JoinAsyncIterator`4.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.Initialize(CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.IncludeCollectionAsync[TEntity,TRelated,TElement](Int32 includeId, INavigation navigation, INavigation inverseNavigation, IEntityType targetEntityType, IClrCollectionAccessor clrCollectionAccessor, IClrPropertySetter inverseClrPropertySetter, Boolean tracking, TEntity entity, Func`1 relatedEntitiesFactory, Func`3 joinPredicate, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.IncludeLoadTreeNodeBase._AwaitMany(IReadOnlyList`1 taskFactories)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler._IncludeAsync[TEntity](QueryContext queryContext, TEntity entity, Object[] included, Func`5 fixup, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor._ExecuteAsync[T](IReadOnlyList`1 taskFactories, Func`2 selector)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+ClientConnectionId:2cdd1409-337c-42a2-9f0a-510ec88d9b83
+Error Number:-1,State:0,Class:20
+
+ERROR 03-01-2019 15:01:03 ScentAir.Payment.Program [11] - Retrieving invoices to pay...failed System.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.JoinAsyncIterator`4.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.Initialize(CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.IncludeCollectionAsync[TEntity,TRelated,TElement](Int32 includeId, INavigation navigation, INavigation inverseNavigation, IEntityType targetEntityType, IClrCollectionAccessor clrCollectionAccessor, IClrPropertySetter inverseClrPropertySetter, Boolean tracking, TEntity entity, Func`1 relatedEntitiesFactory, Func`3 joinPredicate, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.IncludeLoadTreeNodeBase._AwaitMany(IReadOnlyList`1 taskFactories)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler._IncludeAsync[TEntity](QueryContext queryContext, TEntity entity, Object[] included, Func`5 fixup, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor._ExecuteAsync[T](IReadOnlyList`1 taskFactories, Func`2 selector)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at ScentAir.Payment.Impl.AccountManager.GetUnScheduledInvoicesAsync(String accountNumber, Boolean full, CancellationToken cancellationToken) in D:\WorkPlace\Projects\Client\ScentAir\ScentAirPaymentCustomerPortalGIT-APR\src\Data\Impl\AccountManager.cs:line 1996
+   at ScentAir.Payment.Host.paymentTimer_Elapsed(Object sender, ElapsedEventArgs e) in D:\WorkPlace\Projects\Client\ScentAir\ScentAirPaymentCustomerPortalGIT-APR\src\Host\Host.cs:line 286
+ClientConnectionId:e83abe1f-327b-4917-9160-cee93d42086f
+Error Number:-1,State:0,Class:20
+
+ERROR 03-01-2019 15:01:03 ScentAir.Payment.Program [24] - Retrieving invoices to pay...failed System.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.ParameterInjector`1.InjectParametersEnumerator.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.AsyncQueryMethodProvider.GetResult[TResult](IAsyncEnumerable`1 valueBuffers, Boolean throwOnNullResult, CancellationToken cancellationToken)
+   at lambda_method(Closure , TransparentIdentifier`2 )
+   at System.Linq.AsyncEnumerable.<>c__DisplayClass468_0`1.<CombinePredicates>b__0(TSource x)
+   at System.Linq.AsyncEnumerable.<>c__DisplayClass468_0`1.<CombinePredicates>b__0(TSource x)
+   at System.Linq.AsyncEnumerable.<>c__DisplayClass468_0`1.<CombinePredicates>b__0(TSource x)
+   at System.Linq.AsyncEnumerable.WhereSelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.DistinctAsyncIterator`1.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.Internal.Lookup`2.CreateForJoinAsync(IAsyncEnumerable`1 source, Func`2 keySelector, IEqualityComparer`1 comparer, CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.JoinAsyncIterator`4.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.Initialize(CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.IncludeCollectionAsync[TEntity,TRelated,TElement](Int32 includeId, INavigation navigation, INavigation inverseNavigation, IEntityType targetEntityType, IClrCollectionAccessor clrCollectionAccessor, IClrPropertySetter inverseClrPropertySetter, Boolean tracking, TEntity entity, Func`1 relatedEntitiesFactory, Func`3 joinPredicate, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.IncludeLoadTreeNodeBase._AwaitMany(IReadOnlyList`1 taskFactories)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler._IncludeAsync[TEntity](QueryContext queryContext, TEntity entity, Object[] included, Func`5 fixup, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor._ExecuteAsync[T](IReadOnlyList`1 taskFactories, Func`2 selector)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at ScentAir.Payment.Impl.AccountManager.GetUnScheduledInvoicesAsync(String accountNumber, Boolean full, CancellationToken cancellationToken) in D:\WorkPlace\Projects\Client\ScentAir\ScentAirPaymentCustomerPortalGIT-APR\src\Data\Impl\AccountManager.cs:line 1996
+   at ScentAir.Payment.Host.paymentTimer_Elapsed(Object sender, ElapsedEventArgs e) in D:\WorkPlace\Projects\Client\ScentAir\ScentAirPaymentCustomerPortalGIT-APR\src\Host\Host.cs:line 286
+ClientConnectionId:2cdd1409-337c-42a2-9f0a-510ec88d9b83
+Error Number:-1,State:0,Class:20
+
+ERROR 03-01-2019 15:01:03 ScentAir.Payment.Program [15] - Retrieving invoices to pay...failed System.Data.SqlClient.SqlException (0x80131904): A transport-level error has occurred when receiving results from the server. (provider: Session Provider, error: 19 - Physical connection is not usable)
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParserStateObject.ReadAsyncCallbackCaptureException(TaskCompletionSource`1 source)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.BufferlessMoveNext(DbContext _, Boolean buffer, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncQueryingEnumerable`1.AsyncEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.JoinAsyncIterator`4.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.Initialize(CancellationToken cancellationToken)
+   at System.Linq.OrderedAsyncEnumerable`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryBuffer.IncludeCollectionAsync[TEntity,TRelated,TElement](Int32 includeId, INavigation navigation, INavigation inverseNavigation, IEntityType targetEntityType, IClrCollectionAccessor clrCollectionAccessor, IClrPropertySetter inverseClrPropertySetter, Boolean tracking, TEntity entity, Func`1 relatedEntitiesFactory, Func`3 joinPredicate, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler.IncludeLoadTreeNodeBase._AwaitMany(IReadOnlyList`1 taskFactories)
+   at Microsoft.EntityFrameworkCore.Query.Internal.IncludeCompiler._IncludeAsync[TEntity](QueryContext queryContext, TEntity entity, Object[] included, Func`5 fixup, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.TaskLiftingExpressionVisitor._ExecuteAsync[T](IReadOnlyList`1 taskFactories, Func`2 selector)
+   at Microsoft.EntityFrameworkCore.Query.EntityQueryModelVisitor.AsyncSelectEnumerable`2.AsyncSelectEnumerator.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.SelectEnumerableAsyncIterator`2.MoveNextCore(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.AsyncIterator`1.MoveNext(CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.AsyncLinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.Aggregate_[TSource,TAccumulate,TResult](IAsyncEnumerable`1 source, TAccumulate seed, Func`3 accumulator, Func`2 resultSelector, CancellationToken cancellationToken)
+   at ScentAir.Payment.Impl.AccountManager.GetUnScheduledInvoicesAsync(String accountNumber, Boolean full, CancellationToken cancellationToken) in D:\WorkPlace\Projects\Client\ScentAir\ScentAirPaymentCustomerPortalGIT-APR\src\Data\Impl\AccountManager.cs:line 1996
+   at ScentAir.Payment.Host.paymentTimer_Elapsed(Object sender, ElapsedEventArgs e) in D:\WorkPlace\Projects\Client\ScentAir\ScentAirPaymentCustomerPortalGIT-APR\src\Host\Host.cs:line 286
+ClientConnectionId:3ec3b27e-137a-4a43-8d9d-c27beb142df9
+Error Number:-1,State:0,Class:20
+
+INFO  03-01-2019 15:01:03 ScentAir.Payment.Program [11] -  Time : 03-06-2019 03:01:03, payment timer ended 
+INFO  03-01-2019 15:01:03 ScentAir.Payment.Program [24] -  Time : 03-06-2019 03:01:03, payment timer ended 
+INFO  03-01-2019 15:01:03 ScentAir.Payment.Program [15] -  Time : 03-06-2019 03:01:03, payment timer ended 
+INFO  03-01-2019 15:01:03 ScentAir.Payment.Program [11] -  Payment Timer Interval configured on 06-03-2019 04:30 PM  
+INFO  03-01-2019 15:01:03 ScentAir.Payment.Program [24] -  Payment Timer Interval configured on 06-03-2019 04:30 PM  
+INFO  03-01-2019 15:01:03 ScentAir.Payment.Program [15] -  Payment Timer Interval configured on 06-03-2019 04:30 PM  
+INFO  03-01-2019 15:01:03 ScentAir.Payment.Program [11] - paymentTimer.Interval in Milli seconds - 5336796.4009 
+INFO  03-01-2019 15:01:03 ScentAir.Payment.Program [24] - paymentTimer.Interval in Milli seconds - 5336796.3975 
+INFO  03-01-2019 15:01:03 ScentAir.Payment.Program [15] - paymentTimer.Interval in Milli seconds - 5336793.2458 
+INFO  03-01-2019 15:01:46 ScentAir.Payment.Program [1] - Initializing... 
+INFO  03-01-2019 15:01:46 ScentAir.Payment.Program [1] - Starting... 
+INFO  03-01-2019 15:01:46 ScentAir.Payment.Program [1] - Retrieving settings... 
+INFO  03-01-2019 15:01:46 ScentAir.Payment.Program [1] - Setting timers... 
+INFO  03-01-2019 15:01:46 ScentAir.Payment.Program [1] - paymentTimer.Interval in Milli seconds - 60000 
+INFO  03-01-2019 15:01:46 ScentAir.Payment.Program [1] - Creating services... 
+INFO  03-01-2019 15:01:46 ScentAir.Payment.Program [1] - Disabling lookup timer... 
+INFO  03-01-2019 15:01:46 ScentAir.Payment.Program [1] - Started... 
+INFO  03-01-2019 15:01:51 ScentAir.Payment.Program [13] - Disabling import timer... 
+INFO  03-01-2019 15:01:56 ScentAir.Payment.Program [14] - Enabling payment timer... 
+DEBUG 03-02-2019 15:02:56 ScentAir.Payment.Program [14] -  Time : 03-06-2019 03:02:56, payment timer triggered... 
+DEBUG 03-02-2019 15:02:56 ScentAir.Payment.Program [14] -  Time : 03-06-2019 03:02:56, Retrieving invoices to pay...starting 
+DEBUG 03-03-2019 15:03:56 ScentAir.Payment.Program [20] -  Time : 03-06-2019 03:03:56, payment timer triggered... 
+DEBUG 03-03-2019 15:03:56 ScentAir.Payment.Program [20] -  Time : 03-06-2019 03:03:56, Retrieving invoices to pay...starting 
+DEBUG 03-04-2019 15:04:56 ScentAir.Payment.Program [24] -  Time : 03-06-2019 03:04:56, payment timer triggered... 
+DEBUG 03-04-2019 15:04:56 ScentAir.Payment.Program [24] -  Time : 03-06-2019 03:04:56, Retrieving invoices to pay...starting 
+DEBUG 03-05-2019 15:05:56 ScentAir.Payment.Program [35] -  Time : 03-06-2019 03:05:56, payment timer triggered... 
+DEBUG 03-05-2019 15:05:56 ScentAir.Payment.Program [35] -  Time : 03-06-2019 03:05:56, Retrieving invoices to pay...starting 
+DEBUG 03-06-2019 15:06:56 ScentAir.Payment.Program [27] -  Time : 03-06-2019 03:06:56, payment timer triggered... 
+DEBUG 03-06-2019 15:06:56 ScentAir.Payment.Program [27] -  Time : 03-06-2019 03:06:56, Retrieving invoices to pay...starting 
+DEBUG 03-07-2019 15:07:56 ScentAir.Payment.Program [33] -  Time : 03-06-2019 03:07:56, payment timer triggered... 
+DEBUG 03-07-2019 15:07:56 ScentAir.Payment.Program [33] -  Time : 03-06-2019 03:07:56, Retrieving invoices to pay...starting 
+DEBUG 03-08-2019 15:08:56 ScentAir.Payment.Program [15] -  Time : 03-06-2019 03:08:56, payment timer triggered... 
+DEBUG 03-08-2019 15:08:56 ScentAir.Payment.Program [15] -  Time : 03-06-2019 03:08:56, Retrieving invoices to pay...starting 

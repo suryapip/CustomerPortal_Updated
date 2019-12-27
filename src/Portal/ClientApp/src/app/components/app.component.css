@@ -1,0 +1,74 @@
+
+#mainContent.app-component {
+    padding-top: 150px;
+    padding-bottom: 50px;
+}
+
+
+.navbar-inner.app-component {
+  padding-left: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: #56B2CB;
+  background-image: none;
+  min-height: 150px;
+  height: auto;
+}
+
+
+
+.navbar.app-component .nav > .active > a,
+.navbar.app-component .nav > .active > a:hover,
+.navbar.app-component .nav > .active > a:focus {
+  border-bottom: 2px white solid;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: lightgray;
+}
+
+.navbar.app-component .nav > li {
+  cursor: pointer;
+  color: lightgray !important;
+  background-color: transparent !important;
+}
+
+  .navbar.app-component .nav > li:hover {
+    color: lightgray !important;
+    background-color: transparent !important;
+  }
+
+.navbar-fixed-top.app-component .navbar-inner.app-component,
+.navbar-static-top.app-component .navbar-inner.app-component {
+  -webkit-box-shadow: 0 1px 00px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0 1px 00px rgba(0, 0, 0, 0);
+  box-shadow: 0 1px 00px rgba(0, 0, 0, 0);
+}
+
+
+p.navbar-text.app-component {
+  color: #fff;
+}
+
+  p.navbar-text.app-component a {
+    color: #fff;
+  }
+
+
+
+
+.vcenter_text.app-component {
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+.prebootShow.app-component {
+    opacity: 1 !important;
+}
+
+.prebootStep.app-component {
+    opacity: 0;
+    transition: .5s ease-in-out all;
+}

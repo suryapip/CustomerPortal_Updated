@@ -1,0 +1,134 @@
+
+<div>
+  <header class="pageHeader"></header>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <span class="sa-heading-text">{{ 'Login.CustomerLogin' | translate }}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 has-feedback has-error">
+          <div *ngFor="let err of errors" class="errorMessage">{{ err | translate }}</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div style="margin: 0px 20px 20px 20px;">
+            <form *ngIf="formResetToggle" class="form-horizontal login" #f="ngForm" name="f" id="f" (ngSubmit)="login()">
+
+              <div class="form-group">
+                <div>
+                  <label class="control-label" for="userName">{{ 'Login.UserName' | translate }}<span class="sa-required-text">*</span></label>
+                </div>
+                <div class="has-feedback" [ngClass]="{ 'has-error' : isError || userName.dirty && (!userName.valid || userName.errors) }">
+                  <input type="text" id="userName" name="userName" class="form-control" [(ngModel)]="model.userName" #userName="ngModel" required minlength="3" />
+                  <span class="errorMessage" *ngIf="userName.dirty && (!userName.valid || userName.errors)">{{ 'Login.UserNameRequired' | translate }}</span>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <div>
+                  <label class="control-label" for="password">{{ 'Login.Password' | translate }}<span class="sa-required-text">*</span></label>
+                </div>
+                <div class="has-feedback" [ngClass]="{ 'has-error' : isError ||userName.dirty && (!password.valid || password.errors) }">
+                  <input type="password" id="password" name="password" class="form-control" [(ngModel)]="model.password" #password="ngModel" required minlength="8" />
+                  <span class="errorMessage" *ngIf="password.dirty && (!password.valid || password.errors)">{{ 'Login.PasswordRequired' | translate }}</span>
+                </div>
+                <div class="text-right">
+                  <a routerLink="/forgot/username" title="{{ 'Login.ForgotUserName' | translate }}" class="btn btn-link sa-link">{{ 'Login.ForgotUserName' | translate }}</a>
+                  <span class="sa-pipe-divider">|</span>
+                  <a routerLink="/forgot/password" title="{{ 'Login.ForgotPassword' | translate }}" class="btn btn-link sa-link">{{ 'Login.ForgotPassword' | translate }}</a>
+                </div>
+              </div>
+
+
+              <!--<div class="form-group">
+                <div style="color:#FC4242;font-style:italic;font-size:12px;font-weight:600;">
+                  <p>"By failing to prepare, you are preparing to fail." - Benjamin Franklin</p>
+                  <p>We want to make sure we’re prepared to serve you, so the ScentAir Account Center will be down for scheduled maintenance beginning Wednesday, February 20 at 8 PM EST.  Maintenance will be completed by Thursday, February 21 at 3 AM EST or sooner.</p>
+                </div>
+              </div>-->
+
+
+              <div class="form-group">
+                <div>
+                  <button type="submit" class="btn btn-lg btn-block btn-primary sa-btn-header-color" [disabled]="(!f.valid && !isError) || isLoading">
+                    <i *ngIf="isLoading" class='fa fa-circle-o-notch fa-spin'></i> {{ isLoading ? ('Login.SigningIn'  | translate) : ('Login.SignIn' | translate) }}
+                  </button>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div>
+                  <a routerLink="/register" title="{{ 'Login.RegisterNow'  | translate }}" class="btn btn-lg btn-block btn-primary">{{ 'Login.RegisterNow'  | translate }}</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="sa-blue-text sa-no-margin">
+            {{ 'Login.QuickandEasyAccess'  | translate }}
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h3></h3>
+          <p>
+            {{ 'Login.QuickandEasyAccessDescription'  | translate }}
+          </p>
+          <p>
+            <b>{{ 'Login.WhyRegister'  | translate }}</b> {{ 'Login.RegisterDescription'  | translate }}
+          </p>
+
+          <ul>
+            <li>
+              {{ 'Login.RegisterBulletPoint1'  | translate }}
+            </li>
+            <li>
+              {{ 'Login.RegisterBulletPoint2'  | translate }}
+            </li>
+            <li>
+              {{ 'Login.RegisterBulletPoint3'  | translate }}
+            </li>
+            <li *ngIf="!IsSelectedLanguageFrench()">
+              {{ 'Login.RegisterBulletPoint4'  | translate }}
+            </li>
+
+          </ul>
+          <p style="font-size:small;color:red">
+            {{ 'Login.RegisterNote'  | translate }}
+          </p>
+
+          <p>
+            {{ 'Login.Quetions'  | translate }}&nbsp; <a style="font-size:large;" routerLink="/contactus" title="{{ 'Login.ContactUs'  | translate }}" class="btn btn-link sa-link">{{ 'Login.ContactUs'  | translate }}</a>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <br />
+  <div class="row">
+    <div class="col-md-12">
+      <div>
+        <img src="/assets/images/credit-card.png" style="width: 100%; border-radius: 8px;" />
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
