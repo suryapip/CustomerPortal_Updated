@@ -26,7 +26,7 @@ export class InvoiceEndpoint extends EndpointFactory {
 
   // get open invoices
   getOpenInvoicesEndpoint<T>(): Observable<T> {
-    debugger;
+    //debugger;
     return this.http.post(this.openInvoicesUrl, null, this.getRequestHeaders()).pipe<T>(
       catchError(error => {
         return this.handleError(error, () => this.getOpenInvoicesEndpoint());
@@ -44,7 +44,7 @@ export class InvoiceEndpoint extends EndpointFactory {
 
 
   getInvoicePDF(invoiceNumber: string): Observable<PdfResponse> {
-    debugger;
+    //debugger;
     let pdflink = this.pdfUrl + "?InvoiceNumber=" + invoiceNumber;
     return this.http.get(pdflink, this.getRequestHeaders()).pipe<PdfResponse>();
     }
