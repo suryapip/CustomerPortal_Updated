@@ -67,6 +67,7 @@ export class RegisterComponent implements OnInit {
   public useGlobalDomain: boolean = false;
   public aFormGroup: FormGroup;
   @ViewChild('captchaElem') captchaElem: ReCaptcha2Component;
+  //public isDev = (['localhost', 'dev30web01.scentair.local', 'dev30web01'].indexOf(document.location.hostname.toLowerCase()) > -1) // mholmes
 
   constructor(
     private accountService: AccountService,
@@ -79,20 +80,20 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
 
      
-    //Prod
+    // Prod
     this.siteKey = '6LforZoUAAAAAJPt4NAqNpmu5rvY_zsfzNigCAsn';
-    //Stage
-    // this.siteKey = '6LdSmZgUAAAAAA-RJe4UxWSoYMx9_lrHsah1P8xT';
-    //Local
+    // Stage
+    //this.siteKey = '6LdSmZgUAAAAAA-RJe4UxWSoYMx9_lrHsah1P8xT';
+    // Local
     //this.siteKey = '6LdNz5cUAAAAAIO1jk77YhsJdZspLzqxC4U8kLSH';
-
+    // Dev (mholmes)
+    //this.siteKey = '6LfLTNMUAAAAACSnpgaixNUpe0Hqo9wMcJimb1xb';
 
     this.securityQuestions01 = [];
     this.securityQuestions02 = [];
     this.errors = [];
     this.isEdit = false;
     this.setForm();
-
 
     //if (this.getShouldRedirect()) {
     //  this.authService.redirectLoginUser();
