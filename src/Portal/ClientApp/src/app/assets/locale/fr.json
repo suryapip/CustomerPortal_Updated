@@ -335,7 +335,7 @@
   },
   "ForgotPasswordConfirmation": {
     "Header": "Confirmation de mot de passe oublié",
-    "EmailSent": "Le hemos enviado un correo electrónico para restablecer su contraseña. Si en breve no recibe el correo electrónico, favor de comunicarse con su representante de atención al cliente:",
+    "EmailSent": "Un e-mail de réinitialisation du mot de passe a été envoyé à l'adresse e-mail associée au compte. Veuillez prévoir 30 minutes pour l'arrivée de l'e-mail. Gardez à l'esprit que certaines applications de messagerie peuvent signaler cet e-mail comme spam. Après 30 minutes si vous n'avez pas reçu l'e-mail de réinitialisation du mot de passe, veuillez contacter votre représentant du service clientèle à:",
     "AMERICAS": "Amérique",
     "TollFree": "Numéro Vert",
     "Or": "ou",
@@ -346,7 +346,7 @@
   },
   "ForgotUserNameConfirmation": {
     "Header": "Confirmation du nom d'utilisateur oublié",
-    "EmailSent": "Un e-mail a été envoyé avec votre nom d'utilisateur. Si vous ne recevez pas l'e-mail prochainement, veuillez contacter votre représentant du service clientèle:",
+    "EmailSent": "Un e-mail contenant votre nom d'utilisateur a été envoyé à l'adresse e-mail associée au compte. Veuillez prévoir 30 minutes pour l'arrivée de l'e-mail. Gardez à l'esprit que certaines applications de messagerie peuvent signaler cet e-mail comme spam. Après 30 minutes si vous n'avez pas reçu l'e-mail, veuillez contacter votre représentant du service clientèle à:",
     "AMERICAS": "Amérique ",
     "TollFree": "Numéro Vert",
     "Or": "or",

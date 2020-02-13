@@ -335,7 +335,7 @@
   },
   "ForgotPasswordConfirmation": {
     "Header": "Forgot Password Confirmation",
-    "EmailSent": "An email has been sent to reset your password. If you do not receive the email shortly please contact your Customer Care Representative:",
+    "EmailSent": "A password reset email has been sent to the email address associated to the account. Please allow 30 minutes for the email to arrive. Bear in mind that some email applications may flag this email as spam. After 30 minutes if you have not received the password reset email, please contact your Customer Care Representative at:",
     "AMERICAS": "AMERICAS",
     "TollFree": "Toll free",
     "Or": "or",
@@ -346,7 +346,7 @@
   },
   "ForgotUserNameConfirmation": {
     "Header": "Forgot Username Confirmation",
-    "EmailSent": "An email has been sent with your username. If you don’t receive the email shortly please contact your Customer Care Representative:",
+    "EmailSent": "An email containing your username has been sent to the email address associated to the account. Please allow 30 minutes for the email to arrive. Bear in mind that some email applications may flag this email as spam. After 30 minutes if you have not received the email, please contact your Customer Care Representative at:",
     "AMERICAS": "AMERICAS",
     "TollFree": "Toll free",
     "Or": "or",
