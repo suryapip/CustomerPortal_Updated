@@ -80,6 +80,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
 
      
+    // Note: Captcha SiteKey appears in 3 locations within the code base:
+    //   - Portal\appsettings.json
+    //   - Portal\ClientApp\src\app\components\paymentedit\payment-edit.component.ts
+    //   - Portal\ClientApp\src\app\components\register\register.component.ts
     // Prod
     this.siteKey = '6LforZoUAAAAAJPt4NAqNpmu5rvY_zsfzNigCAsn';
     // Stage
