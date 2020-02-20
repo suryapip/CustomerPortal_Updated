@@ -52,7 +52,6 @@ namespace ScentAir.Payment.Impl
             bool.TryParse(configuration.GetValue<string>(Constants.Configuration.Options.OverridePin), out pinOverride);
             testpin = configuration.GetValue<string>(Constants.Configuration.Test.Pin);
 
-
             if (this.portalContext.Identity == null)
                 if (httpAccessor != null)
                     this.portalContext.Identity = httpAccessor.HttpContext?.User?.Identity as ClaimsIdentity;
@@ -2185,26 +2184,19 @@ namespace ScentAir.Payment.Impl
             message.Subject = subject;
             message.Body = isHtml ? new BodyBuilder { HtmlBody = body }.ToMessageBody() : new TextPart("plain") { Text = body };
 
-
             try
             {
-
-
                 if (!smtpConfig.Disabled)
                     using (var client = new SmtpClient())
                     {
                         //if (config.UseSSL)
                         client.ServerCertificateValidationCallback = (object sender2, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors) => true;
-
                         await client.ConnectAsync(smtpConfig.Host, smtpConfig.Port, smtpConfig.UseSSL).ConfigureAwait(false);
                         client.AuthenticationMechanisms.Remove("XOAUTH2");
-
                         if (!string.IsNullOrWhiteSpace(smtpConfig.Username))
                             await client.AuthenticateAsync(smtpConfig.Username, smtpConfig.Password).ConfigureAwait(false);
-
                         await client.SendAsync(message).ConfigureAwait(false);
                         await client.DisconnectAsync(true).ConfigureAwait(false);
-
                     }
                 logger.LogInformation($"Email Sent Successful");
 
@@ -2214,41 +2206,31 @@ namespace ScentAir.Payment.Impl
             {
                 msg = "Not authenticated for the email server";
                 logger.LogError(ex, "Not authenticated for the email server");
-
             }
             catch (ServiceNotConnectedException ex)
             {
                 msg = "Could not connect to the email server";
                 logger.LogError(ex, "Could not connect to the email server");
-
-
             }
             catch (ProtocolException ex)
             {
                 msg = "Handshake failed to the email server";
                 logger.LogError(ex, "Handshake failed to the email server");
-
-
             }
             catch (IOException ex)
             {
                 msg = "IO failed to email server";
                 logger.LogError(ex, "IO failed to email server");
-
-
             }
             catch (SocketException ex)
             {
                 msg = "Socket failed to email server";
                 logger.LogError(ex, "Socket failed to email server");
-
-
             }
             catch (Exception ex)
             {
                 msg = "An error occurred while sending email";
                 logger.LogError(ex, "An error occurred while sending email");
-
             }
             return new Impl.TaskResultBuilder { { "email", msg } }.Fail();
         }

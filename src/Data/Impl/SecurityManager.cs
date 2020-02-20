@@ -24,7 +24,6 @@ namespace ScentAir.Payment.Impl
 		private readonly IEmailSender emailer;
         private readonly Uri externalPath;
 
-
         public SecurityManager(
             UserManager<ApplicationUser> userManager,
             RoleManager<ApplicationRole> roleManager,
