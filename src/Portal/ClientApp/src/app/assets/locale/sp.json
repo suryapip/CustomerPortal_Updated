@@ -335,7 +335,7 @@
   },
   "ForgotPasswordConfirmation": {
     "Header": "Confirmación: Olvidé mi contraseña",
-    "EmailSent": "Se ha enviado un correo electrónico de restablecimiento de contraseña a la dirección de correo electrónico asociada a la cuenta. Por favor, espere 30 minutos para que el correo electrónico para llegar. Tenga en cuenta que algunas aplicaciones de correo electrónico pueden marcar este correo electrónico como spam. Después de 30 minutos si no ha recibido el correo electrónico de restablecimiento de contraseña, comuníquese con su Representante de Atención al Cliente al:",
+    "EmailSent": "Hemos enviado un correo electrónico a la dirección asociada a la cuenta para restablecer la contraseña. Por favor permita 30 minutos para recibir el correo electrónico. Tenga en cuenta que algunas aplicaciones de correo electrónico pueden marcar este correo electrónico como spam. Después de 30 minutos si no ha recibido el mensaje de restablecimiento de contraseña, comuníquese con su Representante de Atención al Cliente al:",
     "AMERICAS": "América (Norte, Centro, Sur)",
     "TollFree": "Llamada gratuita",
     "Or": "o",
@@ -346,7 +346,7 @@
   },
   "ForgotUserNameConfirmation": {
     "Header": "Confirmación: Olvidé mi nombre de usuario.",
-    "EmailSent": "Se ha enviado un correo electrónico con su nombre de usuario a la dirección de correo electrónico asociada a la cuenta. Por favor, espere 30 minutos para que el correo electrónico para llegar. Tenga en cuenta que algunas aplicaciones de correo electrónico pueden marcar este correo electrónico como spam. Después de 30 minutos si no ha recibido el correo electrónico, comuníquese con su Representante de Atención al Cliente al:",
+    "EmailSent": "Se ha enviado un correo electrónico con su nombre de usuario a la dirección de correo electrónico asociada a la cuenta. Por favor permita 30 minutos para recibir el correo electrónico. Tenga en cuenta que algunas aplicaciones de correo electrónico pueden marcar este correo electrónico como spam. Después de 30 minutos si no ha recibido el mensaje, comuníquese con su Representante de Atención al Cliente al:",
     "AMERICAS": "América (Norte, Centro, Sur)",
     "TollFree": "Toll free",
     "Or": "or",
