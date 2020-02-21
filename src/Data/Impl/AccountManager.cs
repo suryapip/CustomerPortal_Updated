@@ -2087,8 +2087,8 @@ namespace ScentAir.Payment.Impl
         }
 
         public async Task<ITaskResult> SendEmailAsync(
-           string recepientName,
-           string recepientEmail,
+           string recipientName,
+           string recipientEmail,
            string subject,
            string body,
            string accountNumber,
@@ -2097,7 +2097,7 @@ namespace ScentAir.Payment.Impl
            bool isHtml = true)
         {
             var from = new MailboxAddress(this.smtpConfig.Name, this.smtpConfig.EmailAddress);
-            var to = new MailboxAddress(recepientName, recepientEmail);
+            var to = new MailboxAddress(recipientName, recipientEmail);
 
             Account account = await portalContext.Accounts.FirstOrDefaultAsync<Account>(x => x.Number == accountNumber);
 
@@ -2169,16 +2169,21 @@ namespace ScentAir.Payment.Impl
 
         public async Task<ITaskResult> SendEmailAsync(
            MailboxAddress sender,
-           MailboxAddress[] recepients,
+           MailboxAddress[] recipients,
            string subject,
            string body,
            bool isHtml = true)
         {
+            if (smtpConfig.UseSendGridEmail)
+            {
+                return await SendGridEmailAsync(sender, recipients, subject, body, isHtml);
+            }
+
             var msg = null as string;
             var message = new MimeMessage();
 
             message.From.Add(sender);
-            message.To.AddRange(recepients);
+            message.To.AddRange(recipients);
             var bccAddress = new MailboxAddress("No Reply", "no-reply@scentair.com");
             message.Bcc.AddRange(new MailboxAddress[] { bccAddress });
             message.Subject = subject;
@@ -2226,6 +2231,47 @@ namespace ScentAir.Payment.Impl
             {
                 msg = "Socket failed to email server";
                 logger.LogError(ex, "Socket failed to email server");
+            }
+            catch (Exception ex)
+            {
+                msg = "An error occurred while sending email";
+                logger.LogError(ex, "An error occurred while sending email");
+            }
+            return new Impl.TaskResultBuilder { { "email", msg } }.Fail();
+        }
+
+        public async Task<ITaskResult> SendGridEmailAsync(
+           MailboxAddress sender,
+           MailboxAddress[] recipients,
+           string subject,
+           string body,
+           bool isHtml = true)
+        {
+            var msg = null as string;
+
+            var sgclient = new SendGrid.SendGridClient(smtpConfig.SendGridEmailApiKey);
+            var sgmsg = new SendGrid.Helpers.Mail.SendGridMessage();
+            sgmsg.From = new SendGrid.Helpers.Mail.EmailAddress(sender.Address, sender.Name);
+            foreach (MailboxAddress to in recipients)
+            {
+                sgmsg.AddTo(to.Address, to.Name);
+            }
+            sgmsg.Subject = subject;
+            var content = new SendGrid.Helpers.Mail.Content(isHtml ? "text/html" : "text/plain", body);
+            sgmsg.Contents = new List<SendGrid.Helpers.Mail.Content>(new[] { content });
+
+            try
+            {
+                var sgres = await sgclient.SendEmailAsync(sgmsg);
+                if (sgres.StatusCode == System.Net.HttpStatusCode.Accepted)
+                {
+                    return Impl.TaskResultBuilder.Successful();
+                }
+                else
+                {
+                    msg = "Email failed to send. Reason: " + sgres.StatusCode.ToString();
+                    return new Impl.TaskResultBuilder { { "email", msg } }.Fail();
+                }
             }
             catch (Exception ex)
             {

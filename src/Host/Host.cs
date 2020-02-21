@@ -128,7 +128,7 @@ namespace ScentAir.Payment
                     var accountManager = scope.ServiceProvider.GetService<IAccountManager>();
                     var configAutoPayFailedEmailId = configuration.GetValue<string>(Constants.Configuration.Options.importAccountCustFailedEmailId);
                     var emailsentResult = await accountManager.SendEmailAsync("Support Team", configAutoPayFailedEmailId, Subject,
-                    GetAutoPaymentFailedEmail(), "", "", ex.Message.ToString());
+                        GetAutoPaymentFailedEmail(), "", "", ex.Message.ToString());
                     Log.LogError(ex, "Retrieving  Account Customers ...failed");
 
                     Environment.Exit(0);

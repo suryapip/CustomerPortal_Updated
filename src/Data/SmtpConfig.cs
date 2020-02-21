@@ -2,7 +2,10 @@
 {
     public class SmtpConfig
     {
-		public bool Disabled { get; set; }
+        public bool UseSendGridEmail { get; set; }
+        public string SendGridEmailApiKey { get; set; }
+
+        public bool Disabled { get; set; }
         public string Host { get; set; }
         public int Port { get; set; }
         public bool UseSSL { get; set; }

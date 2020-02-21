@@ -10,7 +10,7 @@
   "profiles": {
     "Host": {
       "commandName": "Project",
-      "commandLineArgs": "Import",
+      "commandLineArgs": "Autopayprocess",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
