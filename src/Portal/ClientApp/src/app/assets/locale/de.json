@@ -333,7 +333,7 @@
   },
   "ForgotPasswordConfirmation": {
     "Header": "Wachtwoord bevestigen Bevestiging",
-    "EmailSent": "Er is een e-mailadres voor het opnieuw instellen van het wachtwoord verzonden naar het e-mailadres dat aan het account is gekoppeld. Houd rekening met 30 minuten voor de e-mail aan te komen. Houd er rekening mee dat sommige e-mailtoepassingen deze e-mail als spam kunnen markeren. Als u na 30 minuten geen e-mail voor het opnieuw instellen van het wachtwoord hebt ontvangen, neemt u contact op met uw klantenservice via:",
+    "EmailSent": "Er is een e-mailadres voor het opnieuw instellen van het wachtwoord verzonden naar het e-mailadres dat aan het account is gekoppeld. Houd rekening met 30 minuten voordat de e-mail is ontvangen. Houd er rekening mee dat sommige e-mailtoepassingen deze e-mail als spam kunnen markeren. Als u na 30 minuten geen e-mail voor het opnieuw instellen van het wachtwoord hebt ontvangen, neem dan alstublieft contact op met uw klantenservice via:",
     "AMERICAS": "AMERICAS",
     "TollFree": "Tolvrij",
     "Or": "or",
@@ -344,7 +344,7 @@
   },
   "ForgotUserNameConfirmation": {
     "Header": "Gebruikersnaam Bevestiging vergeten",
-    "EmailSent": "Een e-mail met uw gebruikersnaam is verzonden naar het e-mailadres dat aan het account is gekoppeld. Houd rekening met 30 minuten voor de e-mail aan te komen. Houd er rekening mee dat sommige e-mailtoepassingen deze e-mail als spam kunnen markeren. Als u na 30 minuten de e-mail niet hebt ontvangen, neemt u contact op met uw klantenservice op:",
+    "EmailSent": "Een e-mail met uw gebruikersnaam is verzonden naar het e-mailadres dat aan het account is gekoppeld. Houd rekening met 30 minuten voor de e-mail aan te komen. Houd er rekening mee dat sommige e-mailtoepassingen deze e-mail als spam kunnen markeren. Als u na 30 minuten de e-mail niet hebt ontvangen, neem dan alstublieft contact op met uw klantenservice op:",
     "AMERICAS": "AMERICAS",
     "TollFree": "Tolvrij",
     "Or": "or",

@@ -33,9 +33,10 @@ namespace ScentAir.Payment.Helpers
             string subject,
             string body,
             SmtpConfig config = null,
-            bool isHtml = true)
+            bool isHtml = true)         
         {
-            var from = new MailboxAddress(this.config.Name, this.config.EmailAddress);
+            if (config == null) config = this.config;
+            var from = new MailboxAddress(config.Name, config.EmailAddress);
             var to = new MailboxAddress(recepientName, recepientEmail);
 
             return await SendEmailAsync(from, new MailboxAddress[] { to }, subject, body, config, isHtml);
@@ -48,9 +49,10 @@ namespace ScentAir.Payment.Helpers
             string recepientEmail,
             string subject,
             string body,
-            SmtpConfig config = null,
-            bool isHtml = true)
+            SmtpConfig config = null,   
+            bool isHtml = true)         
         {
+            if (config == null) config = this.config;
             var from = new MailboxAddress(senderName, senderEmail);
             var to = new MailboxAddress(recepientName, recepientEmail);
 
@@ -65,6 +67,7 @@ namespace ScentAir.Payment.Helpers
             SmtpConfig config = null,
             bool isHtml = true)
         {
+            if (config == null) config = this.config;
             if (config.UseSendGridEmail)
             {
                 return await SendGridEmailAsync(sender, recipients, subject, body, config, isHtml);
@@ -147,9 +150,10 @@ namespace ScentAir.Payment.Helpers
             SmtpConfig config = null,
             bool isHtml = true)
         {
+            if (config == null) config = this.config;
             string msg;
 
-            var sgclient = new SendGrid.SendGridClient(this.config.SendGridEmailApiKey);
+            var sgclient = new SendGrid.SendGridClient(config.SendGridEmailApiKey);
             var sgmsg = new SendGrid.Helpers.Mail.SendGridMessage();
             sgmsg.From = new SendGrid.Helpers.Mail.EmailAddress(sender.Address, sender.Name);
             foreach (MailboxAddress to in recipients)
