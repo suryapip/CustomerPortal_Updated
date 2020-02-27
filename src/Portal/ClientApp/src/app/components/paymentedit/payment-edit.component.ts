@@ -77,13 +77,13 @@ export class PaymentEditComponent implements OnInit {
     //   - Portal\ClientApp\src\app\components\paymentedit\payment-edit.component.ts
     //   - Portal\ClientApp\src\app\components\register\register.component.ts
     //Prod
-    this.siteKey = '6LforZoUAAAAAJPt4NAqNpmu5rvY_zsfzNigCAsn';
+    //this.siteKey = '6LforZoUAAAAAJPt4NAqNpmu5rvY_zsfzNigCAsn';
     //Stage
     //this.siteKey = '6LdSmZgUAAAAAA-RJe4UxWSoYMx9_lrHsah1P8xT';
     //Local
     //this.siteKey = '6LdNz5cUAAAAAIO1jk77YhsJdZspLzqxC4U8kLSH';
     // Dev (mholmes)
-    //this.siteKey = '6LfLTNMUAAAAACSnpgaixNUpe0Hqo9wMcJimb1xb';
+    this.siteKey = '6LfLTNMUAAAAACSnpgaixNUpe0Hqo9wMcJimb1xb';
 
     this.isAccount = false;
     this.isLoading = false;
