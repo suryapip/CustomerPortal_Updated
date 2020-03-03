@@ -95,7 +95,10 @@ namespace ScentAir.Payment.Models
         [NotMapped]
         public virtual ICollection<string> AccountNumbers
         {
-            get { return Claims.Where(c => c.ClaimType == Constants.ClaimTypes.Account).Select(x => x.ClaimValue).ToArray(); }
+            get 
+            { 
+                return Claims.Where(c => c.ClaimType == Constants.ClaimTypes.Account).Select(x => x.ClaimValue).ToArray(); 
+            }
         }
 
 

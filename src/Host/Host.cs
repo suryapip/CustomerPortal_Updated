@@ -252,8 +252,10 @@ namespace ScentAir.Payment
 
                 Log.LogDebug($"Total Account to be processed : {byAccount.Count}");
 
-                foreach (var account in byAccount)
-                {
+               foreach (var account in byAccount)
+               {
+                    //mholmes in progress getting user email from account
+                    //ApplicationUser user = await accountManager.GetUserAsync(account.Key);
                     try
                     {
 
@@ -275,7 +277,7 @@ namespace ScentAir.Payment
                         var methods = await accountManager.GetPaymentMethodsAsync(account.Key);
 
 
-                        var method = methods.FirstOrDefault(m => m.IsAuto && !m.IsDisabled && !m.IsDeleted);
+                        var method = methods?.FirstOrDefault(m => m.IsAuto && !m.IsDisabled && !m.IsDeleted);
                         if (method == null)
                         {
                             Log.LogDebug($"Account {account.Key}: skipping. no auto payment methods");
@@ -312,6 +314,9 @@ namespace ScentAir.Payment
 
                             var emailsentResult = await accountManager.SendEmailAsync("Support Team", configAutoPayFailedEmailId, "ScentAir Account Center – Auto Payment Failed",
                                 GetAutoPaymentFailedEmail(), account.Key, failedinvoices.Sum(i => i.Balance).ToString(), string.IsNullOrEmpty(payment.ProcessorStatus) ? payment.Message : payment.ProcessorStatus);
+
+                            //var customerEmailsentResult = await accountManager.SendEmailAsync(account.Value., configAutoPayFailedEmailId, "ScentAir Account Center – Auto Payment Failed",
+                            //    GetAutoPaymentFailedEmail(), account.Key, failedinvoices.Sum(i => i.Balance).ToString(), string.IsNullOrEmpty(payment.ProcessorStatus) ? payment.Message : payment.ProcessorStatus);
 
                             Log.LogInformation($"Account {account.Key}, Transaction {transactionNumber}: Canceled payment. ConfirmationNumber: {payment?.ConfirmationNumber}, ProcessorStatus:{payment?.ProcessorStatus}, ApprovalStatus:{payment?.ApprovalStatus}, Message:{payment?.Message}");
                         }
