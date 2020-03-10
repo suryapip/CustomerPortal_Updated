@@ -22,6 +22,8 @@ namespace ScentAir.Payment
 
         Task<Account> SaveAccountAsync(Account account, CancellationToken cancellationToken = default(CancellationToken));
 
+        //Task<ApplicationUser> GetUserAsync(string accountNumber, CancellationToken cancellationToken = default(CancellationToken));
+
         Task<Company> SaveCompanyAsync(Company company, CancellationToken cancellationToken = default(CancellationToken));
 
         Task<CompanyWireAchDetail> GetCompanyAchWireDetailsAsync(string InvoiceNumber, CancellationToken cancellationToken = default(CancellationToken));

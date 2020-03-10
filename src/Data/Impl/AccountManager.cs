@@ -779,8 +779,6 @@ namespace ScentAir.Payment.Impl
             return dbCompany;
         }
 
-
-
         public async Task<Account> GetAccountAsync(string accountNumber, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (accountNumber.IsNullOrWhiteSpace())
@@ -800,6 +798,23 @@ namespace ScentAir.Payment.Impl
 
             return dbAccount;
         }
+
+        //public async Task<ApplicationUser> GetUserAsync(string accountNumber, CancellationToken cancellationToken = default(CancellationToken))
+        //{
+        //    if (accountNumber.IsNullOrWhiteSpace())
+        //        return null;
+        //    if (accountNumber == "*")
+        //        return new ApplicationUser();
+
+        //    var dbUser = await portalContext
+        //        .Users
+        //        .Where(x => x.AccountNumbers.Contains(accountNumber))
+        //        .FirstOrDefaultAsync(cancellationToken)
+        //        .CatchDbAsync(logger);
+
+        //    return dbUser;
+        //}
+
         public async Task<Address> SaveAddressAsync(Address address, Address original = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             if (address == null)

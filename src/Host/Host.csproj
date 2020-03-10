@@ -22,6 +22,7 @@
     <Content Include="..\Portal\appsettings.json" Link="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="..\Portal\appsettings.Production.json" Link="appsettings.Production.json" />
   </ItemGroup>
 
   <ItemGroup>

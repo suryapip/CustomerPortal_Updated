@@ -66,6 +66,6 @@ namespace ScentAir.Payment.Models
         //[InverseProperty("Account")]
         public virtual ICollection<PaymentMethod> PaymentMethods { get; set; }
         //[InverseProperty("Account")]
-        //public IEnumerable<ApplicationUser> Users { get; internal set; }
+        //public virtual ApplicationUser User { get; set; }
     }
 }

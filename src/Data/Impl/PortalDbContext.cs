@@ -150,11 +150,11 @@ namespace ScentAir.Payment.Impl
                 entity.Property(x => x.PhoneNumber).IsUnicode(false);
                 entity.Property(x => x.FaxNumber).IsUnicode(false);
 
-
                 entity.HasOne(x => x.PhysicalAddress).WithMany();
                 entity.HasOne(x => x.BillingAddress).WithMany();
                 entity.HasOne(x => x.ShippingAddress).WithMany();
                 entity.HasOne(x => x.MailingAddress).WithMany();
+                //entity.HasOne(x => x.User).
 
                 entity.HasMany(x => x.InvoicesAsReceiver).WithOne(x => x.SoldToAccount).HasForeignKey(x => x.SoldToAccountNumber).OnDelete(DeleteBehavior.Restrict);
                 entity.HasMany(x => x.InvoicesAsPayor).WithOne(x => x.BilledToAccount).HasForeignKey(x => x.BilledToAccountNumber).OnDelete(DeleteBehavior.Restrict);
@@ -190,6 +190,7 @@ namespace ScentAir.Payment.Impl
                 entity.Property(x => x.IsAuto).IsRequired();
 
                 entity.HasOne(x => x.PaymentBillingAddress).WithMany().IsRequired().OnDelete(DeleteBehavior.Restrict);
+                //entity.HasOne(x => x.Account).WithMany(x => x.PaymentMethods).HasForeignKey(x => x.AccountNumber).OnDelete(DeleteBehavior.Restrict);    // mholmes
 
                 entity.ToTable($"{nameof(this.PaymentMethods)}");
             });
@@ -210,6 +211,7 @@ namespace ScentAir.Payment.Impl
 
                 entity.HasMany(x => x.Details).WithOne(x => x.Invoice).HasForeignKey(d => d.InvoiceNumber).OnDelete(DeleteBehavior.Cascade);
                 entity.HasMany(x => x.Payments).WithOne(x => x.Invoice).HasForeignKey(p => p.InvoiceNumber).OnDelete(DeleteBehavior.Restrict);
+                //entity.HasOne<Company>(x => x.SellingEntity).WithMany().HasForeignKey(i => i.Sell)
 
                 entity.ToTable($"{nameof(this.Invoices)}");
             });
@@ -274,16 +276,17 @@ namespace ScentAir.Payment.Impl
             });
 
 
-            builder.Entity<InvoiceHeaderExtension>(entity =>
-            {
-                entity.HasKey(x => x.Id);
+            // redundant
+            //builder.Entity<InvoiceHeaderExtension>(entity =>
+            //{
+            //    entity.HasKey(x => x.Id);
 
-                entity.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
-                entity.Property(x => x.InvoiceNumber).IsRequired();
-                entity.HasIndex(x => new { x.InvoiceNumber }).IsUnique();
+            //    entity.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
+            //    entity.Property(x => x.InvoiceNumber).IsRequired();
+            //    entity.HasIndex(x => new { x.InvoiceNumber }).IsUnique();
                 
-                entity.ToTable($"{nameof(this.InvoiceHeaderExtensions)}");
-            });
+            //    entity.ToTable($"{nameof(this.InvoiceHeaderExtensions)}");
+            //});
 
 
             builder.Entity<CompanyWireAchDetail>(entity =>
