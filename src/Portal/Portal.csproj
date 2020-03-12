@@ -76,6 +76,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="appsettings.Development.json" />
+    <Content Remove="appsettings.Production.json" />
     <Content Remove="InvoiceLocale\dut.json" />
     <Content Remove="InvoiceLocale\en.json" />
     <Content Remove="InvoiceLocale\fra.json" />
@@ -101,6 +103,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="appsettings.Development.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="appsettings.Production.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Include="InvoiceLocale\dut.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -128,12 +136,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="appsettings.Development.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Update="appsettings.Production.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
     <Content Update="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

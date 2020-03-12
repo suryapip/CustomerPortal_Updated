@@ -154,7 +154,6 @@ namespace ScentAir.Payment.Impl
                 entity.HasOne(x => x.BillingAddress).WithMany();
                 entity.HasOne(x => x.ShippingAddress).WithMany();
                 entity.HasOne(x => x.MailingAddress).WithMany();
-                //entity.HasOne(x => x.User).
 
                 entity.HasMany(x => x.InvoicesAsReceiver).WithOne(x => x.SoldToAccount).HasForeignKey(x => x.SoldToAccountNumber).OnDelete(DeleteBehavior.Restrict);
                 entity.HasMany(x => x.InvoicesAsPayor).WithOne(x => x.BilledToAccount).HasForeignKey(x => x.BilledToAccountNumber).OnDelete(DeleteBehavior.Restrict);
@@ -190,7 +189,6 @@ namespace ScentAir.Payment.Impl
                 entity.Property(x => x.IsAuto).IsRequired();
 
                 entity.HasOne(x => x.PaymentBillingAddress).WithMany().IsRequired().OnDelete(DeleteBehavior.Restrict);
-                //entity.HasOne(x => x.Account).WithMany(x => x.PaymentMethods).HasForeignKey(x => x.AccountNumber).OnDelete(DeleteBehavior.Restrict);    // mholmes
 
                 entity.ToTable($"{nameof(this.PaymentMethods)}");
             });
