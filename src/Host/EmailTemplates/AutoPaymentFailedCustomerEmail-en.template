@@ -1,0 +1,70 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-8">
+</head>
+   <body>
+      <table border="0" >
+         <tr>
+            <td style="background-color:#56B2CB;" align="center" >
+               <img src="https://www2.scentair.com/l/799033/2020-03-12/k8l1/799033/27976/scentair_logo_white_2.png" width="100"></img>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div style="margin-left:0.5%;">
+                  <p>Dear ScentAir Customer,</p>
+                  <p> </p>
+                  <p> We regret to inform you that your scheduled automatic payment has failed. Please refer to the decline reason below for specific details. </p>
+                  <p> </p>
+                  <p> If you wish to use an alternative payment method, you may add it directly into the ScentAir Account Center at <a href="https://myaccount.scentair.com">https://myaccount.scentair.com</a>.<br/>
+                  <b>You will need to process this payment manually.</b> </p>
+                  <p> </p>
+                  <ul style="list-style: none">
+                     <li><b>Customer Name: </b> {customerName} </li>
+                     <li><b>Account Number: </b> {accountNumber} </li>
+                     <li><b>Payment Method: </b> {paymentMethod} </li>
+                     <li><b>Amount: </b> {amount} </li>
+                     <li><b>Reason for Decline: </b> {error}</li>
+                  </ul>
+                  <p> </p>
+                  <p> If you have any questions or concerns you may also reach our Customer Care team at <b>844-712-4307</b>. </p>
+                  <p> </p>
+                  <p> USA / CANADIAN CUSTOMERS: <br/> You may manage your payment methods and AutoPay settings within the ScentAir Account Center. </p>
+                  <p> YOUR BILLING EXPERIENCE: <br/>  Your billing date will be the Effective Date of your ScentAir service agreement and will remain the same throughout your contract term. Please refer to the Terms section on your invoice for payment information. </p>
+                  <p> SCENTAIR SERVICE:<br/>  Equipment use & warranty, scent shipments, service visits [for full service accounts], shipping costs, sales tax, and a back-up team ready to assist and answer any questions you may have! </p>
+                  <p> INQUIRIES & PAYMENTS:<br/>  We can handle your inquiries and payment application most effectively if we have your Customer number to reference. This number can be found on all your invoices along with our remit to address. </p>
+                  <p> Need to Contact us?  Please visit:  <a href="https://myaccount.scentair.com/#/contactus">https://myaccount.scentair.com/#/contactus</a> </p>
+                  <p> Thank you for your continued business. </p>
+                  <p>
+                     Sincerely,<br/> ScentAir
+                  </p>
+                  <div style="font-size: 10px;">
+                     <strong>Please do not reply to this message. Replies to this address are routed to an unmonitored mailbox.</strong><br/>
+                      This email transmission contains information intended only for the use of the recipient(s) named above. 
+                      Further, it contains information that may be confidential. If you are not the intended recipient, you are hereby 
+                      notified that any dissemination, distribution, or copying of this message (including any attachments) is strictly prohibited.
+                  </div>
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td align="center">
+               <br/>
+               <br/>
+               <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+                  <span>
+                  2019 ScentAir. All rights reserved.
+                  </span>
+               </div>
+               <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+                  <span>Corporate: 3810 Shutterfly Rd., Charlotte, NC 28217</span><span style="margin-left: 8px; margin-right: 8px;">|</span>+1 (704) 504-2320
+               </div>
+               <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+                  866.723.6824
+               </div>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

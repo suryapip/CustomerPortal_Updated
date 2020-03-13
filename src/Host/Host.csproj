@@ -68,7 +68,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="EmailTemplates\AutoPaymentFailedEmail.template">
+    <None Update="EmailTemplates\AutoPaymentFailedCustomerEmail-en.template">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="EmailTemplates\AutoPaymentFailedSupportEmail.template">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="EmailTemplates\InvoiceNotification-de.template">

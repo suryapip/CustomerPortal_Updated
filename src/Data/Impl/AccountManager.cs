@@ -799,21 +799,26 @@ namespace ScentAir.Payment.Impl
             return dbAccount;
         }
 
-        //public async Task<ApplicationUser> GetUserAsync(string accountNumber, CancellationToken cancellationToken = default(CancellationToken))
-        //{
-        //    if (accountNumber.IsNullOrWhiteSpace())
-        //        return null;
-        //    if (accountNumber == "*")
-        //        return new ApplicationUser();
+        public async Task<ApplicationUser> GetUserAsync(string accountNumber, CancellationToken cancellationToken = default(CancellationToken))
+        {
+            if (accountNumber.IsNullOrWhiteSpace())
+                return null;
+            if (accountNumber == "*")
+                return new ApplicationUser();
 
-        //    var dbUser = await portalContext
-        //        .Users
-        //        .Where(x => x.AccountNumbers.Contains(accountNumber))
-        //        .FirstOrDefaultAsync(cancellationToken)
-        //        .CatchDbAsync(logger);
+            var claim = await portalContext
+                .UserClaims
+                .Where(uc => uc.ClaimType == Constants.ClaimTypes.Account && uc.ClaimValue == accountNumber)
+                .FirstOrDefaultAsync(cancellationToken)
+                .CatchDbAsync(logger);
+            var dbUser = await portalContext
+                .Users
+                .Where(x => x.Id == claim.UserId)
+                .FirstOrDefaultAsync(cancellationToken)
+                .CatchDbAsync(logger);
 
-        //    return dbUser;
-        //}
+            return dbUser;
+        }
 
         public async Task<Address> SaveAddressAsync(Address address, Address original = null, CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1979,8 +1984,6 @@ namespace ScentAir.Payment.Impl
         public async Task<IList<Invoice>> GetUnScheduledInvoicesAsync(string accountNumber = null, bool full = false, CancellationToken cancellationToken = default(CancellationToken))
         {
             var hasAccountNumber = !string.IsNullOrWhiteSpace(accountNumber);
-
-
             var openStatuses = (int)(InvoiceStatus.Due | InvoiceStatus.Overdue);
 
             var qry = portalContext.Invoices
@@ -2098,7 +2101,7 @@ namespace ScentAir.Payment.Impl
                 return account.Language;
             }
 
-            return "en";
+            return "ENG";
         }
 
         public async Task<ITaskResult> SendEmailAsync(
@@ -2125,61 +2128,22 @@ namespace ScentAir.Payment.Impl
             return await SendEmailAsync(from, new MailboxAddress[] { to }, subject, emailMessage, isHtml);
         }
 
-        public async Task<ITaskResult> SendInvoiceNotification(string emailContent, string accountNumber, string dateDue, string balance, string balanceCurrency)
+        public async Task<ITaskResult> SendEmailAsync(
+           string recipientName,
+           string recipientEmail,
+           string subject,
+           string body,
+           KeyValuePair<string, string>[] formFields, 
+           bool isHtml = true)
         {
-            var checkClaim = portalContext
-                    .UserClaims
-                    .Where(w => w.ClaimValue == accountNumber).SingleOrDefault();
-
-            if (checkClaim != null)
+            var from = new MailboxAddress(this.smtpConfig.Name, this.smtpConfig.EmailAddress);
+            var to = new MailboxAddress(recipientName, recipientEmail);
+            string emailMessage = body;
+            foreach (KeyValuePair<string, string> field in formFields)
             {
-                var userProfile = portalContext
-                    .Users
-                    .Find(checkClaim.UserId);
-                var from = new MailboxAddress(this.smtpConfig.Name, this.smtpConfig.EmailAddress);
-                var to = new MailboxAddress($"{userProfile.FirstName} {userProfile.LastName}", userProfile.Email);
-
-                var customerLanguage = GetAccountLanguage(accountNumber).Result;
-
-                var subject = string.Empty;
-                switch (string.IsNullOrEmpty(customerLanguage) ? null : customerLanguage.ToUpper())
-                {
-                    case "FRA":
-                        subject = "Portail Client ScentAir : Notification de Facture";
-                        break;
-                    case "SPA":
-                        subject = "Portal de Clientes ScentAir - Notificación de Facturas";
-                        break;
-                    case "DUT":
-                        subject = "ScentAir Account Centrum - Factuur Notificatie";
-                        break;
-                    default:
-                        subject = "ScentAir Account Center – Invoice Notification";
-                        break;
-                }
-
-
-
-                //Calculate Total Account Balance
-
-                var accountBalance = portalContext.Invoices
-                    .Where(w => w.BilledToAccountNumber == accountNumber)
-                    .Sum(s => s.Balance);
-
-                string emailMessage = emailContent
-                                     .Replace("{BilledToAccountNumber}", accountNumber)
-                                     .Replace("{DateDue}", dateDue)
-                                     .Replace("{Balance}", balance)
-                                     .Replace("{AccountBalance}", accountBalance.ToString())
-                                     .Replace("{BalanceCurrency}", balanceCurrency);
-
-                logger.LogInformation($"Invoice notification email Sent to {userProfile.FirstName} {userProfile.LastName} at {userProfile.Email} : Customer  number {accountNumber} ");
-
-                return await SendEmailAsync(from, new MailboxAddress[] { to }, subject, emailMessage, true);
+                emailMessage = emailMessage.Replace(field.Key, field.Value);
             }
-
-            logger.LogInformation($"User profile not found for invoice notification ");
-            return new Impl.TaskResultBuilder { { "email", "User Profile not found." } }.Fail();
+            return await SendEmailAsync(from, new MailboxAddress[] { to }, subject, emailMessage, isHtml);
         }
 
         public async Task<ITaskResult> SendEmailAsync(
@@ -2294,6 +2258,63 @@ namespace ScentAir.Payment.Impl
                 logger.LogError(ex, "An error occurred while sending email");
             }
             return new Impl.TaskResultBuilder { { "email", msg } }.Fail();
+        }
+
+        public async Task<ITaskResult> SendInvoiceNotification(string emailContent, string accountNumber, string dateDue, string balance, string balanceCurrency)
+        {
+            var checkClaim = portalContext
+                    .UserClaims
+                    .Where(w => w.ClaimValue == accountNumber).SingleOrDefault();
+
+            if (checkClaim != null)
+            {
+                var userProfile = portalContext
+                    .Users
+                    .Find(checkClaim.UserId);
+                var from = new MailboxAddress(this.smtpConfig.Name, this.smtpConfig.EmailAddress);
+                var to = new MailboxAddress($"{userProfile.FirstName} {userProfile.LastName}", userProfile.Email);
+
+                var customerLanguage = GetAccountLanguage(accountNumber).Result;
+
+                var subject = string.Empty;
+                switch (string.IsNullOrEmpty(customerLanguage) ? null : customerLanguage.ToUpper())
+                {
+                    case "FRA":
+                        subject = "Portail Client ScentAir : Notification de Facture";
+                        break;
+                    case "SPA":
+                        subject = "Portal de Clientes ScentAir - Notificación de Facturas";
+                        break;
+                    case "DUT":
+                        subject = "ScentAir Account Centrum - Factuur Notificatie";
+                        break;
+                    default:
+                        subject = "ScentAir Account Center – Invoice Notification";
+                        break;
+                }
+
+
+
+                //Calculate Total Account Balance
+
+                var accountBalance = portalContext.Invoices
+                    .Where(w => w.BilledToAccountNumber == accountNumber)
+                    .Sum(s => s.Balance);
+
+                string emailMessage = emailContent
+                                     .Replace("{BilledToAccountNumber}", accountNumber)
+                                     .Replace("{DateDue}", dateDue)
+                                     .Replace("{Balance}", balance)
+                                     .Replace("{AccountBalance}", accountBalance.ToString())
+                                     .Replace("{BalanceCurrency}", balanceCurrency);
+
+                logger.LogInformation($"Invoice notification email Sent to {userProfile.FirstName} {userProfile.LastName} at {userProfile.Email} : Customer  number {accountNumber} ");
+
+                return await SendEmailAsync(from, new MailboxAddress[] { to }, subject, emailMessage, true);
+            }
+
+            logger.LogInformation($"User profile not found for invoice notification ");
+            return new Impl.TaskResultBuilder { { "email", "User Profile not found." } }.Fail();
         }
 
     }

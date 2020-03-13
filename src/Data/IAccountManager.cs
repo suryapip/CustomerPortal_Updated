@@ -22,7 +22,7 @@ namespace ScentAir.Payment
 
         Task<Account> SaveAccountAsync(Account account, CancellationToken cancellationToken = default(CancellationToken));
 
-        //Task<ApplicationUser> GetUserAsync(string accountNumber, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ApplicationUser> GetUserAsync(string accountNumber, CancellationToken cancellationToken = default(CancellationToken));
 
         Task<Company> SaveCompanyAsync(Company company, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -55,6 +55,7 @@ namespace ScentAir.Payment
         Task<IList<Invoice>> GetUnScheduledInvoicesAsync(string accountNumber = null, bool full = false, CancellationToken cancellationToken = default(CancellationToken));
 
         Task<ITaskResult> SendEmailAsync(string recepientName, string recepientEmail, string subject, string body,string accountNumber, string amount, string exceptionDetails, bool isHtml = true);
+        Task<ITaskResult> SendEmailAsync(string recipientName, string recipientEmail, string subject, string body, KeyValuePair<string, string>[] formFields, bool isHtml = true);
         Task<string[]> GetEligibleImportCustomerAsync(CancellationToken cancellationToken = default(CancellationToken));
 
         Task<string> GetAccountLanguage(string accountNumber);

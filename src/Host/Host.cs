@@ -106,7 +106,7 @@ namespace ScentAir.Payment
           var accountManager = scope.ServiceProvider.GetService<IAccountManager>();
           var configAutoPayFailedEmailId = configuration.GetValue<string>(Constants.Configuration.Options.importAccountCustFailedEmailId);
           var emailsentResult = await accountManager.SendEmailAsync("Support Team", configAutoPayFailedEmailId, Subject,
-          GetAutoPaymentFailedEmail(), "", "", ex.Message.ToString());
+          GetAutoPaymentFailedSupportEmail(), "", "", ex.Message.ToString());
           Log.LogError(ex, "Retrieving  Account Customers ...failed");
 
           Environment.Exit(0);
@@ -233,7 +233,7 @@ namespace ScentAir.Payment
                 var accountManager = scope.ServiceProvider.GetService<IAccountManager>();
 
                 var unscheduled = await accountManager.GetUnScheduledInvoicesAsync();
-
+                
                 Log.LogDebug($"Total UnScheduled Invoices : {unscheduled.Count}");
 
                 // Remove Failed Payment invoices
@@ -252,10 +252,29 @@ namespace ScentAir.Payment
 
                 Log.LogDebug($"Total Account to be processed : {byAccount.Count}");
 
-               foreach (var account in byAccount)
-               {
-                    //mholmes in progress getting user email from account
-                    //ApplicationUser user = await accountManager.GetUserAsync(account.Key);
+                // mholmes testing
+                //string accountNumbertest = "1279556";
+                //ApplicationUser usertest = await accountManager.GetUserAsync(accountNumbertest);
+                //Account accounttest = await accountManager.GetAccountAsync(accountNumbertest);
+                //var languagetest = accountManager.GetAccountLanguage(accountNumbertest).Result;
+                //string newemailtest = "mholmes@scentair.com";
+                //var methodstest = await accountManager.GetPaymentMethodsAsync(accountNumbertest);
+                //var methodtest = methodstest?.FirstOrDefault(m => m.IsAuto && !m.IsDisabled && !m.IsDeleted);
+                //var cardNumtest = methodtest?.PaymentAccountNumber;
+                //var customerEmailSentResulttest = await accountManager.SendEmailAsync(usertest.FullName, newemailtest, "ScentAir Account Center – Auto Payment Failed",
+                //    GetAutoPaymentFailedCustomerEmail(languagetest), //, accountNumbertest, "123.00", "This is where the error msg goes");
+                //    new KeyValuePair<string, string>[]
+                //    {
+                //        new KeyValuePair<string, string>("{customerName}", accounttest.Name),
+                //        new KeyValuePair<string, string>("{accountNumber}", accounttest.Number),
+                //        new KeyValuePair<string, string>("{paymentMethod}", cardNumtest),
+                //        new KeyValuePair<string, string>("{amount}", "123.45"),
+                //        new KeyValuePair<string, string>("{error}", "This is where the error msg goes"),
+                //    });
+                //var resulttest = customerEmailSentResulttest.ExecutionResult.ToString();
+
+                foreach (var account in byAccount)
+                {
                     try
                     {
 
@@ -310,15 +329,28 @@ namespace ScentAir.Payment
                             //Email send
                             var failedinvoices = account.Value.Where(i => i.Balance > 0).ToArray();
 
+                            // Email to Support
                             var configAutoPayFailedEmailId = configuration.GetValue<string>(Constants.Configuration.Options.FailedEmailId);
+                            var supportEmailSentResult = await accountManager.SendEmailAsync("Support Team", configAutoPayFailedEmailId, "ScentAir Account Center – Auto Payment Failed",
+                                GetAutoPaymentFailedSupportEmail(), account.Key, failedinvoices.Sum(i => i.Balance).ToString(), 
+                                string.IsNullOrEmpty(payment.ProcessorStatus) ? payment.Message : payment.ProcessorStatus);
 
-                            var emailsentResult = await accountManager.SendEmailAsync("Support Team", configAutoPayFailedEmailId, "ScentAir Account Center – Auto Payment Failed",
-                                GetAutoPaymentFailedEmail(), account.Key, failedinvoices.Sum(i => i.Balance).ToString(), string.IsNullOrEmpty(payment.ProcessorStatus) ? payment.Message : payment.ProcessorStatus);
+                            // Email to Customer
+                            ApplicationUser user = await accountManager.GetUserAsync(account.Key);
+                            Account customerAccount = await accountManager.GetAccountAsync(account.Key);
+                            string language = accountManager.GetAccountLanguage(account.Key).Result;
+                            var customerEmailSentResult = await accountManager.SendEmailAsync(user.FullName, user.Email, "ScentAir Account Center – Auto Payment Failed",
+                                GetAutoPaymentFailedCustomerEmail(language),
+                                new KeyValuePair<string, string>[]
+                                {
+                                    new KeyValuePair<string, string>("{customerName}", customerAccount.Name),
+                                    new KeyValuePair<string, string>("{accountNumber}", customerAccount.Number),
+                                    new KeyValuePair<string, string>("{paymentMethod}", method?.PaymentAccountNumber),
+                                    new KeyValuePair<string, string>("{amount}", failedinvoices.Sum(i => i.Balance).ToString()),
+                                    new KeyValuePair<string, string>("{error}", string.IsNullOrEmpty(payment.ProcessorStatus) ? payment.Message : payment.ProcessorStatus),
+                                });
 
-                            //var customerEmailsentResult = await accountManager.SendEmailAsync(account.Value., configAutoPayFailedEmailId, "ScentAir Account Center – Auto Payment Failed",
-                            //    GetAutoPaymentFailedEmail(), account.Key, failedinvoices.Sum(i => i.Balance).ToString(), string.IsNullOrEmpty(payment.ProcessorStatus) ? payment.Message : payment.ProcessorStatus);
-
-                            Log.LogInformation($"Account {account.Key}, Transaction {transactionNumber}: Canceled payment. ConfirmationNumber: {payment?.ConfirmationNumber}, ProcessorStatus:{payment?.ProcessorStatus}, ApprovalStatus:{payment?.ApprovalStatus}, Message:{payment?.Message}");
+                            Log.LogInformation($"Account {account.Key}, Transaction {transactionNumber}: Canceled payment. ConfirmationNumber: {payment?.ConfirmationNumber}, ProcessorStatus:{payment?.ProcessorStatus}, ApprovalStatus: {payment?.ApprovalStatus}, Message: {payment?.Message}, CustomerEmailResult: {customerEmailSentResult.ExecutionResult.ToString()} ({user.Email})");
                         }
 
                         if (paymentResult.IsSuccessful)
@@ -339,7 +371,7 @@ namespace ScentAir.Payment
                         var configAutoPayFailedEmailId = configuration.GetValue<string>(Constants.Configuration.Options.FailedEmailId);
 
                         var emailsentResult = await accountManager.SendEmailAsync("Support Team", configAutoPayFailedEmailId, "ScentAir Account Center – Auto Payment Failed",
-                            GetAutoPaymentFailedEmail(), account.Key, totalBalance.ToString(), ex.Message.ToString());
+                            GetAutoPaymentFailedSupportEmail(), account.Key, totalBalance.ToString(), ex.Message.ToString());
                         Log.LogError(ex, "Retrieving invoices to pay...failed");
                     }
                     catch (Exception ex)
@@ -350,7 +382,7 @@ namespace ScentAir.Payment
                         var configAutoPayFailedEmailId = configuration.GetValue<string>(Constants.Configuration.Options.FailedEmailId);
 
                         var emailsentResult = await accountManager.SendEmailAsync("Support Team", configAutoPayFailedEmailId, "ScentAir Account Center – Auto Payment Failed",
-                            GetAutoPaymentFailedEmail(), account.Key, totalBalance.ToString(), ex.Message.ToString());
+                            GetAutoPaymentFailedSupportEmail(), account.Key, totalBalance.ToString(), ex.Message.ToString());
                         Log.LogError(ex, "Retrieving invoices to pay...failed");
 
                     }
@@ -364,9 +396,32 @@ namespace ScentAir.Payment
 
 
 
-        public static string GetAutoPaymentFailedEmail()
+        public static string GetAutoPaymentFailedSupportEmail()
         {
-            return readFile("EmailTemplates/AutoPaymentFailedEmail.template");
+            return readFile("EmailTemplates/AutoPaymentFailedSupportEmail.template");
+        }
+
+        public static string GetAutoPaymentFailedCustomerEmail(string language = null)
+        {
+            var fileName = string.Empty;
+            switch (string.IsNullOrEmpty(language) ? null : language.ToUpper())
+            {
+                // Currently, AutoPay is only available for English language.
+                //case "FRA":
+                //    fileName = "EmailTemplates/InvoiceNotification-fr.template";
+                //    break;
+                //case "SPA":
+                //    fileName = "EmailTemplates/InvoiceNotification-sp.template";
+                //    break;
+                //case "DUT":
+                //    fileName = "EmailTemplates/InvoiceNotification-de.template";
+                //    break;
+                default:
+                    fileName = "EmailTemplates/AutoPaymentFailedCustomerEmail-en.template";
+                    break;
+            }
+
+            return readFile(fileName);
         }
 
 
