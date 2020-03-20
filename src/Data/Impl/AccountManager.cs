@@ -219,6 +219,7 @@ namespace ScentAir.Payment.Impl
                 .Include(u => u.PayByAddress)
                 .Include(u => u.BillToAddress)
                 .Include(u => u.ShipToAddress)
+                .Include(u => u.RemitAddress)
                 .Where(u => u.InvoiceNumber == InvoiceNumber)
                 .Where(u => u.Invoice.BilledToAccount.Number == accountNumber);
 
