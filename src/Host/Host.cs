@@ -56,18 +56,18 @@ namespace ScentAir.Payment
 
         public void Start(string[] args)
         {
-                OnStarting(args);
-                OnStarted();
-                Console.WriteLine("Job Started for " + args[0]);
-                switch (args[0])
-                {
-                    case "Import":
-                        _ = LastImportDetails();
-                        break;
-                    case "Autopayprocess":
-                        _ = PaymentDetails();
-                        break;
-                }
+            OnStarting(args);
+            OnStarted();
+            Console.WriteLine("Job Started for " + args[0]);
+            switch (args[0])
+            {
+                case "Import":
+                    _ = LastImportDetails();
+                    break;
+                case "Autopayprocess":
+                    _ = PaymentDetails();
+                    break;
+            }
         }
 
 
@@ -83,111 +83,148 @@ namespace ScentAir.Payment
 
 
 
-    private async Task LastImportDetails()
-    {
-      try
-      {
-        //new SP imple code start from here
-        newImportDetails();
-      }
-      catch (Exception ex)
-      {
-        using (var scope = services.CreateScope())
+        private async Task LastImportDetails()
         {
-          var Subject = "";
-          if (_hostingEnvironment.IsDevelopment())
-          {
-            Subject = "Test: No Customer found to import inovice" + DateTime.Now.ToString();
-          }
-          else
-          {
-            Subject = "Prod: No Customer found to import inovice" + DateTime.Now.ToString();
-          }
-          var accountManager = scope.ServiceProvider.GetService<IAccountManager>();
-          var configAutoPayFailedEmailId = configuration.GetValue<string>(Constants.Configuration.Options.importAccountCustFailedEmailId);
-          var emailsentResult = await accountManager.SendEmailAsync("Support Team", configAutoPayFailedEmailId, Subject,
-          GetAutoPaymentFailedSupportEmail(), "", "", ex.Message.ToString());
-          Log.LogError(ex, "Retrieving  Account Customers ...failed");
-
-          Environment.Exit(0);
-        }
-      }
-
-    }
-
-    #region Portal DB Insert
-    private void newImportDetails()
-    {
-      try
-      {
-        var connectiondb = configuration["ConnectionStrings:Portal"];
-
-        //1.Get customers
-        SqlConnection conportal = new SqlConnection(connectiondb);
-        SqlCommand cmdCustomer = new SqlCommand("SP_GETALLELIGIBLECUSTOMERS", conportal);
-        cmdCustomer.CommandType = CommandType.StoredProcedure;
-        SqlDataAdapter daCustomer = new SqlDataAdapter(cmdCustomer);
-        DataTable dtCustomer = new DataTable();
-        conportal.Open();
-        daCustomer.Fill(dtCustomer);
-        Log.LogInformation(dtCustomer.Rows.Count, "Account Customers Retrieved  ");
-
-        //2.Get all invoices customerwise
-        SqlCommand cmdCustomerInvoices = new SqlCommand("SP_GETALLINVOICESOFCUSTOMERS", conportal);
-        cmdCustomerInvoices.CommandType = CommandType.StoredProcedure;
-        cmdCustomerInvoices.Parameters.Add("@ACCOUNTNUMBER", SqlDbType.NVarChar);
-        SqlDataAdapter daCustomerInvoices = null;
-        DataTable dtCustomerInvoices = new DataTable();
-
-        SqlDataAdapter daInvoice = null;
-        DataTable dtInvoice = new DataTable();
-        SqlCommand cmdInvoice = new SqlCommand("[SP_INSERTINVOICEDATA]", conportal);
-        cmdInvoice.CommandType = CommandType.StoredProcedure;
-        cmdInvoice.Parameters.Add("@ACCOUNTNUMBER", SqlDbType.NVarChar);
-        cmdInvoice.Parameters.Add("@INVOICENUMBER", SqlDbType.NVarChar);
-        foreach (DataRow customer in dtCustomer.Rows)
-        {
-          var customerId = customer[0].ToString();
-          cmdCustomerInvoices.Parameters["@ACCOUNTNUMBER"].Value = customerId;
-          daCustomerInvoices = new SqlDataAdapter(cmdCustomerInvoices);
-          dtCustomerInvoices = new DataTable();
-          daCustomerInvoices.Fill(dtCustomerInvoices);
-          Log.LogInformation("Customer {0} have {1} invoices ", customerId, dtCustomerInvoices.Rows.Count);
-          if (dtCustomerInvoices.Rows.Count > 0)
-          {
-            // 3.Get Invoicewise details from X3(PortalDB)
-            foreach (DataRow invoice in dtCustomerInvoices.Rows)
+            try
             {
-              Log.LogInformation("Customer {0} have {1} invoices ", customerId, invoice[0].ToString());
-              var invoiceNumber = invoice[0].ToString();
-              cmdInvoice.Parameters["@ACCOUNTNUMBER"].Value = customerId;
-              cmdInvoice.Parameters["@INVOICENUMBER"].Value = invoiceNumber;
-              daInvoice = new SqlDataAdapter(cmdInvoice);
-              dtInvoice = new DataTable();
-              daInvoice.Fill(dtInvoice);
-              Log.LogInformation("Customer {0} have {1} invoice imported sucessfully ", customerId, invoice[0].ToString());
+                //new SP imple code start from here
+                newImportDetails();
             }
-          }
+            catch (Exception ex)
+            {
+                using (var scope = services.CreateScope())
+                {
+                    var Subject = "";
+                    if (_hostingEnvironment.IsDevelopment())
+                    {
+                        Subject = "Test: No Customer found to import inovice" + DateTime.Now.ToString();
+                    }
+                    else
+                    {
+                        Subject = "Prod: No Customer found to import inovice" + DateTime.Now.ToString();
+                    }
+                    var accountManager = scope.ServiceProvider.GetService<IAccountManager>();
+                    var configAutoPayFailedEmailId = configuration.GetValue<string>(Constants.Configuration.Options.importAccountCustFailedEmailId);
+                    var emailsentResult = await accountManager.SendEmailAsync("Support Team", configAutoPayFailedEmailId, Subject,
+                    GetAutoPaymentFailedSupportEmail(), "", "", ex.Message.ToString());
+                    Log.LogError(ex, "Retrieving  Account Customers ...failed");
+
+                    Environment.Exit(0);
+                }
+            }
+
         }
-        Log.LogInformation("Database connection closed sucessfully");
-        conportal.Close();
-      }
-      catch (Exception ex)
-      {
-        Log.LogDebug("Runtime Exception", ex.StackTrace);
-      }
-    }
-    #endregion
-    //New insert in "Portal" database
+
+        #region Portal DB Insert
+        private void newImportDetails()
+        {
+            try
+            {
+                var connectiondb = configuration["ConnectionStrings:Portal"];
+
+                //1.Get customers
+                SqlConnection conportal = new SqlConnection(connectiondb);
+                SqlCommand cmdCustomer = new SqlCommand("Get_All_Eligible_Customer_Invoices_For_Insert", conportal);
+                cmdCustomer.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter daInvoice = new SqlDataAdapter(cmdCustomer);
+                DataTable dtCustomer = new DataTable();
+                conportal.Open();
+                daInvoice.Fill(dtCustomer);
+                Log.LogInformation(dtCustomer.Rows.Count, "Account Customers Retrieved  ");
+
+                DataTable dtInvoice = new DataTable();
+                SqlCommand cmdInvoice = new SqlCommand("[SP_INSERTINVOICEDATA]", conportal);
+                cmdInvoice.CommandType = CommandType.StoredProcedure;
+                cmdInvoice.Parameters.Add("@ACCOUNTNUMBER", SqlDbType.NVarChar);
+                cmdInvoice.Parameters.Add("@INVOICENUMBER", SqlDbType.NVarChar);
+
+                List<string> customerNumberList = new List<string>();
+
+                foreach (DataRow customer in dtCustomer.Rows)
+                {
+                    var customerId = customer["CustomerNumber"].ToString();
+                    cmdInvoice.Parameters["@ACCOUNTNUMBER"].Value = customerId;
+
+                    var invoiceId = customer["InvoiceNumber"].ToString();
+                    cmdInvoice.Parameters["@INVOICENUMBER"].Value = invoiceId;
+
+                    if (dtCustomer.Rows.Count > 0)
+                    {
+                        daInvoice = new SqlDataAdapter(cmdInvoice);
+                        dtInvoice = new DataTable();
+                        daInvoice.Fill(dtInvoice);
+
+                        Log.LogInformation("Customer {0} invoice {1}  imported sucessfully ", customerId, invoiceId);
+                    }
+                    customerNumberList.Add(customerId);
+                }
+
+                InvoiceEmailNotifications(customerNumberList);
+
+
+                UpdateInvoiceData(connectiondb);
+
+                Log.LogInformation("Database connection closed sucessfully");
+                conportal.Close();
+            }
+            catch (Exception ex)
+            {
+                Log.LogDebug("Runtime Exception", ex.StackTrace);
+            }
+
+        }
+
+        private void UpdateInvoiceData(string connectiondb)
+        {
+            SqlConnection updateConportal = new SqlConnection(connectiondb);
+            SqlCommand cmdUpdateCustomer = new SqlCommand("SP_UPDATEINVOICEDATA", updateConportal);
+            cmdUpdateCustomer.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter daUpdateCustomer = new SqlDataAdapter(cmdUpdateCustomer);
+            DataTable dtUpdateCustomer = new DataTable();
+            updateConportal.Open();
+            daUpdateCustomer.Fill(dtUpdateCustomer);
+            if (dtUpdateCustomer.Rows.Count > 0)
+                Log.LogInformation(dtUpdateCustomer.Rows.Count, "Customer invoice updated successfully.");
+            else
+                Log.LogInformation(dtUpdateCustomer.Rows.Count, "No record found for update.");
+
+        }
+        #endregion
+        //New insert in "Portal" database
+
+        private async void InvoiceEmailNotifications(List<string> customerNumberList)
+        {
+            foreach (var customer in customerNumberList)
+            {
+                using (var scope = services.CreateScope())
+                {
+                    var accountManager = scope.ServiceProvider.GetService<IAccountManager>();
+                    var language = accountManager.GetAccountLanguage(customer).Result;
+                    var methods = await accountManager.GetPaymentMethodsAsync(customer);
+
+                    importManager.InvoiceNotificationEmailContent = GetInvoiceNotificationEmail(language);
+                    ApplicationUser user = await accountManager.GetUserAsync(customer);
+                    Account customerAccount = await accountManager.GetAccountAsync(customer);
+                    var customerEmailSentResult = await accountManager.SendEmailAsync(user.FullName, customerAccount.Email, "ScentAir Account Center – Invoice Ready for Payment.",
+                        GetInvoiceNotificationEmail(language),
+                        new KeyValuePair<string, string>[]
+                        {
+                                    new KeyValuePair<string, string>("{customerName}", customerAccount.Name),
+                                    new KeyValuePair<string, string>("{accountNumber}", customerAccount.Number)
+                        });
+
+                }
+            }
+        }
 
 
 
-    private void ImportDueDetails()
+        private void ImportDueDetails()
         {
             Log.LogDebug("Calculating accounts to import...starting");
 
             // Fetch max 20 Customer for each iteration.
-             //var importDue = lastImport.Where(kv => kv.Value + importInterval < DateTime.Now).Select(kv => kv.Key).Take(20).ToArray();
+            //var importDue = lastImport.Where(kv => kv.Value + importInterval < DateTime.Now).Select(kv => kv.Key).Take(20).ToArray();
 
             //Removed logic to import 20 at a time as we are not using timer now
 
@@ -217,10 +254,8 @@ namespace ScentAir.Payment
 
                 lastImport[customer] = DateTime.Now;
             }
-           
+
         }
-
-
 
         private async Task PaymentDetails()
         {
@@ -233,7 +268,7 @@ namespace ScentAir.Payment
                 var accountManager = scope.ServiceProvider.GetService<IAccountManager>();
 
                 var unscheduled = await accountManager.GetUnScheduledInvoicesAsync();
-                
+
                 Log.LogDebug($"Total UnScheduled Invoices : {unscheduled.Count}");
 
                 // Remove Failed Payment invoices
@@ -332,7 +367,7 @@ namespace ScentAir.Payment
                             // Email to Support
                             var configAutoPayFailedEmailId = configuration.GetValue<string>(Constants.Configuration.Options.FailedEmailId);
                             var supportEmailSentResult = await accountManager.SendEmailAsync("Support Team", configAutoPayFailedEmailId, "ScentAir Account Center – Auto Payment Failed",
-                                GetAutoPaymentFailedSupportEmail(), account.Key, failedinvoices.Sum(i => i.Balance).ToString(), 
+                                GetAutoPaymentFailedSupportEmail(), account.Key, failedinvoices.Sum(i => i.Balance).ToString(),
                                 string.IsNullOrEmpty(payment.ProcessorStatus) ? payment.Message : payment.ProcessorStatus);
 
                             // Email to Customer
@@ -394,8 +429,6 @@ namespace ScentAir.Payment
             Environment.Exit(0);
         }
 
-
-
         public static string GetAutoPaymentFailedSupportEmail()
         {
             return readFile("EmailTemplates/AutoPaymentFailedSupportEmail.template");
@@ -423,7 +456,6 @@ namespace ScentAir.Payment
 
             return readFile(fileName);
         }
-
 
         public static string GetInvoiceNotificationEmail(string language)
         {
@@ -477,8 +509,6 @@ namespace ScentAir.Payment
 
             this.Log.LogInformation("Started...");
         }
-
-
     }
     public static class ServiceHostExtensions
     {
