@@ -13,8 +13,6 @@ using System.IO;
 using System.Linq;
 using System.ServiceModel;
 using System.Threading.Tasks;
-using System.Timers;
-using Timer = System.Timers.Timer;
 
 namespace ScentAir.Payment
 {
@@ -37,7 +35,6 @@ namespace ScentAir.Payment
         private bool autoPayEnabled;
         static IHostingEnvironment _hostingEnvironment;
 
-
         public Host(IWebHost host) : base(host)
         {
             this.services = host.Services;
@@ -52,7 +49,6 @@ namespace ScentAir.Payment
             this.lastImport = new ConcurrentDictionary<string, DateTime>();
 
         }
-
 
         public void Start(string[] args)
         {
@@ -70,7 +66,6 @@ namespace ScentAir.Payment
             }
         }
 
-
         protected override void OnStarting(string[] args)
         {
 
@@ -80,8 +75,6 @@ namespace ScentAir.Payment
 
             this.importManager = serviceScope.ServiceProvider.GetRequiredService<IImportManager>();
         }
-
-
 
         private async Task LastImportDetails()
         {
@@ -112,16 +105,8 @@ namespace ScentAir.Payment
                     Environment.Exit(0);
                 }
             }
-
         }
 
-        struct CustList {
-            public string CustomerNumber;
-            public string DueDate;
-            public string Balance;
-            public string BalCur;
-            public string SUbTotal;
-        }
         #region Portal DB Insert
         private void newImportDetails()
         {
@@ -145,8 +130,6 @@ namespace ScentAir.Payment
                 cmdInvoice.Parameters.Add("@ACCOUNTNUMBER", SqlDbType.NVarChar);
                 cmdInvoice.Parameters.Add("@INVOICENUMBER", SqlDbType.NVarChar);
 
-                List<CustList> customerNumberList = new List<CustList>();
-
                 foreach (DataRow customer in dtCustomer.Rows)
                 {
                     var customerId = customer["CustomerNumber"].ToString();
@@ -167,18 +150,11 @@ namespace ScentAir.Payment
                     var balance = customer["Balance"].ToString();
                     var balCur = customer["BalCur"].ToString();
                     var subTotal = customer["SUbTotal"].ToString();
+                    var Laungage = customer["acc_Lang"].ToString();
+                    var Email = customer["Email"].ToString();
 
-                    customerNumberList.Add(new CustList {
-                        CustomerNumber= customerId,
-                        DueDate = dueDate,
-                        Balance = balance,
-                        BalCur = balCur,
-                        SUbTotal = subTotal
-                    });
+                    InvoiceEmailNotifications(customerId, dueDate, balance, subTotal, balCur, Laungage, Email);
                 }
-
-                InvoiceEmailNotifications(customerNumberList);
-
 
                 UpdateInvoiceData(connectiondb);
 
@@ -189,7 +165,6 @@ namespace ScentAir.Payment
             {
                 Log.LogDebug("Runtime Exception", ex.StackTrace);
             }
-
         }
 
         private void UpdateInvoiceData(string connectiondb)
@@ -210,31 +185,23 @@ namespace ScentAir.Payment
         #endregion
         //New insert in "Portal" database
 
-        private async void InvoiceEmailNotifications(List<CustList> customerNumberList)
+        private async void InvoiceEmailNotifications(string CustomerNumber, string DueDate, string Balance, string SUbTotal, string BalCur, string Laungage, string Email)
         {
-            foreach (var customer in customerNumberList)
+            using (var scope = services.CreateScope())
             {
-                using (var scope = services.CreateScope())
-                {
-                    var accountManager = scope.ServiceProvider.GetService<IAccountManager>();
-                    var language = accountManager.GetAccountLanguage(customer.CustomerNumber).Result;
-                    var methods = await accountManager.GetPaymentMethodsAsync(customer.CustomerNumber);
-
-                    importManager.InvoiceNotificationEmailContent = GetInvoiceNotificationEmail(language);
-                    ApplicationUser user = await accountManager.GetUserAsync(customer.CustomerNumber);
-                    Account customerAccount = await accountManager.GetAccountAsync(customer.CustomerNumber);
-
-                    var customerEmailSentResult = await accountManager.SendEmailAsync(user.FullName, customerAccount.Email, "ScentAir Account Center – Invoice Ready for Payment.",
-                        GetInvoiceNotificationEmail(language),
-                        new KeyValuePair<string, string>[]
-                        {
-                                    new KeyValuePair<string, string>("{BilledToAccountNumber}", customer.CustomerNumber),
-                                    new KeyValuePair<string, string>("{DateDue}", customer.DueDate),
-                                    new KeyValuePair<string, string>("{Balance}", customer.Balance),
-                                    new KeyValuePair<string, string>("{AccountBalance}", customer.SUbTotal),
-                                    new KeyValuePair<string, string>("{BalanceCurrency}", customer.BalCur),
-                        });
-                }
+                var accountManager = scope.ServiceProvider.GetService<IAccountManager>();
+                ApplicationUser user = await accountManager.GetUserAsync(CustomerNumber);
+                importManager.InvoiceNotificationEmailContent = GetInvoiceNotificationEmail(Laungage);
+                var customerEmailSentResult = await accountManager.SendEmailAsync(user.FullName, Email, "ScentAir Account Center – Invoice Ready for Payment.",
+                    GetInvoiceNotificationEmail(Laungage),
+                    new KeyValuePair<string, string>[]
+                    {
+                        new KeyValuePair<string, string>("{BilledToAccountNumber}", CustomerNumber),
+                        new KeyValuePair<string, string>("{DateDue}", DueDate),
+                        new KeyValuePair<string, string>("{Balance}", Balance),
+                        new KeyValuePair<string, string>("{AccountBalance}", SUbTotal),
+                        new KeyValuePair<string, string>("{BalanceCurrency}", BalCur),
+                    });
             }
         }
 
