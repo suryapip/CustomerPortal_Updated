@@ -110,10 +110,9 @@ namespace ScentAir.Payment
         #region Portal DB Insert
         private void newImportDetails()
         {
+            var connectiondb = configuration["ConnectionStrings:Portal"];
             try
             {
-                var connectiondb = configuration["ConnectionStrings:Portal"];
-
                 //1.Get customers
                 SqlConnection conportal = new SqlConnection(connectiondb);
                 SqlCommand cmdCustomer = new SqlCommand("Get_All_Eligible_Customer_Invoices_For_Insert", conportal);
@@ -156,31 +155,45 @@ namespace ScentAir.Payment
                     InvoiceEmailNotifications(customerId, dueDate, balance, subTotal, balCur, Laungage, Email);
                 }
 
-                UpdateInvoiceData(connectiondb);
-
                 Log.LogInformation("Database connection closed sucessfully");
                 conportal.Close();
             }
             catch (Exception ex)
             {
-                Log.LogError(ex,"Runtime Exception: -- ", ex.Message);
-                Log.LogError(ex,"Runtime Exception: -- ", ex.StackTrace);
+                Log.LogError(ex, "Runtime Exception: -- ", ex.Message);
+                Log.LogError(ex, "Runtime Exception: -- ", ex.StackTrace);
             }
+            UpdateInvoiceData(connectiondb);
+
         }
 
         private void UpdateInvoiceData(string connectiondb)
         {
-            SqlConnection updateConportal = new SqlConnection(connectiondb);
-            SqlCommand cmdUpdateCustomer = new SqlCommand("SP_UPDATEINVOICEDATA", updateConportal);
-            cmdUpdateCustomer.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter daUpdateCustomer = new SqlDataAdapter(cmdUpdateCustomer);
-            DataTable dtUpdateCustomer = new DataTable();
-            updateConportal.Open();
-            daUpdateCustomer.Fill(dtUpdateCustomer);
-            if (dtUpdateCustomer.Rows.Count > 0)
-                Log.LogInformation(dtUpdateCustomer.Rows.Count, "Customer invoice updated successfully.");
-            else
-                Log.LogInformation(dtUpdateCustomer.Rows.Count, "No record found for update.");
+            try
+            {
+                Log.LogInformation("Checking for Customers invoices for updatation.");
+                SqlConnection updateConportal = new SqlConnection(connectiondb);
+                SqlCommand cmdUpdateCustomer = new SqlCommand("SP_UPDATEINVOICEDATA", updateConportal);
+                cmdUpdateCustomer.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter daUpdateCustomer = new SqlDataAdapter(cmdUpdateCustomer);
+                DataTable dtUpdateCustomer = new DataTable();
+                updateConportal.Open();
+                daUpdateCustomer.Fill(dtUpdateCustomer);
+
+                if (dtUpdateCustomer.Rows.Count > 0)
+                    Log.LogInformation(dtUpdateCustomer.Rows.Count, "Customer invoice updated successfully.");
+                else
+                    Log.LogInformation(dtUpdateCustomer.Rows.Count, "No record found for update.");
+
+
+                Log.LogInformation("Database connection closed sucessfully");
+                updateConportal.Close();
+            }
+            catch (Exception ex)
+            {
+                Log.LogError(ex, "Runtime Exception: -- ", ex.Message);
+                Log.LogError(ex, "Runtime Exception: -- ", ex.StackTrace);
+            }
 
         }
         #endregion
@@ -188,21 +201,29 @@ namespace ScentAir.Payment
 
         private async void InvoiceEmailNotifications(string CustomerNumber, string DueDate, string Balance, string SUbTotal, string BalCur, string Laungage, string Email)
         {
-            using (var scope = services.CreateScope())
+            try
             {
-                var accountManager = scope.ServiceProvider.GetService<IAccountManager>();
-                ApplicationUser user = await accountManager.GetUserAsync(CustomerNumber);
-                importManager.InvoiceNotificationEmailContent = GetInvoiceNotificationEmail(Laungage);
-                var customerEmailSentResult = await accountManager.SendEmailAsync(user.FullName, Email, "ScentAir Account Center – Invoice Ready for Payment.",
-                    GetInvoiceNotificationEmail(Laungage),
-                    new KeyValuePair<string, string>[]
-                    {
+                using (var scope = services.CreateScope())
+                {
+                    var accountManager = scope.ServiceProvider.GetService<IAccountManager>();
+                    ApplicationUser user = await accountManager.GetUserAsync(CustomerNumber);
+                    importManager.InvoiceNotificationEmailContent = GetInvoiceNotificationEmail(Laungage);
+                    var customerEmailSentResult = await accountManager.SendEmailAsync(user.FullName, Email, "ScentAir Account Center – Invoice Ready for Payment.",
+                        GetInvoiceNotificationEmail(Laungage),
+                        new KeyValuePair<string, string>[]
+                        {
                         new KeyValuePair<string, string>("{BilledToAccountNumber}", CustomerNumber),
                         new KeyValuePair<string, string>("{DateDue}", DueDate),
                         new KeyValuePair<string, string>("{Balance}", Balance),
                         new KeyValuePair<string, string>("{AccountBalance}", SUbTotal),
                         new KeyValuePair<string, string>("{BalanceCurrency}", BalCur),
-                    });
+                        });
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.LogError(ex, "Runtime Exception: -- ", ex.Message);
+                Log.LogError(ex, "Runtime Exception: -- ", ex.StackTrace);
             }
         }
 
