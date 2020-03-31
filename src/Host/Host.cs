@@ -163,7 +163,8 @@ namespace ScentAir.Payment
             }
             catch (Exception ex)
             {
-                Log.LogDebug("Runtime Exception", ex.StackTrace);
+                Log.LogError(ex,"Runtime Exception: -- ", ex.Message);
+                Log.LogError(ex,"Runtime Exception: -- ", ex.StackTrace);
             }
         }
 
