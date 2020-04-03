@@ -176,15 +176,19 @@ namespace ScentAir.Payment
                 SqlCommand cmdUpdateCustomer = new SqlCommand("SP_UPDATEINVOICEDATA", updateConportal);
                 cmdUpdateCustomer.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter daUpdateCustomer = new SqlDataAdapter(cmdUpdateCustomer);
+
                 DataTable dtUpdateCustomer = new DataTable();
                 updateConportal.Open();
                 daUpdateCustomer.Fill(dtUpdateCustomer);
 
-                if (dtUpdateCustomer.Rows.Count > 0)
-                    Log.LogInformation(dtUpdateCustomer.Rows.Count, "Customer invoice updated successfully.");
-                else
-                    Log.LogInformation(dtUpdateCustomer.Rows.Count, "No record found for update.");
-
+                foreach (DataRow rowCount in dtUpdateCustomer.Rows)
+                {
+                    var RowAffected = rowCount["RowAffected"].ToString();
+                    if (dtUpdateCustomer.Rows.Count > 0)
+                        Log.LogInformation("{0} invoice updated successfully.", RowAffected);
+                    else
+                        Log.LogInformation(RowAffected, "No record found for update.");
+                }
 
                 Log.LogInformation("Database connection closed sucessfully");
                 updateConportal.Close();
