@@ -171,7 +171,7 @@ namespace ScentAir.Payment
         {
             try
             {
-                Log.LogInformation("Checking for Customers invoices for updatation.");
+                Log.LogInformation("Checking for Customers invoices for update.");
                 SqlConnection updateConportal = new SqlConnection(connectiondb);
                 SqlCommand cmdUpdateCustomer = new SqlCommand("SP_UPDATEINVOICEDATA", updateConportal);
                 cmdUpdateCustomer.CommandType = CommandType.StoredProcedure;
@@ -180,14 +180,16 @@ namespace ScentAir.Payment
                 DataTable dtUpdateCustomer = new DataTable();
                 updateConportal.Open();
                 daUpdateCustomer.Fill(dtUpdateCustomer);
-
+                
                 foreach (DataRow rowCount in dtUpdateCustomer.Rows)
                 {
                     var RowAffected = rowCount["RowAffected"].ToString();
-                    if (dtUpdateCustomer.Rows.Count > 0)
+                    // Log.LogInformation("{0} invoice updated successfully.", RowAffected);
+
+                    if (Convert.ToInt32(RowAffected) > 0)
                         Log.LogInformation("{0} invoice updated successfully.", RowAffected);
                     else
-                        Log.LogInformation(RowAffected, "No record found for update.");
+                        Log.LogInformation("No record found for update.");
                 }
 
                 Log.LogInformation("Database connection closed sucessfully");
@@ -529,7 +531,7 @@ namespace ScentAir.Payment
             var serviceHost = new Host(host);
 
             serviceHost.Start(args);
-            host.Run();
+            //host.Run();
         }
     }
 }
