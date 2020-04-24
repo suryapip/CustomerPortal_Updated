@@ -531,7 +531,7 @@ namespace ScentAir.Payment
             var serviceHost = new Host(host);
 
             serviceHost.Start(args);
-            //host.Run();
+            if (args.Length > 0 && args[0] == "Autopayprocess") host.Run();  // Only host.Run() for Autopayprocess, *not* for Import. Import will hang.
         }
     }
 }
