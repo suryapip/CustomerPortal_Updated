@@ -117,6 +117,7 @@ namespace ScentAir.Payment
                 SqlConnection conportal = new SqlConnection(connectiondb);
                 SqlCommand cmdCustomer = new SqlCommand("Get_All_Eligible_Customer_Invoices_For_Insert", conportal);
                 cmdCustomer.CommandType = CommandType.StoredProcedure;
+                cmdCustomer.CommandTimeout = 1800;                              // Temporary measure, as it can take ~7.5 minutes to pull ~3000 records with the stored proc below.
                 SqlDataAdapter daInvoice = new SqlDataAdapter(cmdCustomer);
                 DataTable dtCustomer = new DataTable();
                 conportal.Open();
