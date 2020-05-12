@@ -18,6 +18,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
 
   isProfileActivated = true;
   isPreferencesActivated = false;
+  isAccountActivated = false;
+  isContactsActivated = false;
   isUsersActivated = false;
   isRolesActivated = false;
 
@@ -25,6 +27,8 @@ export class SettingsComponent implements OnInit, OnDestroy {
 
   readonly profileTab = "profile";
   readonly preferencesTab = "preferences";
+  readonly accountTab = "account";
+  readonly contactsTab = "contacts";
   readonly usersTab = "users";
   readonly rolesTab = "roles";
 
@@ -73,7 +77,9 @@ export class SettingsComponent implements OnInit, OnDestroy {
     let activeTab = event.target.attributes["fragment"].value;
 
     this.isProfileActivated = activeTab == this.profileTab;
-   // this.isPreferencesActivated = activeTab == this.preferencesTab;
+    this.isAccountActivated = activeTab == this.accountTab;
+    this.isContactsActivated = activeTab == this.contactsTab;
+    // this.isPreferencesActivated = activeTab == this.preferencesTab;
     this.isUsersActivated = activeTab == this.usersTab;
     this.isRolesActivated = activeTab == this.rolesTab;
   }

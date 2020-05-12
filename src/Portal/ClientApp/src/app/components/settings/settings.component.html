@@ -9,6 +9,12 @@
         <li class="active">
           <a id="profileTab" [routerLink]="[]" fragment="profile" href="#profile" data-toggle="tab"><i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i> {{'settings.tab.Profile' | translate}}</a>
         </li>
+        <li>
+          <a id="accountTab" [routerLink]="[]" fragment="account" href="#account" data-toggle="tab"><i class="fa fa-building-o fa-fw" aria-hidden="true"></i> {{'settings.tab.Account' | translate}}</a>
+        </li>
+        <li>
+          <a id="contactsTab" [routerLink]="[]" fragment="contacts" href="#contacts" data-toggle="tab"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i> {{'settings.tab.Contacts' | translate}}</a>
+        </li>
         <!--<li>
           <a id="preferencesTab" [routerLink]="[]" fragment="preferences" href="#preferences" data-toggle="tab"><i class="fa fa-sliders fa-fw" aria-hidden="true"></i> {{'settings.tab.Preferences' | translate}}</a>
         </li>-->
@@ -27,6 +33,22 @@
           <hr class="separator-hr" />
           <div [@fadeInOut] *ngIf="isProfileActivated" class="content-container">
             <user-info></user-info>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="account">
+          <h4>{{'settings.header.AccountSettings' | translate}}</h4>
+          <hr class="separator-hr" />
+          <div [@fadeInOut] *ngIf="isAccountActivated" class="content-container">
+            <sf-account-settings></sf-account-settings>
+          </div>
+        </div>
+
+        <div class="tab-pane" id="contacts">
+          <h4>{{'settings.header.ContactManagement' | translate}}</h4>
+          <hr class="separator-hr" />
+          <div [@fadeInOut] *ngIf="isContactsActivated" class="content-container">
+            <sf-contacts></sf-contacts>
           </div>
         </div>
 

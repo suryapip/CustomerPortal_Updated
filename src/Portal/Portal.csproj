@@ -87,6 +87,9 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\models\payment-method.model.ts" />
     <None Remove="ClientApp\src\app\models\payment-result-model.ts" />
+    <None Remove="ClientApp\src\app\models\sf-account-settings.model.ts" />
+    <None Remove="ClientApp\src\app\models\sf-contact.model.ts" />
+    <None Remove="ClientApp\src\app\models\sf-role.model.ts" />
     <None Remove="ReadMe.html" />
   </ItemGroup>
 
@@ -126,6 +129,9 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\models\payment-method.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\payment-result-model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\sf-account-settings.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\sf-contact.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\sf-role.model.ts" />
   </ItemGroup>
 
   <ItemGroup>

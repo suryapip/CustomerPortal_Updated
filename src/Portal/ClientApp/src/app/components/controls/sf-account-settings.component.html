@@ -1,0 +1,355 @@
+<div>
+  <form *ngIf="formResetToggle" [attr.autocomplete]="isGeneralEditor ? NaN : null" class="form-horizontal" name="userInfoForm" #f="ngForm" novalidate
+        (ngSubmit)="f.form.valid ? save() :
+          (!billingAddress1.valid && showErrorAlert('Billing address is required', 'Please enter a billing address (maximum of 50 characters)'));
+          (!billingMunicipality.valid && showErrorAlert('Billing city is required', 'Please enter a billing city (maximum of 100 characters)'));
+          (!billingStateOrProvince.valid && showErrorAlert('Billing state or province is required', 'Please enter a billing state or province (maximum of 35 characters)'));
+          (!billingPostalCode.valid && showErrorAlert('Billing postal code is required', 'Please enter a billing postal code (maximum of 10 characters)'));
+          (!billingCountry.valid && showErrorAlert('Billing country is required', 'Please enter a billing country (maximum of 40 characters)'));
+          (!shippingAddress1.valid && showErrorAlert('Shipping address is required', 'Please enter a shipping address (maximum of 50 characters)'));
+          (!shippingMunicipality.valid && showErrorAlert('Shipping city is required', 'Please enter a shipping city (maximum of 100 characters)'));
+          (!shippingStateOrProvince.valid && showErrorAlert('Shipping state or province is required', 'Please enter a shipping state or province (maximum of 35 characters)'));
+          (!shippingPostalCode.valid && showErrorAlert('Shipping postal code is required', 'Please enter a shipping postal code (maximum of 10 characters)'));
+          (!shippingCountry.valid && showErrorAlert('Shipping country is required', 'Please enter a shipping country (maximum of 40 characters)'));
+        ">
+
+    <!-- BillingAddress1 -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingAddress1-{{uniqueId}}">{{'AccountSettings.BillingAddress1' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.billingAddress.line1}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && billingAddress1.valid, 'has-error' : f.submitted && !billingAddress1.valid}">
+        <input type="text" attr.id="BillingAddress1-{{uniqueId}}" name="billingAddress1" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Billing Address"
+               class="form-control" [(ngModel)]="accountSettings.billingAddress.line1" #userName="ngModel" required minlength="1" maxlength="50" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': billingAddress1.valid, 'glyphicon-remove' : !billingAddress1.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !billingAddress1.valid" class="errorMessage">
+          {{'AccountSettings.BillingAddress1Required' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.separator-hr]="!isEditMode" [class.edit-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- BillingAddress2 -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingAddress2-{{uniqueId}}">{{'AccountSettings.BillingAddress2' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.billingAddress.line2}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && billingAddress2.valid, 'has-error' : f.submitted && !billingAddress2.valid}">
+        <input type="text" attr.id="BillingAddress2-{{uniqueId}}" name="billingAddress2" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Billing Address 2"
+               class="form-control" [(ngModel)]="accountSettings.billingAddress.line2" #userName="ngModel" required minlength="1" maxlength="50" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': billingAddress2.valid, 'glyphicon-remove' : !billingAddress2.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !billingAddress2.valid" class="errorMessage">
+          {{'AccountSettings.BillingAddress2Required' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.separator-hr]="!isEditMode" [class.edit-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- BillingAddress3 -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingAddress3-{{uniqueId}}">{{'AccountSettings.BillingAddress3' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.billingAddress.line3}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && billingAddress3.valid, 'has-error' : f.submitted && !billingAddress3.valid}">
+        <input type="text" attr.id="BillingAddress3-{{uniqueId}}" name="billingAddress3" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Billing Address 3"
+               class="form-control" [(ngModel)]="accountSettings.billingAddress.line3" #userName="ngModel" required minlength="1" maxlength="50" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': billingAddress3.valid, 'glyphicon-remove' : !billingAddress3.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !billingAddress3.valid" class="errorMessage">
+          {{'AccountSettings.BillingAddress3Required' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.separator-hr]="!isEditMode" [class.edit-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- BillingMunicipality -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingMunicipality-{{uniqueId}}">{{'AccountSettings.BillingMunicipality' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.billingAddress.municipality}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && billingMunicipality.valid, 'has-error' : f.submitted && !billingMunicipality.valid}">
+        <input type="text" attr.id="BillingMunicipality-{{uniqueId}}" name="billingMunicipality" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Billing City"
+               class="form-control" [(ngModel)]="accountSettings.billingAddress.municipality" #userName="ngModel" required minlength="1" maxlength="100" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': billingMunicipality.valid, 'glyphicon-remove' : !billingMunicipality.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !billingMunicipality.valid" class="errorMessage">
+          {{'AccountSettings.BillingMunicipalityRequired' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.separator-hr]="!isEditMode" [class.edit-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- BillingStateOrProvince -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingStateOrProvince-{{uniqueId}}">{{'AccountSettings.BillingStateOrProvince' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.billingAddress.stateOrProvince}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && billingStateOrProvince.valid, 'has-error' : f.submitted && !billingStateOrProvince.valid}">
+        <input type="text" attr.id="BillingStateOrProvince-{{uniqueId}}" name="billingStateOrProvince" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Billing State or Province"
+               class="form-control" [(ngModel)]="accountSettings.billingAddress.stateOrProvince" #userName="ngModel" required minlength="1" maxlength="35" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': billingStateOrProvince.valid, 'glyphicon-remove' : !billingStateOrProvince.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !billingStateOrProvince.valid" class="errorMessage">
+          {{'AccountSettings.BillingStateOrProvinceRequired' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.separator-hr]="!isEditMode" [class.edit-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- BillingPostalCode -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingPostalCode-{{uniqueId}}">{{'AccountSettings.BillingPostalCode' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.billingAddress.postalCode}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && billingPostalCode.valid, 'has-error' : f.submitted && !billingPostalCode.valid}">
+        <input type="text" attr.id="BillingPostalCode-{{uniqueId}}" name="billingPostalCode" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Billing Postal Code"
+               class="form-control" [(ngModel)]="accountSettings.billingAddress.postalCode" #userName="ngModel" required minlength="1" maxlength="10" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': billingPostalCode.valid, 'glyphicon-remove' : !billingPostalCode.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !billingPostalCode.valid" class="errorMessage">
+          {{'AccountSettings.BillingPostalCodeRequired' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.separator-hr]="!isEditMode" [class.edit-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- BillingCountry -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingCountry-{{uniqueId}}">{{'AccountSettings.BillingCountry' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.billingAddress.country}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && billingCountry.valid, 'has-error' : f.submitted && !billingCountry.valid}">
+        <input type="text" attr.id="BillingCountry-{{uniqueId}}" name="billingCountry" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Billing Country"
+               class="form-control" [(ngModel)]="accountSettings.billingAddress.country" #userName="ngModel" required minlength="1" maxlength="40" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': billingCountry.valid, 'glyphicon-remove' : !billingCountry.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !billingCountry.valid" class="errorMessage">
+          {{'AccountSettings.BillingCountryRequired' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.last-separator-hr]="!isEditMode" [class.edit-last-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- ShippingAddress1 -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingAddress1-{{uniqueId}}">{{'AccountSettings.ShippingAddress1' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.shippingAddress.line1}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && shippingAddress1.valid, 'has-error' : f.submitted && !shippingAddress1.valid}">
+        <input type="text" attr.id="ShippingAddress1-{{uniqueId}}" name="shippingAddress1" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Shipping Address"
+               class="form-control" [(ngModel)]="accountSettings.shippingAddress.line1" #userName="ngModel" required minlength="1" maxlength="50" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': shippingAddress1.valid, 'glyphicon-remove' : !shippingAddress1.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !shippingAddress1.valid" class="errorMessage">
+          {{'AccountSettings.ShippingAddress1Required' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.separator-hr]="!isEditMode" [class.edit-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- ShippingAddress2 -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingAddress2-{{uniqueId}}">{{'AccountSettings.ShippingAddress2' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.shippingAddress.line2}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && shippingAddress2.valid, 'has-error' : f.submitted && !shippingAddress2.valid}">
+        <input type="text" attr.id="ShippingAddress2-{{uniqueId}}" name="shippingAddress2" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Shipping Address 2"
+               class="form-control" [(ngModel)]="accountSettings.shippingAddress.line2" #userName="ngModel" required minlength="1" maxlength="50" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': shippingAddress2.valid, 'glyphicon-remove' : !shippingAddress2.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !shippingAddress2.valid" class="errorMessage">
+          {{'AccountSettings.ShippingAddress2Required' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.separator-hr]="!isEditMode" [class.edit-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- ShippingAddress3 -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingAddress3-{{uniqueId}}">{{'AccountSettings.ShippingAddress3' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.shippingAddress.line3}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && shippingAddress3.valid, 'has-error' : f.submitted && !shippingAddress3.valid}">
+        <input type="text" attr.id="ShippingAddress3-{{uniqueId}}" name="shippingAddress3" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Shipping Address 3"
+               class="form-control" [(ngModel)]="accountSettings.shippingAddress.line3" #userName="ngModel" required minlength="1" maxlength="50" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': shippingAddress3.valid, 'glyphicon-remove' : !shippingAddress3.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !shippingAddress3.valid" class="errorMessage">
+          {{'AccountSettings.ShippingAddress3Required' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.separator-hr]="!isEditMode" [class.edit-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- ShippingMunicipality -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingMunicipality-{{uniqueId}}">{{'AccountSettings.ShippingMunicipality' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.shippingAddress.municipality}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && shippingMunicipality.valid, 'has-error' : f.submitted && !shippingMunicipality.valid}">
+        <input type="text" attr.id="ShippingMunicipality-{{uniqueId}}" name="shippingMunicipality" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Shipping City"
+               class="form-control" [(ngModel)]="accountSettings.shippingAddress.municipality" #userName="ngModel" required minlength="1" maxlength="100" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': shippingMunicipality.valid, 'glyphicon-remove' : !shippingMunicipality.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !shippingMunicipality.valid" class="errorMessage">
+          {{'AccountSettings.ShippingMunicipalityRequired' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.separator-hr]="!isEditMode" [class.edit-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- ShippingStateOrProvince -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingStateOrProvince-{{uniqueId}}">{{'AccountSettings.ShippingStateOrProvince' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.shippingAddress.stateOrProvince}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && shippingStateOrProvince.valid, 'has-error' : f.submitted && !shippingStateOrProvince.valid}">
+        <input type="text" attr.id="ShippingStateOrProvince-{{uniqueId}}" name="shippingStateOrProvince" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Shipping State or Province"
+               class="form-control" [(ngModel)]="accountSettings.shippingAddress.stateOrProvince" #userName="ngModel" required minlength="1" maxlength="35" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': shippingStateOrProvince.valid, 'glyphicon-remove' : !shippingStateOrProvince.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !shippingStateOrProvince.valid" class="errorMessage">
+          {{'AccountSettings.ShippingStateOrProvinceRequired' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.separator-hr]="!isEditMode" [class.edit-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- ShippingPostalCode -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingPostalCode-{{uniqueId}}">{{'AccountSettings.ShippingPostalCode' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.shippingAddress.postalCode}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && shippingPostalCode.valid, 'has-error' : f.submitted && !shippingPostalCode.valid}">
+        <input type="text" attr.id="ShippingPostalCode-{{uniqueId}}" name="shippingPostalCode" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Shipping Postal Code"
+               class="form-control" [(ngModel)]="accountSettings.shippingAddress.postalCode" #userName="ngModel" required minlength="1" maxlength="10" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': shippingPostalCode.valid, 'glyphicon-remove' : !shippingPostalCode.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !shippingPostalCode.valid" class="errorMessage">
+          {{'AccountSettings.ShippingPostalCodeRequired' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.separator-hr]="!isEditMode" [class.edit-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- ShippingCountry -->
+    <div class="form-group has-feedback">
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingCountry-{{uniqueId}}">{{'AccountSettings.ShippingCountry' | translate}}</label>
+      <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
+        <p class="form-control-static">{{accountSettings.shippingAddress.country}}</p>
+      </div>
+      <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && shippingCountry.valid, 'has-error' : f.submitted && !shippingCountry.valid}">
+        <input type="text" attr.id="ShippingCountry-{{uniqueId}}" name="shippingCountry" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Shipping Country"
+               class="form-control" [(ngModel)]="accountSettings.shippingAddress.country" #userName="ngModel" required minlength="1" maxlength="40" />
+        <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': shippingCountry.valid, 'glyphicon-remove' : !shippingCountry.valid}"></span>
+        <span *ngIf="showValidationErrors && f.submitted && !shippingCountry.valid" class="errorMessage">
+          {{'AccountSettings.ShippingCountryRequired' | translate}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <hr [class.last-separator-hr]="!isEditMode" [class.edit-last-separator-hr]="isEditMode" />
+      </div>
+    </div>
+
+    <!-- Edit/Save/Cancel buttons -->
+    <div *ngIf="!isViewOnly" class="form-group">
+      <div class="col-sm-5">
+        <div *ngIf="isGeneralEditor && isEditMode" class="pull-left">
+          e"
+          >
+          us
+          <div class="checkbox user-enabled">
+            <label>
+              <input type="checkbox" name="isEnabled" [(ngModel)]="userEdit.isEnabled">
+              {{'users.editor.Enabled' | translate}}
+            </label>
+          </div>
+          <button *ngIf="userEdit.isLockedOut" type="button" (click)="unlockUser()" class="btn btn-warning unblock-user" [disabled]="isSaving"><i class='fa fa-unlock-alt'></i> {{'users.editor.Unblock' | translate}}</button>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div ngPreserveWhitespaces class="pull-right">
+          <button *ngIf="!isEditMode && isGeneralEditor" type="button" (click)="close()" class="btn btn-default"><i class='fa fa-close'></i> {{'users.editor.Close' | translate}}</button>
+          <button *ngIf="!isEditMode && !isGeneralEditor" type="button" (click)="edit()" class="btn btn-default"><i class='fa fa-edit'></i> {{'users.editor.Edit' | translate}}</button>
+          <button *ngIf="isEditMode" type="button" (click)="cancel()" class="btn btn-danger" [disabled]="isSaving"><i class='fa fa-times'></i> {{'users.editor.Cancel' | translate}}</button>
+          <button *ngIf="isEditMode" type="submit" class="btn btn-primary" [disabled]="isSaving">
+            <i *ngIf="!isSaving" class='fa fa-save'></i>
+            <i *ngIf="isSaving" class='fa fa-circle-o-notch fa-spin'></i> {{isSaving ? ('users.editor.Saving' | translate) : ('users.editor.Save' | translate)}}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+  </form>
+</div>

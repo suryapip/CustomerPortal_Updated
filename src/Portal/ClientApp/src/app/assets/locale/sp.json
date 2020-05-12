@@ -394,14 +394,18 @@
       "Profile": "Perfil",
       "Preferences": "Preferencias",
       "Users": "Usuarios",
-      "Roles": "Funciones"
+      "Roles": "Funciones",
+      "Account": "Cuenta",
+      "Contacts": "Contactos"
     },
     "header": {
       "UserProfile": "Perfil de Usuario",
       "UserPreferences": "Preferencias de Usuario",
       "UserDepartments": "Departamentos de Usuarios",
       "UsersManagements": "Gerentes de Usuarios",
-      "RolesManagement": "Gestión de roles"
+      "RolesManagement": "Gestión de roles",
+      "AccountSettings": "Configuraciones de la cuenta",
+      "ContactManagement": "Gestión de contactos"
     }
   },
   "preferences": {
@@ -536,6 +540,55 @@
       "Description": "Descrição",
       "Important": "Marcar como importante",
       "AddTask": "Adicionar Tarefa"
+    }
+  },
+  "AccountSettings": {
+    "BillingAddress1": "Billing Address:",
+    "BillingAddress2": "Billing Address 2:",
+    "BillingAddress3": "Billing Address 3:",
+    "BillingMunicipality": "Billing City:",
+    "BillingStateOrProvince": "Billing State or Province:",
+    "BillingPostalCode": "Billing Postal Code:",
+    "BillingCountry": "Billing Country:",
+    "ShippingAddress1": "Shipping Address:",
+    "ShippingAddress2": "Shipping Address 2:",
+    "ShippingAddress3": "Shipping Address 3:",
+    "ShippingMunicipality": "Shipping City:",
+    "ShippingStateOrProvince": "Shipping State or Province:",
+    "ShippingPostalCode": "Shipping Postal Code:",
+    "ShippingCountry": "Shipping Country:",
+    "BillingAddress1Required": "Billing Address is required (maximum of 50 characters)",
+    "BillingMunicipalityRequired": "Billing City is required (maximum of 100 characters)",
+    "BillingStateOrProvinceRequired": "Billing State or Province is required (maximum of 35 characters)",
+    "BillingPostalCodeRequired": "Billing Postal Code is required",
+    "BillingCountryRequired": "Billing Country is required (maximum of 40 characters)",
+    "ShippingAddress1Required": "Shipping Address is required (maximum of 50 characters)",
+    "ShippingMunicipalityRequired": "Shipping City is required (maximum of 100 characters)",
+    "ShippingStateOrProvinceRequired": "Shipping State or Province is required (maximum of 35 characters)",
+    "ShippingPostalCodeRequired": "Shipping Postal Code is required",
+    "ShippingCountryRequired": "Shipping Country is required (maximum of 40 characters)"
+  },
+  "Contacts": {
+    "management": {
+      "Search": "Search...",
+      "NewContact": "New Contact",
+      "Edit": "Edit",
+      "EditContact": "Edit Contact \"{{name}}\"",
+      "Name": "Name",
+      "Email": "Email",
+      "PhoneNumber": "Phone Number",
+      "Roles": "Roles",
+      "Status": "Status"
+    },
+    "editor": {
+      "Name": "Name:",
+      "Email": "Email:",
+      "PhoneNumber": "Phone Number:",
+      "Roles": "Roles:",
+      "MarketingOptOut": "Marketing Opt-Out:",
+      "Status": "Status:",
+      "NameRequired": "Name is required",
+      "EmailRequired": "Email is required"
     }
   }
 }

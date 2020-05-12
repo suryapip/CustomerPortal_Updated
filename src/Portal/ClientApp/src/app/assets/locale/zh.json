@@ -323,14 +323,18 @@
       "Profile": "轮廓",
       "Preferences": "喜好",
       "Users": "用户",
-      "Roles": "角色"
+      "Roles": "角色",
+      "Account": "帐户",
+      "Contacts": "联络人"
     },
     "header": {
       "UserProfile": "轮廓",
       "UserPreferences": "用户首选项",
       "UserDepartments": "用户部门",
       "UsersManagements": "用户管理",
-      "RolesManagement": "角色管理"
+      "RolesManagement": "角色管理",
+      "AccountSettings": "帐号设定",
+      "ContactManagement": "联络人管理"
     }
   },
   "preferences": {
@@ -537,5 +541,54 @@
     "description11": "订阅者同意ScentAir隐私政策https://www.scentair.com/legal/privacy中包含的条款，因为它们可能会不时更新并同意它将参考https://www.scentair.com/legal /privacy.html获取与ScentAir隐私政策相关的所有信息以及订户可能与这些条款和条件以及本授权相关的任何其他权利，以及与订户数据相关的任何权利",
     "PaymentAlert": "美国东部时间5:00后收到的付款将反映在美国东部时间下午10:00之后的工作日。",
     "CurrentPaymentMethod": "目前的自动付款方式"
+  },
+  "AccountSettings": {
+    "BillingAddress1": "Billing Address:",
+    "BillingAddress2": "Billing Address 2:",
+    "BillingAddress3": "Billing Address 3:",
+    "BillingMunicipality": "Billing City:",
+    "BillingStateOrProvince": "Billing State or Province:",
+    "BillingPostalCode": "Billing Postal Code:",
+    "BillingCountry": "Billing Country:",
+    "ShippingAddress1": "Shipping Address:",
+    "ShippingAddress2": "Shipping Address 2:",
+    "ShippingAddress3": "Shipping Address 3:",
+    "ShippingMunicipality": "Shipping City:",
+    "ShippingStateOrProvince": "Shipping State or Province:",
+    "ShippingPostalCode": "Shipping Postal Code:",
+    "ShippingCountry": "Shipping Country:",
+    "BillingAddress1Required": "Billing Address is required (maximum of 50 characters)",
+    "BillingMunicipalityRequired": "Billing City is required (maximum of 100 characters)",
+    "BillingStateOrProvinceRequired": "Billing State or Province is required (maximum of 35 characters)",
+    "BillingPostalCodeRequired": "Billing Postal Code is required",
+    "BillingCountryRequired": "Billing Country is required (maximum of 40 characters)",
+    "ShippingAddress1Required": "Shipping Address is required (maximum of 50 characters)",
+    "ShippingMunicipalityRequired": "Shipping City is required (maximum of 100 characters)",
+    "ShippingStateOrProvinceRequired": "Shipping State or Province is required (maximum of 35 characters)",
+    "ShippingPostalCodeRequired": "Shipping Postal Code is required",
+    "ShippingCountryRequired": "Shipping Country is required (maximum of 40 characters)"
+  },
+  "Contacts": {
+    "management": {
+      "Search": "Search...",
+      "NewContact": "New Contact",
+      "Edit": "Edit",
+      "EditContact": "Edit Contact \"{{name}}\"",
+      "Name": "Name",
+      "Email": "Email",
+      "PhoneNumber": "Phone Number",
+      "Roles": "Roles",
+      "Status": "Status"
+    },
+    "editor": {
+      "Name": "Name:",
+      "Email": "Email:",
+      "PhoneNumber": "Phone Number:",
+      "Roles": "Roles:",
+      "MarketingOptOut": "Marketing Opt-Out:",
+      "Status": "Status:",
+      "NameRequired": "Name is required",
+      "EmailRequired": "Email is required"
+    }
   }
 }

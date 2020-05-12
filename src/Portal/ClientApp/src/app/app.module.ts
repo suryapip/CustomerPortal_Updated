@@ -87,6 +87,9 @@ import { InvoiceClosedComponent } from './components/invoices-closed/invoices-cl
 import { ModelStateDirective } from './directives/modelstate.directive';
 import { LanguageObservableService } from "./services/language-observable.service";
 
+import { SFAccountSettingsComponent } from "./components/controls/sf-account-settings.component";
+import { SFContactsComponent } from "./components/controls/sf-contacts.component";
+
 
 @NgModule({
   imports: [
@@ -149,7 +152,9 @@ import { LanguageObservableService } from "./services/language-observable.servic
     TermsComponent,
     InvoiceClosedComponent,
     ContactUsComponent,
-    ContactUsExtComponent
+    ContactUsExtComponent,
+    SFAccountSettingsComponent,
+    SFContactsComponent
   ],
   providers: [
     { provide: 'BASE_URL', useFactory: getBaseUrl },
