@@ -44,6 +44,7 @@ namespace ScentAir.Payment.Impl
         public DbSet<InvoiceHeaderExtension> InvoiceHeaderExtensions { get; set; }
         public DbSet<CompanyWireAchDetail> CompanyWireAchDetails { get; set; }
 
+        public DbSet<SFAccountSettings> SFAccountSettings { get; set; }
 
 
 
@@ -296,6 +297,46 @@ namespace ScentAir.Payment.Impl
                 entity.HasIndex(x => new { x.InvoiceNumber }).IsUnique();
 
                 entity.ToTable($"{nameof(this.CompanyWireAchDetails)}");
+            });
+
+
+            builder.Entity<SFAccountSettings>(entity =>
+            {
+                //entity.Property(x => x.AccountNumber).IsRequired().IsUnicode(false);
+                //entity.Property(x => x.BillingLine1);
+                //entity.Property(x => x.BillingLine2);
+                //entity.Property(x => x.BillingLine3);
+                //entity.Property(x => x.BillingMunicipality);
+                //entity.Property(x => x.BillingStateOrProvince);
+                //entity.Property(x => x.BillingPostalCode);
+                //entity.Property(x => x.BillingCountry);
+                //entity.Property(x => x.ShippingLine1);
+                //entity.Property(x => x.ShippingLine2);
+                //entity.Property(x => x.ShippingLine3);
+                //entity.Property(x => x.ShippingMunicipality);
+                //entity.Property(x => x.ShippingStateOrProvince);
+                //entity.Property(x => x.ShippingPostalCode);
+                //entity.Property(x => x.ShippingCountry);
+
+                entity.HasKey(x => x.Id);
+                entity.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
+                entity.Property(x => x.AccountNumber).IsRequired().IsUnicode(false);
+                entity.Property(x => x.BillingLine1).IsRequired().IsUnicode(false);
+                entity.Property(x => x.BillingLine2).IsUnicode(false);
+                entity.Property(x => x.BillingLine3).IsUnicode(false);
+                entity.Property(x => x.BillingMunicipality).IsRequired().IsUnicode(false);
+                entity.Property(x => x.BillingStateOrProvince).IsRequired().IsUnicode(false);
+                entity.Property(x => x.BillingPostalCode).IsRequired().IsUnicode(false);
+                entity.Property(x => x.BillingCountry).IsRequired().IsUnicode(false);
+                entity.Property(x => x.ShippingLine1).IsRequired().IsUnicode(false);
+                entity.Property(x => x.ShippingLine2).IsUnicode(false);
+                entity.Property(x => x.ShippingLine3).IsUnicode(false);
+                entity.Property(x => x.ShippingMunicipality).IsRequired().IsUnicode(false);
+                entity.Property(x => x.ShippingStateOrProvince).IsRequired().IsUnicode(false);
+                entity.Property(x => x.ShippingPostalCode).IsRequired().IsUnicode(false);
+                entity.Property(x => x.ShippingCountry).IsRequired().IsUnicode(false);
+
+                entity.ToTable($"{nameof(this.SFAccountSettings)}");
             });
 
         }

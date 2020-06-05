@@ -33,7 +33,6 @@ import { PaymentServiceEndpoint } from './services/payment-service-endpoint.serv
 import { InvoiceService } from './services/invoice.service';
 import { InvoiceEndpoint } from './services/invoice-endpoint.service';
 
-
 import { EqualValidator } from './directives/equal-validator.directive';
 import { NotEqualValidator } from './directives/notequal-validator.directive';
 import { LastElementDirective } from './directives/last-element.directive';
@@ -88,6 +87,8 @@ import { ModelStateDirective } from './directives/modelstate.directive';
 import { LanguageObservableService } from "./services/language-observable.service";
 
 import { SFAccountSettingsComponent } from "./components/controls/sf-account-settings.component";
+import { SFAccountSettingsService } from "./services/sf-account-settings.service";
+import { SFAccountSettingsEndpoint } from "./services/sf-account-settings-endpoint.service";
 import { SFContactsComponent } from "./components/controls/sf-contacts.component";
 
 
@@ -173,7 +174,9 @@ import { SFContactsComponent } from "./components/controls/sf-contacts.component
     InvoiceEndpoint,
     PaymentService,
     PaymentServiceEndpoint,
-    LanguageObservableService
+    LanguageObservableService,
+    SFAccountSettingsService,
+    SFAccountSettingsEndpoint
   ],
   bootstrap: [AppComponent]
 })

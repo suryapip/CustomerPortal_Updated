@@ -99,6 +99,7 @@ namespace ScentAir.Payment.Portal
                 .AddScoped<ILookupManager, LookupManager>()
                 .AddScoped<ISecurityManager, SecurityManager>()
                 .AddScoped<IRegistrationManager, RegistrationManager>()
+                .AddScoped<ISFAccountSettingsManager, SFAccountSettingsManager>()
 
                 .AddSingleton<IAuthorizationHandler, ViewUserAuthorizationHandler>()
                 .AddSingleton<IAuthorizationHandler, ManageUserAuthorizationHandler>()
