@@ -16,6 +16,7 @@ import { access } from 'fs';
 export class SFAccountSettingsEndpoint extends EndpointFactory {
 
   private readonly _sfAccountSettingsLookupUrl: string = "/api/sfaccount/sfaccountsettings";
+  private readonly _sfAccountSettingsSaveUrl: string = "/api/sfaccount/SaveSFAccountSettingsAsync"
 
   get sfAccountSettingsLookupUrl() {
     return this.configurations.baseUrl + this._sfAccountSettingsLookupUrl;
@@ -29,12 +30,21 @@ export class SFAccountSettingsEndpoint extends EndpointFactory {
     var url = this.sfAccountSettingsLookupUrl;
     var headers = this.getRequestHeaders();
     return this.http
-      .post(url, null, headers)
+      .get(url, headers)
+      //.post(url, null, headers)
       .pipe<T>(
         //tap(ev => console.log(ev)),
         catchError(error => this.handleError(error))
       );
   }
+
+  getUpdateSFAccountSettingsEndpoint<T>(userObject: any, userId?: string): Observable<T> {
+    let endpointUrl = userId ? `${this.usersUrl}/${userId}` : this.currentUserUrl;
+    return this.http
+      .put<T>(endpointUrl, JSON.stringify(userObject), this.getRequestHeaders())
+      .pipe<T>(catchError(error => this.handleError(error)));
+  }
+
 
   //getAccount<T>(): Observable<T> {
   //  return this.http

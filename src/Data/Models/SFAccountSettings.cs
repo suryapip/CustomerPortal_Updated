@@ -12,31 +12,6 @@ namespace ScentAir.Payment.Models
 
     public class SFAccountSettings : Impl.AuditableEntity
     {
-        //[Required]
-        //public string AccountNumber { get; set; }
-
-        //public virtual Account Account { get; set; }
-        ////public virtual Address BillingAddress { get; set; }
-        ////public virtual Address ShippingAddress { get; set; }
-        ////public virtual ICollection<SFContact> Contacts { get; set; }
-
-        //public string BillingLine1 { get; set; }
-        //public string BillingLine2 { get; set; }
-        //public string BillingLine3 { get; set; }
-        //public string BillingMunicipality { get; set; }
-        //public string BillingStateOrProvince { get; set; }
-        //public string BillingPostalCode { get; set; }
-        //public string BillingCountry { get; set; }
-
-        //public string ShippingLine1 { get; set; }
-        //public string ShippingLine2 { get; set; }
-        //public string ShippingLine3 { get; set; }
-        //public string ShippingMunicipality { get; set; }
-        //public string ShippingStateOrProvince { get; set; }
-        //public string ShippingPostalCode { get; set; }
-        //public string ShippingCountry { get; set; }
-
-
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
@@ -88,5 +63,28 @@ namespace ScentAir.Payment.Models
         [StringLength(40)]
         public string ShippingCountry { get; set; }
 
+        //[Required]
+        //public string AccountNumber { get; set; }
+
+        //public virtual Account Account { get; set; }
+        ////public virtual Address BillingAddress { get; set; }
+        ////public virtual Address ShippingAddress { get; set; }
+        ////public virtual ICollection<SFContact> Contacts { get; set; }
+
+        //public string BillingLine1 { get; set; }
+        //public string BillingLine2 { get; set; }
+        //public string BillingLine3 { get; set; }
+        //public string BillingMunicipality { get; set; }
+        //public string BillingStateOrProvince { get; set; }
+        //public string BillingPostalCode { get; set; }
+        //public string BillingCountry { get; set; }
+
+        //public string ShippingLine1 { get; set; }
+        //public string ShippingLine2 { get; set; }
+        //public string ShippingLine3 { get; set; }
+        //public string ShippingMunicipality { get; set; }
+        //public string ShippingStateOrProvince { get; set; }
+        //public string ShippingPostalCode { get; set; }
+        //public string ShippingCountry { get; set; }
     }
 }

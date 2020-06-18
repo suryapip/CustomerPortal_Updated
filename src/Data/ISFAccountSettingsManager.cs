@@ -9,6 +9,7 @@ namespace ScentAir.Payment
     public interface ISFAccountSettingsManager
     {
         Task<SFAccountSettings> GetSFAccountSettingsAsync(string accountNumber, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ITaskResult> SaveSFAccountSettingsAsync(SFAccountSettings sfAccountSettings, CancellationToken cancellationToken = default(CancellationToken));
 
         //Task<ITaskResult<ApplicationRole>> CreateRoleAsync(ApplicationRole role, IEnumerable<string> claims, CancellationToken cancellationToken = default(CancellationToken));
         //Task<ITaskResult<ApplicationUser>> CreateUserAsync(ApplicationUser user, IEnumerable<string> roles, string accountNumber, string password, CancellationToken cancellationToken = default(CancellationToken));

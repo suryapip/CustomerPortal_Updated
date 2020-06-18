@@ -37,7 +37,15 @@ export class SFAccountSettingsService {
     private sfAccountSettingsEndpoint: SFAccountSettingsEndpoint) {
   }
 
-  //register(request: register) {
+  getSFAccountSettings() {
+    return this.sfAccountSettingsEndpoint.getSFAccountSettings<SFAccountSettings>();
+  }
+
+  updateSFAccountSettings(sfAccountSettings: SFAccountSettings) {
+    return this.sfAccountSettingsEndpoint.getUpdateSFAccountSettingsEndpoint<SFAccountSettings>(sfAccountSettings);
+  }
+
+//register(request: register) {
   //  return this
   //    .sfAccountSettingsEndpoint
   //    .getRegisterEndpoint<register>(request)
@@ -76,10 +84,6 @@ export class SFAccountSettingsService {
   //getAccount() {
   //  return this.sfAccountSettingsEndpoint.getAccount<Account>();    
   //}
-
-  getSFAccountSettings() {
-    return this.sfAccountSettingsEndpoint.getSFAccountSettings<SFAccountSettings>();
-  }
 
   //getUserAndRoles(userId?: string) {
 

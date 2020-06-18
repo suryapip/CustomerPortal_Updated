@@ -41,7 +41,7 @@ namespace ScentAir.Payment.Controllers
 
         #region Account Settings
 
-        [HttpPost("sfaccountsettings")]
+        [HttpGet("sfaccountsettings")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(SFAccountSettingsViewModel))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         [ProducesResponseType((int)HttpStatusCode.Forbidden)]
@@ -63,7 +63,108 @@ namespace ScentAir.Payment.Controllers
             return Ok(vm);
         }
 
+        private async Task<SFAccountSettingsViewModel> getSFAccountSettingsViewModelHelper(string accountNumber)
+        {
+            SFAccountSettings sfAccountSettings = await sfAccountSettingsManager.GetSFAccountSettingsAsync(accountNumber).SafeAsync(Log);
+            if (sfAccountSettings == null)
+                return null;
+
+            var vm = Mapper.Map<SFAccountSettingsViewModel>(sfAccountSettings);
+
+            return vm;
+        }
+
+        //[HttpPost("roles")]
+        //[Authorize(Authorization.Policies.ManageAllRolesPolicy)]
+        //[ProducesResponseType(201, Type = typeof(RoleViewModel))]
+        //[ProducesResponseType(400)]
+        //public async Task<IActionResult> PostRole([FromBody][Required] RoleViewModel role)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest();
+        //    var appRole = Mapper.Map<ApplicationRole>(role);
+        //    var result = await securityManager.CreateRoleAsync(appRole, role.Permissions?.Select(p => p.Value).ToArray()).SafeAsync(Log);
+        //    if (!result.IsSuccessful)
+        //        return BadRequest("Could not create role");
+        //    var vm = await getRoleViewModelHelper(appRole.Name).SafeAsync(Log);
+        //    return CreatedAtAction(nameof(GetRoleById), new { id = vm.Id }, vm);
+        //}
+
+        //[HttpPut("roles/{id}")]
+        //[Authorize(Authorization.Policies.ManageAllRolesPolicy)]
+        //[ProducesResponseType(204)]
+        //[ProducesResponseType(400)]
+        //[ProducesResponseType(404)]
+        //public async Task<IActionResult> PutRole([Required] string id, [FromBody][Required] RoleViewModel role)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest();
+        //    if (!string.IsNullOrWhiteSpace(role.Id) && id != role.Id)
+        //        return BadRequest("Conflicting role id in parameter and model data");
+        //    var appRole = await securityManager.GetRoleByIdAsync(id).SafeAsync(Log);
+        //    if (appRole == null)
+        //        return NotFound();
+        //    Mapper.Map<RoleViewModel, ApplicationRole>(role, appRole);
+        //    var result = await securityManager.UpdateRoleAsync(appRole, role.Permissions?.Select(p => p.Value).ToArray()).SafeAsync(Log);
+        //    if (!result.IsSuccessful)
+        //        return BadRequest("Could not update role");
+        //    return NoContent();
+        //}
+
         #endregion Account Settings
+
+
+        //[HttpPut("roles/{id}")]
+        //[Authorize(Authorization.Policies.ManageAllRolesPolicy)]
+        //[ProducesResponseType(204)]
+        //[ProducesResponseType(400)]
+        //[ProducesResponseType(404)]
+        //public async Task<IActionResult> PutRole([Required] string id, [FromBody][Required] RoleViewModel role)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest();
+
+
+        //    if (!string.IsNullOrWhiteSpace(role.Id) && id != role.Id)
+        //        return BadRequest("Conflicting role id in parameter and model data");
+
+
+
+        //    var appRole = await securityManager.GetRoleByIdAsync(id).SafeAsync(Log);
+        //    if (appRole == null)
+        //        return NotFound();
+
+
+        //    Mapper.Map<RoleViewModel, ApplicationRole>(role, appRole);
+
+        //    var result = await securityManager.UpdateRoleAsync(appRole, role.Permissions?.Select(p => p.Value).ToArray()).SafeAsync(Log);
+        //    if (!result.IsSuccessful)
+        //        return BadRequest("Could not update role");
+
+        //    return NoContent();
+        //}
+
+
+        //[HttpPost("roles")]
+        //[Authorize(Authorization.Policies.ManageAllRolesPolicy)]
+        //[ProducesResponseType(201, Type = typeof(RoleViewModel))]
+        //[ProducesResponseType(400)]
+        //public async Task<IActionResult> PostRole([FromBody][Required] RoleViewModel role)
+        //{
+        //    if (!ModelState.IsValid)
+        //        return BadRequest();
+
+
+
+        //    var appRole = Mapper.Map<ApplicationRole>(role);
+        //    var result = await securityManager.CreateRoleAsync(appRole, role.Permissions?.Select(p => p.Value).ToArray()).SafeAsync(Log);
+        //    if (!result.IsSuccessful)
+        //        return BadRequest("Could not create role");
+
+
+        //    var vm = await getRoleViewModelHelper(appRole.Name).SafeAsync(Log);
+        //    return CreatedAtAction(nameof(GetRoleById), new { id = vm.Id }, vm);
+        //}
 
 
         //#region Contacts
@@ -336,17 +437,6 @@ namespace ScentAir.Payment.Controllers
 
         //#endregion Roles
 
-
-        private async Task<SFAccountSettingsViewModel> getSFAccountSettingsViewModelHelper(string accountNumber)
-        {
-            SFAccountSettings sfAccountSettings = await sfAccountSettingsManager.GetSFAccountSettingsAsync(accountNumber).SafeAsync(Log);
-            if (sfAccountSettings == null)
-                return null;
-
-            var vm = Mapper.Map<SFAccountSettingsViewModel>(sfAccountSettings);
-
-            return vm;
-        }
 
         //private async Task<UserViewModel> getUserViewModelHelper(string userId)
         //{

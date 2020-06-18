@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 
 import { AlertService, MessageSeverity } from '../../services/alert.service';
-import { AccountService } from "../../services/account.service";
+//import { AccountService } from "../../services/account.service";
 import { Utilities } from '../../services/utilities';
-import { User } from '../../models/user.model';
-import { UserEdit } from '../../models/user-edit.model';
-import { Role } from '../../models/role.model';
-import { Permission } from '../../models/permission.model';
+//import { User } from '../../models/user.model';
+//import { UserEdit } from '../../models/user-edit.model';
+//import { Role } from '../../models/role.model';
+//import { Permission } from '../../models/permission.model';
 //import { Observable } from 'rxjs';
 //import { SecurityQuestion } from '../../models/security-questions.model';
 import { LocalStoreManager } from '../../services/local-store-manager.service';
@@ -26,16 +26,16 @@ import { SFAccountSettingsService } from "../../services/sf-account-settings.ser
 export class SFAccountSettingsComponent implements OnInit {
 
   private isEditMode = false;
-  private isNewUser = false;
+  //private isNewUser = false;
   private isSaving = false;
   //private isChangePassword = false;
-  private isEditingSelf = false;
+  //private isEditingSelf = false;
   private showValidationErrors = false;
   //private editingUserName: string;
   private uniqueId: string = Utilities.uniqueId();
-  private user: User = new User();
-  private userEdit: UserEdit = new UserEdit();
-  private allRoles: Role[] = [];
+  //private user: User = new User();
+  //private userEdit: UserEdit = new UserEdit();
+  //private allRoles: Role[] = [];
   //private isEditingEmailAddress: boolean = false;
   private selectedLanguage: string;
 
@@ -103,30 +103,6 @@ export class SFAccountSettingsComponent implements OnInit {
 
   @ViewChild('shippingCountry')
   private shippingCountry;
-
-  //@ViewChild('userName')
-  //private userName;
-
-  //@ViewChild('userPassword')
-  //private userPassword;
-
-  //@ViewChild('email')
-  //private email;
-
-  //@ViewChild('currentPassword')
-  //private currentPassword;
-
-  //@ViewChild('newPassword')
-  //private newPassword;
-
-  //@ViewChild('confirmPassword')
-  //private confirmPassword;
-
-  //@ViewChild('roles')
-  //private roles;
-
-  //@ViewChild('rolesSelector')
-  //private rolesSelector;
 
 
   constructor(private alertService: AlertService, private sfAccountSettingsService: SFAccountSettingsService, private localStorage: LocalStoreManager, public userInfoService: LanguageObservableService) {
@@ -277,7 +253,7 @@ export class SFAccountSettingsComponent implements OnInit {
   }
 
 
-  private saveSuccessHelper(user?: User) {
+  private saveSuccessHelper() {
     //this.testIsRoleUserCountChanged(this.user, this.userEdit);
 
     //if (user)
@@ -352,13 +328,17 @@ export class SFAccountSettingsComponent implements OnInit {
 
 
   private cancel() {
-    if (this.isGeneralEditor)
-      this.userEdit = this.user = new UserEdit();
-    else
-      this.userEdit = new UserEdit();
+    //if (this.isGeneralEditor)
+    //  this.userEdit = this.user = new UserEdit();
+    //else
+    //  this.userEdit = new UserEdit();
 
     this.showValidationErrors = false;
     this.resetForm();
+
+    if (!this.isGeneralEditor) {
+      this.loadSFAccountSettingsData();
+    }
 
     this.alertService.showMessage("Cancelled", "Operation cancelled by user", MessageSeverity.default);
     this.alertService.resetStickyMessage();
@@ -372,7 +352,7 @@ export class SFAccountSettingsComponent implements OnInit {
 
 
   private close() {
-    this.userEdit = this.user = new UserEdit();
+    //this.userEdit = this.user = new UserEdit();
     this.showValidationErrors = false;
     this.resetForm();
     this.isEditMode = false;
