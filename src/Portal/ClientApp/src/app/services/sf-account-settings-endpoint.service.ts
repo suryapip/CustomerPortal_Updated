@@ -6,44 +6,99 @@ import { catchError } from 'rxjs/operators';
 
 import { EndpointFactory } from './endpoint-factory.service';
 import { ConfigurationService } from './configuration.service';
-import { register } from '../models/register.model';
-import { Account } from '../models/account.model';
-import { UserForgotUserName } from '../models/user-forgot-username.model'
-import { access } from 'fs';
+//import { register } from '../models/register.model';
+//import { Account } from '../models/account.model';
+//import { UserForgotUserName } from '../models/user-forgot-username.model'
+//import { access } from 'fs';
+
+import { SFAccountSettings } from '../models/sf-account-settings.model';
+import { SFContact } from '../models/sf-contact.model';
 
 
 @Injectable()
 export class SFAccountSettingsEndpoint extends EndpointFactory {
 
-  private readonly _sfAccountSettingsLookupUrl: string = "/api/sfaccount/sfaccountsettings";
-  private readonly _sfAccountSettingsSaveUrl: string = "/api/sfaccount/SaveSFAccountSettingsAsync"
+  private readonly _sfAccountSettingsUrl: string = "/api/sfaccount/sfaccountsettings";
+  private readonly _sfAccountSettingsSaveUrl: string = "/api/sfaccount/savesfaccountsettings"
+  private readonly _sfContactsUrl: string = "/api/sfaccount/sfcontacts";
+  private readonly _sfContactUrl: string = "/api/sfaccount/sfcontact";
+  private readonly _sfContactSaveUrl: string = "/api/sfaccount/savesfcontact";
 
-  get sfAccountSettingsLookupUrl() {
-    return this.configurations.baseUrl + this._sfAccountSettingsLookupUrl;
+  get sfAccountSettingsUrl() {
+    return this.configurations.baseUrl + this._sfAccountSettingsUrl;
   }
+
+  get sfAccountSettingsSaveUrl() {
+    return this.configurations.baseUrl + this._sfAccountSettingsSaveUrl;
+  }
+
+  get sfContactsUrl() {
+    return this.configurations.baseUrl + this._sfContactsUrl;
+  }
+
+  get sfContactUrl() {
+    return this.configurations.baseUrl + this._sfContactUrl;
+  }
+
+  get sfContactSaveUrl() {
+    return this.configurations.baseUrl + this._sfContactSaveUrl;
+  }
+
+
 
   constructor(http: HttpClient, configurations: ConfigurationService, injector: Injector) {
     super(http, configurations, injector);
   }
 
-  getSFAccountSettings<T>(): Observable<T> {
-    var url = this.sfAccountSettingsLookupUrl;
+
+  // SFAccountSettings
+  getSFAccountSettingsEndpoint<T>(): Observable<T> {
+    var url = this.sfAccountSettingsUrl;
     var headers = this.getRequestHeaders();
     return this.http
       .get(url, headers)
-      //.post(url, null, headers)
       .pipe<T>(
-        //tap(ev => console.log(ev)),
         catchError(error => this.handleError(error))
       );
   }
 
-  getUpdateSFAccountSettingsEndpoint<T>(userObject: any, userId?: string): Observable<T> {
-    let endpointUrl = userId ? `${this.usersUrl}/${userId}` : this.currentUserUrl;
+  getSaveSFAccountSettingsEndpoint<T>(sfAccountSettings: SFAccountSettings): Observable<T> {
+    let endpointUrl = this.sfAccountSettingsSaveUrl;
     return this.http
-      .put<T>(endpointUrl, JSON.stringify(userObject), this.getRequestHeaders())
+      .put<T>(endpointUrl, JSON.stringify(sfAccountSettings), this.getRequestHeaders())
       .pipe<T>(catchError(error => this.handleError(error)));
   }
+
+
+  // SFContacts
+  getSFContactsEndpoint<T>(page?: number, pageSize?: number): Observable<T> {
+    let endpointUrl = page && pageSize ? `${this.sfContactsUrl}/${page}/${pageSize}` : this.sfContactsUrl;
+    return this.http
+      .get<T>(endpointUrl, this.getRequestHeaders())
+      .pipe<T>(catchError(error => this.handleError(error)));
+  }
+
+  getSFContactEndpoint<T>(id: number): Observable<T> {
+    let endpointUrl = `${this.sfContactUrl}/${id}`;
+    return this.http
+      .get<T>(endpointUrl, this.getRequestHeaders())
+      .pipe<T>(catchError(error => this.handleError(error)));
+  }
+
+  getSaveSFContactEndpoint<T>(sfContact: SFContact): Observable<T> {
+    let endpointUrl = this.sfContactSaveUrl;
+    return this.http
+      .put<T>(endpointUrl, JSON.stringify(sfContact), this.getRequestHeaders())
+      .pipe<T>(catchError(error => this.handleError(error)));
+  }
+
+  //getUpdateSFContactEndpoint<T>(sfContact: SFContact): Observable<T> {
+  //  let endpointUrl = `${this.sfContactSaveUrl}/${sfContact.id}`;
+  //  return this.http
+  //    .put<T>(endpointUrl, JSON.stringify(sfContact), this.getRequestHeaders())
+  //    .pipe<T>(catchError(error => this.handleError(error)));
+  //}
+
 
 
   //getAccount<T>(): Observable<T> {

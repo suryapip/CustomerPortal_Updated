@@ -4,21 +4,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subject, forkJoin, BehaviorSubject, Notification, combineLatest, concat, from, fromEvent, pipe } from 'rxjs';
 import { map, mergeMap, tap, subscribeOn } from 'rxjs/operators';
 
-//import { AccountEndpoint } from './account-endpoint.service';
 import { AuthService } from './auth.service';
-//import { User } from '../models/user.model';
-//import { Role } from '../models/role.model';
 import { Account } from '../models/account.model';
-//import { Permission, PermissionNames, PermissionValues } from '../models/permission.model';
-//import { UserEdit } from '../models/user-edit.model';
-//import { register } from '../models/register.model';
-//import { UserForgotUserName } from '../models/user-forgot-username.model'
-//import { SecurityQuestion } from '../models/security-questions.model';
 import { validateConfig } from '@angular/router/src/config';
 
 import { SFAccountSettings } from '../models/sf-account-settings.model';
 import { SFContact } from '../models/sf-contact.model';
-import { SFRole } from '../models/sf-role.model';
 import { SFAccountSettingsEndpoint } from './sf-account-settings-endpoint.service';
 
 //export type SFRolesChangedOperation = 'add' | 'delete' | 'modify';
@@ -37,13 +28,35 @@ export class SFAccountSettingsService {
     private sfAccountSettingsEndpoint: SFAccountSettingsEndpoint) {
   }
 
+
+  // SFAccountSettings
   getSFAccountSettings() {
-    return this.sfAccountSettingsEndpoint.getSFAccountSettings<SFAccountSettings>();
+    return this.sfAccountSettingsEndpoint.getSFAccountSettingsEndpoint<SFAccountSettings>();
   }
 
-  updateSFAccountSettings(sfAccountSettings: SFAccountSettings) {
-    return this.sfAccountSettingsEndpoint.getUpdateSFAccountSettingsEndpoint<SFAccountSettings>(sfAccountSettings);
+  saveSFAccountSettings(sfAccountSettings: SFAccountSettings) {
+    return this.sfAccountSettingsEndpoint.getSaveSFAccountSettingsEndpoint<SFAccountSettings>(sfAccountSettings);
   }
+
+
+  // SFContacts
+  getSFContacts(page?: number, pageSize?: number) {
+    return this.sfAccountSettingsEndpoint.getSFContactsEndpoint<SFContact[]>(page, pageSize);
+  }
+
+  getSFContact(id?: number) {
+    return this.sfAccountSettingsEndpoint.getSFContactEndpoint<SFContact>(id);
+  }
+
+  saveSFContact(sfContact: SFContact) {
+    return this.sfAccountSettingsEndpoint.getSaveSFContactEndpoint<SFContact>(sfContact);
+  }
+
+  //updateSFContact(sfContact: SFContact) {
+  //  return this.sfAccountSettingsEndpoint.getUpdateSFContactEndpoint<SFContact>(sfContact);
+  //}
+
+
 
 //register(request: register) {
   //  return this

@@ -1,13 +1,7 @@
-import { Account } from './account.model';
-import { Address } from './address.model';
-import { SFContact } from './sf-contact.model';
-
 export class SFAccountSettings {
   public id: number;
-  public account: Account;
-
-  //public billingAddress: Address = new Address();
-  //public shippingAddress: Address = new Address();
+  // Note: The AccountCaseSafeId column contains the SalesForce unique identifier for the Account record, 
+  //   and is only used by Richa's sync process; we don't need to read or write it here in the app.
   public accountNumber: string;
   public billingLine1: string;
   public billingLine2: string;
@@ -23,6 +17,4 @@ export class SFAccountSettings {
   public shippingStateOrProvince: string;
   public shippingPostalCode: string;
   public shippingCountry: string;
-
-  public contacts: SFContact[];
 }

@@ -5,13 +5,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>Portal</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>Local Release Folder</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>DEV30WEB01 %28stop .NET Core app pool first%29</NameOfLastUsedPublishProfile>
   </PropertyGroup>
-  <ItemGroup>
-    <TypeScriptCompile Update="ClientApp\src\app\models\sf-role.model.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Update="ClientApp\src\app\models\sf-contact.model.ts">
       <SubType>Code</SubType>

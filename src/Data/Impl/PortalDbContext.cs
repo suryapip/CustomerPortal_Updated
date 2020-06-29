@@ -45,6 +45,7 @@ namespace ScentAir.Payment.Impl
         public DbSet<CompanyWireAchDetail> CompanyWireAchDetails { get; set; }
 
         public DbSet<SFAccountSettings> SFAccountSettings { get; set; }
+        public DbSet<SFContact> SFContacts { get; set; }
 
 
 
@@ -275,19 +276,6 @@ namespace ScentAir.Payment.Impl
             });
 
 
-            // redundant
-            //builder.Entity<InvoiceHeaderExtension>(entity =>
-            //{
-            //    entity.HasKey(x => x.Id);
-
-            //    entity.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
-            //    entity.Property(x => x.InvoiceNumber).IsRequired();
-            //    entity.HasIndex(x => new { x.InvoiceNumber }).IsUnique();
-                
-            //    entity.ToTable($"{nameof(this.InvoiceHeaderExtensions)}");
-            //});
-
-
             builder.Entity<CompanyWireAchDetail>(entity =>
             {
                 entity.HasKey(x => x.Id);
@@ -305,23 +293,46 @@ namespace ScentAir.Payment.Impl
                 entity.HasKey(x => x.Id);
                 entity.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
                 entity.Property(x => x.AccountNumber).IsRequired().IsUnicode(false);
-                entity.Property(x => x.BillingLine1).IsRequired().IsUnicode(false);
+                entity.Property(x => x.BillingLine1).IsUnicode(false);
                 entity.Property(x => x.BillingLine2).IsUnicode(false);
                 entity.Property(x => x.BillingLine3).IsUnicode(false);
-                entity.Property(x => x.BillingMunicipality).IsRequired().IsUnicode(false);
-                entity.Property(x => x.BillingStateOrProvince).IsRequired().IsUnicode(false);
-                entity.Property(x => x.BillingPostalCode).IsRequired().IsUnicode(false);
-                entity.Property(x => x.BillingCountry).IsRequired().IsUnicode(false);
-                entity.Property(x => x.ShippingLine1).IsRequired().IsUnicode(false);
+                entity.Property(x => x.BillingMunicipality).IsUnicode(false);
+                entity.Property(x => x.BillingStateOrProvince).IsUnicode(false);
+                entity.Property(x => x.BillingPostalCode).IsUnicode(false);
+                entity.Property(x => x.BillingCountry).IsUnicode(false);
+                entity.Property(x => x.ShippingLine1).IsUnicode(false);
                 entity.Property(x => x.ShippingLine2).IsUnicode(false);
                 entity.Property(x => x.ShippingLine3).IsUnicode(false);
-                entity.Property(x => x.ShippingMunicipality).IsRequired().IsUnicode(false);
-                entity.Property(x => x.ShippingStateOrProvince).IsRequired().IsUnicode(false);
-                entity.Property(x => x.ShippingPostalCode).IsRequired().IsUnicode(false);
-                entity.Property(x => x.ShippingCountry).IsRequired().IsUnicode(false);
+                entity.Property(x => x.ShippingMunicipality).IsUnicode(false);
+                entity.Property(x => x.ShippingStateOrProvince).IsUnicode(false);
+                entity.Property(x => x.ShippingPostalCode).IsUnicode(false);
+                entity.Property(x => x.ShippingCountry).IsUnicode(false);
 
                 entity.ToTable($"{nameof(this.SFAccountSettings)}");
             });
+
+            builder.Entity<SFContact>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+                entity.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
+                entity.Property(x => x.AccountNumber).IsRequired().IsUnicode(false);
+                entity.Property(x => x.Name).IsRequired().IsUnicode(false);
+                entity.Property(x => x.Email).IsUnicode(false);
+                entity.Property(x => x.Phone).IsUnicode(false);
+                entity.Property(x => x.MainContact);
+                entity.Property(x => x.BillingContact);
+                entity.Property(x => x.ShippingContact);
+                entity.Property(x => x.ServiceContact);
+                entity.Property(x => x.PropertyContact);
+                entity.Property(x => x.InstallationContact);
+                entity.Property(x => x.MarketingContact);
+                entity.Property(x => x.DoNotCall);
+                entity.Property(x => x.DoNotEmail);
+                entity.Property(x => x.Active);
+
+                entity.ToTable($"{nameof(this.SFContacts)}");
+            });
+
 
         }
 

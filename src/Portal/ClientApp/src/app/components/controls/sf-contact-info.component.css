@@ -35,14 +35,8 @@ input.form-control {
     border-left-width: 5px;
 }
 
-.inactive {
-  color: #777;
-  font-style: italic;
-}
-
-.role {
-  font-size: 0.8em !important;
-  margin-right: 1px;
+.checkbox.is-active {
+  display: inline-block;
 }
 
 /*.password-well {
@@ -51,18 +45,14 @@ input.form-control {
 
 .hint-sm {
     display: block;
-}*/
-
-.checkbox.active {
-    display: inline-block;
 }
 
-/*.unblock-user {
+.unblock-user {
     margin-left: 34px;
-}*/
+}
 
 @media (min-width: 992px) {
-    .active {
+    .user-enabled {
         margin-left: 40px;
     }
-}
+}*/

@@ -219,19 +219,37 @@
       "EditContact": "Edit Contact \"{{name}}\"",
       "Name": "Name",
       "Email": "Email",
-      "PhoneNumber": "Phone Number",
+      "Phone": "Phone Number",
       "Roles": "Roles",
-      "Status": "Status"
+      "RoleMain": "Main",
+      "RoleBilling": "Billing",
+      "RoleShipping": "Shipping",
+      "RoleService": "Service",
+      "RoleProperty": "Property",
+      "RoleInstallation": "Installation",
+      "RoleMarketing": "Marketing",
+      "DoNotCall": "Do Not Call",
+      "DoNotEmail": "Do Not E-mail",
+      "Active": "Active"
     },
     "editor": {
       "Name": "Name:",
       "Email": "Email:",
-      "PhoneNumber": "Phone Number:",
+      "Phone": "Phone Number:",
       "Roles": "Roles:",
-      "MarketingOptOut": "Marketing Opt-Out:",
-      "Status": "Status:",
+      "RoleMain": "Main Contact:",
+      "RoleBilling": "Billing Contact:",
+      "RoleShipping": "Shipping Contact:",
+      "RoleService": "Service Contact:",
+      "RoleProperty": "Property Contact:",
+      "RoleInstallation": "Installation Contact:",
+      "RoleMarketing": "Marketing Contact:",
+      "DoNotCall": "Do Not Call:",
+      "DoNotEmail": "Do Not E-mail:",
+      "Active": "Active:",
       "NameRequired": "Name is required",
-      "EmailRequired": "Email is required"
+      "EmailRequired": "Email is required",
+      "InvalidEmail": "Specified email is not valid"
     }
   }
 }

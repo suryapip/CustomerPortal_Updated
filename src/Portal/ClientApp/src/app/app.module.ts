@@ -89,6 +89,7 @@ import { LanguageObservableService } from "./services/language-observable.servic
 import { SFAccountSettingsComponent } from "./components/controls/sf-account-settings.component";
 import { SFAccountSettingsService } from "./services/sf-account-settings.service";
 import { SFAccountSettingsEndpoint } from "./services/sf-account-settings-endpoint.service";
+import { SFContactInfoComponent } from "./components/controls/sf-contact-info.component";
 import { SFContactsComponent } from "./components/controls/sf-contacts.component";
 
 
@@ -155,7 +156,8 @@ import { SFContactsComponent } from "./components/controls/sf-contacts.component
     ContactUsComponent,
     ContactUsExtComponent,
     SFAccountSettingsComponent,
-    SFContactsComponent
+    SFContactsComponent,
+    SFContactInfoComponent
   ],
   providers: [
     { provide: 'BASE_URL', useFactory: getBaseUrl },

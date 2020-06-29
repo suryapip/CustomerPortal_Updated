@@ -74,6 +74,199 @@ namespace ScentAir.Payment.Controllers
             return vm;
         }
 
+        [HttpPut("savesfaccountsettings")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> SaveSFAccountSettings([FromBody][Required] SFAccountSettingsViewModel vmSFAccountSettings)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var dbSFAccountSettings = await sfAccountSettingsManager.GetSFAccountSettingsAsync(vmSFAccountSettings.AccountNumber).SafeAsync(Log);
+            if (dbSFAccountSettings == null)
+                return NotFound();
+
+            dbSFAccountSettings.BillingLine1 = vmSFAccountSettings.BillingLine1;
+            dbSFAccountSettings.BillingLine2 = vmSFAccountSettings.BillingLine2;
+            dbSFAccountSettings.BillingLine3 = vmSFAccountSettings.BillingLine3;
+            dbSFAccountSettings.BillingMunicipality = vmSFAccountSettings.BillingMunicipality;
+            dbSFAccountSettings.BillingStateOrProvince = vmSFAccountSettings.BillingStateOrProvince;
+            dbSFAccountSettings.BillingPostalCode = vmSFAccountSettings.BillingPostalCode;
+            dbSFAccountSettings.BillingCountry = vmSFAccountSettings.BillingCountry;
+            dbSFAccountSettings.ShippingLine1 = vmSFAccountSettings.ShippingLine1;
+            dbSFAccountSettings.ShippingLine2 = vmSFAccountSettings.ShippingLine2;
+            dbSFAccountSettings.ShippingLine3 = vmSFAccountSettings.ShippingLine3;
+            dbSFAccountSettings.ShippingMunicipality = vmSFAccountSettings.ShippingMunicipality;
+            dbSFAccountSettings.ShippingStateOrProvince = vmSFAccountSettings.ShippingStateOrProvince;
+            dbSFAccountSettings.ShippingPostalCode = vmSFAccountSettings.ShippingPostalCode;
+            dbSFAccountSettings.ShippingCountry = vmSFAccountSettings.ShippingCountry; 
+
+            var result = await sfAccountSettingsManager.SaveSFAccountSettingsAsync(dbSFAccountSettings).SafeAsync(Log);
+            if (!result.IsSuccessful)
+                return BadRequest("Could not update account settings");
+
+            return NoContent();
+        }
+
+        #endregion SFAccountSettings
+
+        #region SFContacts
+
+        [HttpGet("sfcontacts")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<SFContactViewModel>))]
+        //[ProducesResponseType((int)HttpStatusCode.Forbidden)]
+        //[ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        //[ProducesResponseType((int)HttpStatusCode.NotFound)]
+        //[ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> GetSFContacts() => await GetSFContacts(-1, -1);
+        //{
+        //    var (accountNumber, response) = IsAuthorized();     // Use IsAuthorized() to get the Account Number.
+
+        //    var dbSFContacts = await sfAccountSettingsManager.GetSFContactsAsync(accountNumber).SafeAsync(Log);
+        //    if (dbSFContacts == null)
+        //        return NotFound();
+
+        //    var result = new List<SFContactViewModel>();
+        //    foreach (var sfContact in dbSFContacts)
+        //    {
+        //        var vm = Mapper.Map<SFContactViewModel>(sfContact);
+        //        result.Add(vm);
+        //    }
+
+        //    return Ok(result);
+        //}
+
+        [HttpGet("sfcontacts/{pageNumber:int}/{pageSize:int}")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<SFContactViewModel>))]
+        [ProducesResponseType((int)HttpStatusCode.Forbidden)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> GetSFContacts(int pageNumber, int pageSize)
+        {
+            var (accountNumber, response) = IsAuthorized();     // Use IsAuthorized() to get the Account Number.
+
+            var dbSFContacts = await sfAccountSettingsManager.GetSFContactsAsync(accountNumber, pageNumber, pageSize).SafeAsync(Log);
+            if (dbSFContacts == null)
+                return NotFound();
+
+            var result = new List<SFContactViewModel>();
+            foreach (var sfContact in dbSFContacts)
+            {
+                var vm = Mapper.Map<SFContactViewModel>(sfContact);
+                result.Add(vm);
+            }
+
+            return Ok(result);
+        }
+
+        [HttpGet("sfcontact/{id:int}")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(SFContactViewModel))]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType((int)HttpStatusCode.Forbidden)]
+        [ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> GetSFContact(int id)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var vm = await getSFContactViewModelHelper(id).SafeAsync(Log);
+
+            if (vm == null)
+                return NotFound();
+
+            return Ok(vm);
+        }
+
+        private async Task<SFContactViewModel> getSFContactViewModelHelper(int id)
+        {
+            SFContact sfContact = await sfAccountSettingsManager.GetSFContactAsync(id).SafeAsync(Log);
+            if (sfContact == null)
+                return null;
+
+            var vm = Mapper.Map<SFContactViewModel>(sfContact);
+
+            return vm;
+        }
+
+        //[HttpPut("savesfcontact")]
+        //[ProducesResponseType(204)]
+        //[ProducesResponseType(400)]
+        //[ProducesResponseType(404)]
+        //public async Task<IActionResult> SaveSFContact([FromBody][Required] SFContactViewModel vmSFContact) => await SaveSFContact(-1, vmSFContact);
+
+        [HttpPut("savesfcontact")] ///{id:int}
+        [ProducesResponseType(204)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+        public async Task<IActionResult> SaveSFContact([FromBody][Required] SFContactViewModel vmSFContact) //int id, 
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
+            var (accountNumber, response) = IsAuthorized();     // Use IsAuthorized() to get the Account Number.
+
+            var dbSFContact = await sfAccountSettingsManager.GetSFContactAsync(vmSFContact.Id).SafeAsync(Log);
+            bool isNew = dbSFContact == null;
+            if (isNew)
+                dbSFContact = new SFContact();
+                //return NotFound();
+
+            dbSFContact.AccountNumber = isNew ? accountNumber : vmSFContact.AccountNumber;
+            dbSFContact.Name = vmSFContact.Name;
+            dbSFContact.Email = vmSFContact.Email;
+            dbSFContact.Phone = vmSFContact.Phone;
+            dbSFContact.MainContact = vmSFContact.MainContact;
+            dbSFContact.BillingContact = vmSFContact.BillingContact;
+            dbSFContact.ShippingContact = vmSFContact.ShippingContact;
+            dbSFContact.ServiceContact = vmSFContact.ServiceContact;
+            dbSFContact.PropertyContact = vmSFContact.PropertyContact;
+            dbSFContact.InstallationContact = vmSFContact.InstallationContact;
+            dbSFContact.MarketingContact = vmSFContact.MarketingContact;
+            dbSFContact.DoNotCall = vmSFContact.DoNotCall;
+            dbSFContact.DoNotEmail = vmSFContact.DoNotEmail;
+            dbSFContact.Active = vmSFContact.Active;
+
+            var result = await sfAccountSettingsManager.SaveSFContactAsync(dbSFContact).SafeAsync(Log);
+            if (!result.IsSuccessful)
+                return BadRequest("Could not save contact");
+
+            return NoContent();
+        }
+
+        #endregion
+
+
+        //[HttpGet("users/{pageNumber:int}/{pageSize:int}")]
+        //[Authorize(Authorization.Policies.ViewAllUsersPolicy)]
+        //[ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(List<UserViewModel>))]
+        //[ProducesResponseType((int)HttpStatusCode.Forbidden)]
+        //[ProducesResponseType((int)HttpStatusCode.Unauthorized)]
+        //[ProducesResponseType((int)HttpStatusCode.NotFound)]
+        //[ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        //public async Task<IActionResult> GetUsers(int pageNumber, int pageSize)
+        //{
+        //    var usersAndRoles = await securityManager.GetUsersAndRolesAsync(pageNumber, pageSize).SafeAsync(Log);
+        //    if (usersAndRoles == null)
+        //        return NotFound();
+
+
+        //    var result = new List<UserViewModel>();
+        //    foreach (var (user, roles) in usersAndRoles)
+        //    {
+        //        var vm = Mapper.Map<UserViewModel>(user);
+        //        vm.Roles = roles;
+
+        //        result.Add(vm);
+        //    }
+
+        //    return Ok(result);
+        //}
+
+
         //[HttpPost("roles")]
         //[Authorize(Authorization.Policies.ManageAllRolesPolicy)]
         //[ProducesResponseType(201, Type = typeof(RoleViewModel))]
@@ -111,7 +304,6 @@ namespace ScentAir.Payment.Controllers
         //    return NoContent();
         //}
 
-        #endregion Account Settings
 
 
         //[HttpPut("roles/{id}")]

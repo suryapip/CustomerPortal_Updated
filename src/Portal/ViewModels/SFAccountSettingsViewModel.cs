@@ -1,18 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
-namespace ScentAir.Payment.ViewModels
+﻿namespace ScentAir.Payment.ViewModels
 {
     public class SFAccountSettingsViewModel
     {
-        //public AccountViewModel Account { get; set; }
-        //public int Id { get; set; }
-        //public AddressViewModel BillingAddress { get; set; }
-        //public AddressViewModel ShippingAddress { get; set; }
+        public int Id { get; set; }
         public string AccountNumber { get; set; }
         public string BillingLine1 { get; set; }
         public string BillingLine2 { get; set; }
