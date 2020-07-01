@@ -1,7 +1,5 @@
 export class SFAccountSettings {
   public id: number;
-  // Note: The AccountCaseSafeId column contains the SalesForce unique identifier for the Account record, 
-  //   and is only used by Richa's sync process; we don't need to read or write it here in the app.
   public accountNumber: string;
   public billingLine1: string;
   public billingLine2: string;

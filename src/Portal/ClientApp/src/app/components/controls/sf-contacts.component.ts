@@ -8,7 +8,6 @@ import { Utilities } from "../../services/utilities";
 import { SFAccountSettingsService } from "../../services/sf-account-settings.service";
 import { SFContact } from "../../models/sf-contact.model";
 import { SFContactInfoComponent } from "./sf-contact-info.component";
-import { SFContactRole } from "../../models/sf-contact-role.model";
 
 @Component({
   selector: 'sf-contacts',
@@ -23,22 +22,11 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
   sourceContact: SFContact;
   editingContactName: { name: string };
   loadingIndicator: boolean;
-
-  // A contact's roles are stored as individual boolean fields in the SFContacts table, not in a separate association table.
-  // The SFContactRole object is hardcoded on the UI side for display purposes; it doesn't propagate to the database.
-  allRoles: SFContactRole[] = [
-    new SFContactRole('Main', 'Main Contact'),
-    new SFContactRole('Billing', 'Billing Contact'),
-    new SFContactRole('Shipping', 'Shipping Contact'),
-    new SFContactRole('Service', 'Service Contact'),
-    new SFContactRole('Property', 'Property Contact'),
-    new SFContactRole('Installation', 'Installation Contact'),
-    new SFContactRole('Marketing', 'Marketing Contact')
-  ];
+  //numMainContacts: number;
 
   @ViewChild('indexTemplate') indexTemplate: TemplateRef<any>;
-  @ViewChild('contactNameTemplate') contactNameTemplate: TemplateRef<any>;
   @ViewChild('rolesTemplate') rolesTemplate: TemplateRef<any>;
+  @ViewChild('activeTemplate') activeTemplate: TemplateRef<any>;
   @ViewChild('actionsTemplate') actionsTemplate: TemplateRef<any>;
   @ViewChild('editorModal') editorModal: ModalDirective;
   @ViewChild('sfContactEditor') sfContactEditor: SFContactInfoComponent;
@@ -53,14 +41,14 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
 
     this.columns = [
       { prop: "index", name: '#', width: 40, cellTemplate: this.indexTemplate, canAutoResize: false },
-      { prop: 'name', name: gT('Contacts.management.Name'), width: 130, cellTemplate: this.contactNameTemplate },
-      { prop: 'email', name: gT('Contacts.management.Email'), width: 90 },
-      { prop: 'phone', name: gT('Contacts.management.Phone'), width: 120 },
-      { prop: 'roles', name: gT('Contacts.management.Roles'), width: 120, cellTemplate: this.rolesTemplate },
-      { prop: 'active', name: gT('Contacts.management.Active'), width: 70 },
+      { prop: 'name', name: gT('Contacts.management.Name'), width: 120 },
+      { prop: 'email', name: gT('Contacts.management.Email'), width: 130 },
+      { prop: 'phone', name: gT('Contacts.management.Phone'), width: 90 },
+      { prop: 'roles', name: gT('Contacts.management.Roles'), width: 140, cellTemplate: this.rolesTemplate },
+      { prop: 'active', name: gT('Contacts.management.Active'), width: 30, cellTemplate: this.activeTemplate },
     ];
 
-    this.columns.push({ name: '', width: 80, cellTemplate: this.actionsTemplate, resizeable: false, canAutoResize: false, sortable: false, draggable: false });
+    this.columns.push({ name: '', width: 65, cellTemplate: this.actionsTemplate, resizeable: false, canAutoResize: false, sortable: false, draggable: false });
 
     this.loadData();
   }
@@ -78,65 +66,103 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
       this.sourceContact = null;
       this.editorModal.hide();
     };
+
+    //this.sfContactEditor.numMainContactsCallback = () => {
+    //  this.sfContactEditor.numMainContacts = this.getNumMainContacts();
+    //};
+
   }
 
 
   addNewContactToList() {
-    if (this.sourceContact) {
-      Object.assign(this.sourceContact, this.editedContact);
+    try {
+      this.fillName(this.editedContact);
+      this.fillRoles(this.editedContact);
+      if (this.sourceContact) {
+        Object.assign(this.sourceContact, this.editedContact);
 
-      let sourceIndex = this.rowsCache.indexOf(this.sourceContact, 0);
-      if (sourceIndex > -1)
-        Utilities.moveArrayItem(this.rowsCache, sourceIndex, 0);
+        let sourceIndex = this.rowsCache.indexOf(this.sourceContact, 0);
+        if (sourceIndex > -1)
+          Utilities.moveArrayItem(this.rowsCache, sourceIndex, 0);
 
-      sourceIndex = this.rows.indexOf(this.sourceContact, 0);
-      if (sourceIndex > -1)
-        Utilities.moveArrayItem(this.rows, sourceIndex, 0);
+        sourceIndex = this.rows.indexOf(this.sourceContact, 0);
+        if (sourceIndex > -1)
+          Utilities.moveArrayItem(this.rows, sourceIndex, 0);
 
-      this.editedContact = null;
-      this.sourceContact = null;
-    }
-    else {
-      let sfContact = new SFContact();
-      Object.assign(sfContact, this.editedContact);
-      this.editedContact = null;
-
-      let maxIndex = 0;
-      for (let u of this.rowsCache) {
-        if ((<any>u).index > maxIndex)
-          maxIndex = (<any>u).index;
+        this.editedContact = null;
+        this.sourceContact = null;
       }
+      else {
+        let sfContact = new SFContact();
+        Object.assign(sfContact, this.editedContact);
+        this.editedContact = null;
 
-      (<any>sfContact).index = maxIndex + 1;
+        let maxIndex = 0;
+        for (let u of this.rowsCache) {
+          if ((<any>u) && (<any>u).index > maxIndex)
+            maxIndex = (<any>u).index;
+        }
 
-      this.rowsCache.splice(0, 0, sfContact);
-      this.rows.splice(0, 0, sfContact);
-      this.rows = [...this.rows];
+        (<any>sfContact).index = maxIndex + 1;
+
+        this.rowsCache.splice(0, 0, sfContact);
+        this.rows.splice(0, 0, sfContact);
+        this.rows = [...this.rows];
+      }
     }
+    catch (e) {
+      if (e instanceof Error) {
+        // IDE type hinting now available
+        // properly handle Error e
+        alert(e.message);
+      }
+      else if (typeof e === 'string' || e instanceof String) {
+        // IDE type hinting now available
+        // properly handle e or...stop using libraries that throw naked strings
+        alert(e);
+      }
+      else if (typeof e === 'number' || e instanceof Number) {
+        // IDE type hinting now available
+        // properly handle e or...stop using libraries that throw naked numbers
+        alert(e);
+      }
+      else if (typeof e === 'boolean' || e instanceof Boolean) {
+        // IDE type hinting now available
+        // properly handle e or...stop using libraries that throw naked booleans
+        alert(e);
+      }
+      else {
+        // if we can't figure out what what we are dealing with then
+        // probably cannot recover...therefore, rethrow
+        // Note to Self: Rethink my life choices and choose better libraries to use.
+        throw e;
+      }
+    }
+
   }
 
 
   loadData() {
     this.alertService.startLoadingMessage();
     this.loadingIndicator = true;
-    //this.accountService.getUsersAndRoles().subscribe(results => this.onDataLoadSuccessful(results[0], results[1]), error => this.onDataLoadFailed(error));
     this.sfAccountSettingsService.getSFContacts().subscribe(results => this.onDataLoadSuccessful(results), error => this.onDataLoadFailed(error));
   }
 
 
-  //onDataLoadSuccessful(sfContacts: SFContact[], roles: Role[]) {
   onDataLoadSuccessful(sfContacts: SFContact[]) {
     this.alertService.stopLoadingMessage();
     this.loadingIndicator = false;
+    //this.numMainContacts = 0;
 
     sfContacts.forEach((sfContact, index, sfContacts) => {
       (<any>sfContact).index = index + 1;
+      this.fillName((<any>sfContact));
+      this.fillRoles(<any>sfContact);
+      //if ((<any>sfContact).mainContact) this.numMainContacts++;
     });
 
     this.rowsCache = [...sfContacts];
     this.rows = sfContacts;
-
-    //this.allRoles = roles;
   }
 
 
@@ -150,7 +176,7 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
 
 
   onSearchChanged(value: string) {
-    this.rows = this.rowsCache.filter(r => Utilities.searchArray(value, false, r.name, r.email, r.phone));
+    this.rows = this.rowsCache.filter(r => Utilities.searchArray(value, false, r.firstName, r.lastName, r.email, r.phone));
   }
 
   onEditorModalHidden() {
@@ -162,7 +188,6 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
   newSFContact() {
     this.editingContactName = null;
     this.sourceContact = null;
-    //this.editedContact = this.sfContactEditor.newSFContact(this.allRoles);
     this.editedContact = this.sfContactEditor.newSFContact();
     this.editorModal.show();
   }
@@ -171,9 +196,35 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
   editSFContact(row: SFContact) {
     this.editingContactName = { name: row.name };
     this.sourceContact = row;
-    //this.editedContact = this.sfContactEditor.editSFContact(row, this.allRoles);
     this.editedContact = this.sfContactEditor.editSFContact(row);
     this.editorModal.show();
+  }
+
+
+  // Populate the contact's full name.
+  fillName(sfContact: SFContact) {
+    let firstName = sfContact.firstName ? (sfContact.firstName.toLowerCase() != 'null' ? sfContact.firstName : '') : '';
+    sfContact.name = (firstName + ' ' + sfContact.lastName).trim();
+  }
+
+  // Populate the contact's Roles.
+  fillRoles(sfContact: SFContact) {
+    sfContact.roles = [];
+    if (sfContact.mainContact) sfContact.roles.push('Main');
+    if (sfContact.billingContact) sfContact.roles.push('Billing');
+    if (sfContact.shippingContact) sfContact.roles.push('Shipping');
+    if (sfContact.serviceContact) sfContact.roles.push('Service');
+    if (sfContact.propertyContact) sfContact.roles.push('Property');
+    if (sfContact.installationContact) sfContact.roles.push('Installation');
+    if (sfContact.marketingContact) sfContact.roles.push('Marketing');
+  }
+
+  getNumMainContacts() {
+    let numMainContacts = 0;
+    //let sfContacts = this.rows;
+    for(let sfContact of this.rows) 
+      if (sfContact.mainContact) numMainContacts++;
+    return numMainContacts;
   }
 
 }

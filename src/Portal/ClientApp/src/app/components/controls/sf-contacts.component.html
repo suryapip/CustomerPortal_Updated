@@ -33,15 +33,22 @@
     <strong>{{value}}</strong>
   </ng-template>
 
-  <ng-template #nameTemplate let-row="row" let-value="value">
+  <!--<ng-template #nameTemplate let-row="row" let-value="value">
     <span [class.inactive]="!row.active">
       <i *ngIf="!row.active" class="fa fa-exclamation"> </i>
       {{value}}
     </span>
-  </ng-template>
+  </ng-template>-->
 
   <ng-template #rolesTemplate let-row="row" let-value="value" let-i="index">
     <span class="role badge" *ngFor="let role of value">{{role}}</span>
+  </ng-template>
+
+  <ng-template #activeTemplate let-row="row" let-value="value">
+    <!--<div class="center">-->
+    <i *ngIf="row.active" class="fa fa-check green"> </i>
+    <i *ngIf="!row.active" class="fa fa-close red"> </i>
+    <!--</div>-->
   </ng-template>
 
   <ng-template #actionsTemplate let-row="row" let-value="value" let-i="index">

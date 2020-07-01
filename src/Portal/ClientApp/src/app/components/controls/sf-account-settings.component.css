@@ -35,15 +35,6 @@ input.form-control {
   border-left-width: 5px;
 }
 
-
-.password-well {
-  margin-bottom: 0;
-}
-
-.hint-sm {
-  display: block;
-}
-
 .checkbox.user-enabled {
   display: inline-block;
 }
@@ -56,4 +47,9 @@ input.form-control {
   .user-enabled {
     margin-left: 40px;
   }
+}
+
+.required {
+  display: inline-block;
+  color: #ff0000;
 }

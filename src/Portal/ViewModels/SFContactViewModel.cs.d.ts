@@ -2,7 +2,8 @@
     interface sfContactViewModel {
         id: number;
         accountNumber: string;
-        name: string;
+        firstName: string;
+        lastName: string;
         email: string;
         phone: string;
         mainContact : boolean;

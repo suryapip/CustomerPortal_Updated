@@ -316,7 +316,8 @@ namespace ScentAir.Payment.Impl
                 entity.HasKey(x => x.Id);
                 entity.Property(x => x.Id).IsRequired().ValueGeneratedOnAdd();
                 entity.Property(x => x.AccountNumber).IsRequired().IsUnicode(false);
-                entity.Property(x => x.Name).IsRequired().IsUnicode(false);
+                entity.Property(x => x.FirstName).IsUnicode(false);
+                entity.Property(x => x.LastName).IsRequired().IsUnicode(false);
                 entity.Property(x => x.Email).IsUnicode(false);
                 entity.Property(x => x.Phone).IsUnicode(false);
                 entity.Property(x => x.MainContact);

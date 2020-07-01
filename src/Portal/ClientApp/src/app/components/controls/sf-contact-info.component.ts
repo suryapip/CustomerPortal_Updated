@@ -7,9 +7,9 @@ import { LocalStoreManager } from '../../services/local-store-manager.service';
 import { DBkeys } from '../../services/db-Keys';
 import { LanguageObservableService } from '../../services/language-observable.service';
 
+import { SFAccountSettings } from '../../models/sf-account-settings.model';
 import { SFAccountSettingsService } from "../../services/sf-account-settings.service";
 import { SFContact } from "../../models/sf-contact.model";
-import { SFContactRole } from "../../models/sf-contact-role.model";
 
 
 @Component({
@@ -25,28 +25,17 @@ export class SFContactInfoComponent implements OnInit {
   private showValidationErrors = false;
   private editingContactName: string;
   private uniqueId: string = Utilities.uniqueId();
+  private sfAccountSettings: SFAccountSettings = new SFAccountSettings();
   private sfContact: SFContact = new SFContact();
   private sfContactEdit: SFContact = new SFContact();
-  private isEditingEmailAddress: boolean = false;
   private selectedLanguage: string;
 
-  // A contact's roles are stored as individual boolean fields in the SFContacts table, not in a separate association table.
-  // The SFContactRole object is hardcoded on the UI side for display purposes; it doesn't propagate to the database.
-  //allRoles: SFContactRole[] = [
-  //  new SFContactRole('Main', 'Main Contact'),
-  //  new SFContactRole('Billing', 'Billing Contact'),
-  //  new SFContactRole('Shipping', 'Shipping Contact'),
-  //  new SFContactRole('Service', 'Service Contact'),
-  //  new SFContactRole('Property', 'Property Contact'),
-  //  new SFContactRole('Installation', 'Installation Contact'),
-  //  new SFContactRole('Marketing', 'Marketing Contact')
-  //];
-
-  public formResetToggle = true;
+  public formResetToggle: boolean = true;
 
   public changesSavedCallback: () => void;
   public changesFailedCallback: () => void;
   public changesCancelledCallback: () => void;
+
   
   @Input()
   isViewOnly: boolean;
@@ -59,8 +48,10 @@ export class SFContactInfoComponent implements OnInit {
   private form;
 
   //ViewChilds Required because ngIf hides template variables from global scope
+  @ViewChild('id') private id;
   @ViewChild('accountNumber') private accountNumber;
-  @ViewChild('name') private name;
+  @ViewChild('firstName') private firstName;
+  @ViewChild('lastName') private lastName;
   @ViewChild('email') private email;
   @ViewChild('phone') private phone;
   @ViewChild('mainContact') private mainContact;
@@ -73,8 +64,13 @@ export class SFContactInfoComponent implements OnInit {
   @ViewChild('doNotCall') private doNotCall;
   @ViewChild('doNotEmail') private doNotEmail;
   @ViewChild('active') private active;
-  //@ViewChild('roles') private roles;
-  //@ViewChild('rolesSelector') private rolesSelector;
+
+  // Computed values from the SFContact model
+  @ViewChild('name') private name;
+
+  //@ViewChild('removedLastMainContact') public removedLastMainContact: boolean = false;
+  //public numMainContacts: number;
+  //public numMainContactsCallback: () => void;
 
 
   constructor(private alertService: AlertService, private sfAccountSettingsService: SFAccountSettingsService, private localStorage: LocalStoreManager, public userInfoService: LanguageObservableService) {
@@ -87,6 +83,8 @@ export class SFContactInfoComponent implements OnInit {
       this.selectedLanguage = "en";
     }
 
+    this.loadSFAccountSettingsData();   // So we can populate the AccountNumber for new Contacts.
+
     if (!this.isGeneralEditor) {
       this.loadSFContactInfo();
     }
@@ -98,6 +96,31 @@ export class SFContactInfoComponent implements OnInit {
     });
   }
 
+  // SFAccountSettings
+
+  private loadSFAccountSettingsData() {
+    this.alertService.startLoadingMessage();
+    this.sfAccountSettingsService.getSFAccountSettings()
+      .subscribe(results => this.onSFAccountSettingsDataLoadSuccessful(results), error => this.onSFAccountSettingsDataLoadFailed(error));
+  }
+
+
+  private onSFAccountSettingsDataLoadSuccessful(accountSettings: SFAccountSettings) {
+    this.alertService.stopLoadingMessage();
+    this.sfAccountSettings = accountSettings;
+  }
+
+
+  private onSFAccountSettingsDataLoadFailed(error: any) {
+    this.alertService.stopLoadingMessage();
+    this.alertService.showStickyMessage("Load Error", `Unable to retrieve account settings from the server.\r\nErrors: "${Utilities.getHttpResponseMessage(error)}"`,
+      MessageSeverity.error, error);
+
+    this.sfAccountSettings = new SFAccountSettings();
+  }
+
+
+  // SFContact
 
   private loadSFContactInfo() {
     this.alertService.startLoadingMessage();
@@ -108,7 +131,26 @@ export class SFContactInfoComponent implements OnInit {
   private onSFContactInfoLoadSuccessful(sfContact: SFContact) {
     this.alertService.stopLoadingMessage();
     this.sfContact = sfContact;
-    //this.allRoles = roles;
+    this.id = sfContact.id;
+    this.accountNumber = sfContact.accountNumber;
+    this.firstName = sfContact.firstName;
+    this.lastName = sfContact.lastName;
+    this.email = sfContact.email;
+    this.phone = sfContact.phone;
+    this.mainContact = sfContact.mainContact;
+    this.billingContact = sfContact.billingContact;
+    this.shippingContact = sfContact.shippingContact;
+    this.serviceContact = sfContact.serviceContact;
+    this.propertyContact = sfContact.propertyContact;
+    this.installationContact = sfContact.installationContact;
+    this.marketingContact = sfContact.marketingContact;
+    this.doNotCall = sfContact.doNotCall;
+    this.doNotEmail = sfContact.doNotEmail;
+    this.active = sfContact.active
+
+    // Computed values from the SFContact model
+    this.fillName(sfContact);
+    this.name = sfContact.name;
   }
 
   private onSFContactInfoLoadFailed(error: any) {
@@ -120,17 +162,9 @@ export class SFContactInfoComponent implements OnInit {
   }
 
 
-  //private getRoleByName(name: string) {
-  //  return this.allRoles.find((r) => r.name == name)
-  //}
-
-
-  private showErrorAlert(caption: string, message: string) {
-    this.alertService.showMessage(caption, message, MessageSeverity.error);
-  }
-
-
   private edit() {
+    if (this.isNewContact) 
+      this.sfContact.accountNumber = this.sfAccountSettings.accountNumber;
     Object.assign(this.sfContactEdit, this.sfContact);
     this.isEditMode = true;
     this.showValidationErrors = true;
@@ -140,29 +174,14 @@ export class SFContactInfoComponent implements OnInit {
   private save() {
     this.isSaving = true;
     this.alertService.startLoadingMessage("Saving changes...");
-
-    if (this.sfContact.email != this.sfContactEdit.email) {
-      this.isEditingEmailAddress = true;
-    }
-
-    //if (this.isNewContact) {
     this.sfAccountSettingsService.saveSFContact(this.sfContactEdit)
       .subscribe(
         response => this.saveSuccessHelper(response),
         error => this.saveFailedHelper(error));
-    //}
-    //else {
-    //  this.sfAccountSettingsService.updateSFContact(this.sfContactEdit)
-    //    .subscribe(
-    //      response => this.saveSuccessHelper(response),
-    //      error => this.saveFailedHelper(error));
-    //}
   }
 
 
   private saveSuccessHelper(sfContact?: SFContact) {
-    //this.testIsRoleUserCountChanged(this.sfContact, this.sfContactEdit);
-
     if (sfContact)
       Object.assign(this.sfContactEdit, sfContact);
 
@@ -170,6 +189,7 @@ export class SFContactInfoComponent implements OnInit {
     this.alertService.stopLoadingMessage();
     this.showValidationErrors = false;
 
+    this.fillName(this.sfContactEdit);
     Object.assign(this.sfContact, this.sfContactEdit);
     this.sfContactEdit = new SFContact();
     this.resetForm();
@@ -182,7 +202,6 @@ export class SFContactInfoComponent implements OnInit {
     }
 
     this.isEditMode = false;
-    this.isEditingEmailAddress = false;
 
     if (this.changesSavedCallback)
       this.changesSavedCallback();
@@ -191,7 +210,6 @@ export class SFContactInfoComponent implements OnInit {
 
   private saveFailedHelper(error: any) {
     this.isSaving = false;
-    this.isEditingEmailAddress = false;
     this.showValidationErrors = true;
 
     this.alertService.stopLoadingMessage();
@@ -203,18 +221,6 @@ export class SFContactInfoComponent implements OnInit {
     if (this.changesFailedCallback)
       this.changesFailedCallback();
   }
-
-
-  //private testIsRoleUserCountChanged(currentSFContact: SFContact, editedSFContact: SFContact) {
-
-  //  let rolesAdded = this.isNewContact ? editedSFContact.roles : editedSFContact.roles.filter(role => currentSFContact.roles.indexOf(role) == -1);
-  //  let rolesRemoved = this.isNewContact ? [] : currentSFContact.roles.filter(role => editedSFContact.roles.indexOf(role) == -1);
-
-  //  let modifiedRoles = rolesAdded.concat(rolesRemoved);
-
-  //  if (modifiedRoles.length)
-  //    setTimeout(() => this.sfAccountSettingsService.onRolesUserCountChanged(modifiedRoles));
-  //}
 
 
   private cancel() {
@@ -248,18 +254,6 @@ export class SFContactInfoComponent implements OnInit {
   }
 
 
-  //private refreshLoggedInUser() {
-  //  this.sfAccountSettingsService.refreshLoggedInUser()
-  //    .subscribe(user => {
-  //      this.loadCurrentSFContactData();
-  //    },
-  //      error => {
-  //        this.alertService.resetStickyMessage();
-  //        this.alertService.showStickyMessage("Refresh failed", "An error occurred whilst refreshing logged in user information from the server", MessageSeverity.error, error);
-  //      });
-  //}
-
-
   resetForm(replace = false) {
     if (!replace) {
       this.form.reset();
@@ -274,28 +268,26 @@ export class SFContactInfoComponent implements OnInit {
   }
 
 
-  //newSFContact(allRoles: SFContactRole[]) {
   newSFContact() {
     this.isGeneralEditor = true;
     this.isNewContact = true;
 
-    //this.allRoles = [...allRoles];
     this.editingContactName = null;
     this.sfContact = this.sfContactEdit = new SFContact();
-    //this.sfContactEdit.accountNumber = 
     this.sfContactEdit.active = true;
     this.edit();
+
+    //this.numMainContactsCallback();     // Get the current number of Main contacts from the parent page.
+    //this.removedLastMainContact = (this.sfContact.mainContact && !this.sfContactEdit.mainContact && this.numMainContacts == 1);
 
     return this.sfContactEdit;
   }
 
-  //editSFContact(sfContact: SFContact, allRoles: SFContactRole[]) {
   editSFContact(sfContact: SFContact) {
     if (sfContact) {
       this.isGeneralEditor = true;
       this.isNewContact = false;
 
-      //this.setRoles(sfContact, allRoles);
       this.editingContactName = sfContact.name;
       this.sfContact = new SFContact();
       this.sfContactEdit = new SFContact();
@@ -303,33 +295,32 @@ export class SFContactInfoComponent implements OnInit {
       Object.assign(this.sfContactEdit, sfContact);
       this.edit();
 
+      //this.numMainContactsCallback();     // Get the current number of Main contacts from the parent page.
+      //this.removedLastMainContact = (this.sfContact.mainContact && !this.sfContactEdit.mainContact && this.numMainContacts == 1);
+
       return this.sfContactEdit;
     }
     else {
-      //return this.newSFContact(allRoles);
       return this.newSFContact();
     }
   }
 
 
-  //displaySFContact(sfContact: SFContact, allRoles?: SFContactRole[]) {
   displaySFContact(sfContact: SFContact) {
     this.sfContact = new SFContact();
     Object.assign(this.sfContact, sfContact);
-    //this.setRoles(sfContact, allRoles);
     this.isEditMode = false;
   }
 
-  //private setRoles(sfContact: SFContact, allRoles?: SFContactRole[]) {
-  //  this.allRoles = allRoles ? [...allRoles] : [];
-  //  if (sfContact.roles) {
-  //    for (let ur of sfContact.roles()) {
-  //      if (!this.allRoles.some(r => r.name == ur))
-  //        this.allRoles.unshift(new SFContactRole(ur));
-  //    }
-  //  }
-  //  if (allRoles == null || this.allRoles.length != allRoles.length)
-  //    setTimeout(() => this.rolesSelector.refresh());
-  //}
+
+  private showErrorAlert(caption: string, message: string) {
+    this.alertService.showMessage(caption, message, MessageSeverity.error);
+  }
+
+
+  // Populate the contact's full name.
+  fillName(sfContact: SFContact) {
+    sfContact.name = (sfContact.firstName + ' ' + sfContact.lastName).trim();
+  }
 
 }

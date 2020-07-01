@@ -1,7 +1,8 @@
 export class SFContact {
   public id: number;
   public accountNumber: string;
-  public name: string;
+  public firstName: string;
+  public lastName: string;
   public email: string;
   public phone: string;
   public mainContact: boolean;
@@ -15,18 +16,8 @@ export class SFContact {
   public doNotEmail: boolean;
   public active: boolean;
 
-  // A contact's roles are stored as individual boolean fields in the SFContacts table, not in a separate association table.
-  // The SFContactRole object and roles [] array are coded on the UI side for display purposes.
-  public roles(): string[] {
-    var roles: string[];
-    if (this.mainContact) roles.push('Main');
-    if (this.billingContact) roles.push('Billing');
-    if (this.shippingContact) roles.push('Shipping');
-    if (this.serviceContact) roles.push('Service');
-    if (this.propertyContact) roles.push('Property');
-    if (this.installationContact) roles.push('Installation');
-    if (this.marketingContact) roles.push('Marketing');
-    return roles;
-  }
+  // Computed values
+  public name: string;
+  public roles: string[];
 
 }

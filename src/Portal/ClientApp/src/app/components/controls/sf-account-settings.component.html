@@ -15,13 +15,13 @@
 
     <!-- BillingLine1 -->
     <div class="form-group has-feedback">
-      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingLine1-{{uniqueId}}">{{'AccountSettings.BillingLine1' | translate}}</label>
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingLine1-{{uniqueId}}"><div class="required">*</div>{{'AccountSettings.BillingLine1' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
         <p class="form-control-static">{{sfAccountSettings.billingLine1}}</p>
       </div>
       <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && billingLine1.valid, 'has-error' : f.submitted && !billingLine1.valid}">
         <input type="text" attr.id="BillingLine1-{{uniqueId}}" name="billingLine1" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Billing Address"
-               class="form-control" [(ngModel)]="sfAccountSettings.billingLine1" #billingLine1="ngModel" required minlength="1" maxlength="50" />
+               class="form-control" [(ngModel)]="sfAccountSettings.billingLine1" #billingLine1="ngModel" required minlength="1" maxlength="50" autofocus />
         <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': billingLine1.valid, 'glyphicon-remove' : !billingLine1.valid}"></span>
         <span *ngIf="showValidationErrors && f.submitted && !billingLine1.valid" class="errorMessage">
           {{'AccountSettings.BillingLine1Required' | translate}}
@@ -81,7 +81,7 @@
 
     <!-- BillingMunicipality -->
     <div class="form-group has-feedback">
-      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingMunicipality-{{uniqueId}}">{{'AccountSettings.BillingMunicipality' | translate}}</label>
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingMunicipality-{{uniqueId}}"><div class="required">*</div>{{'AccountSettings.BillingMunicipality' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
         <p class="form-control-static">{{sfAccountSettings.billingMunicipality}}</p>
       </div>
@@ -103,7 +103,7 @@
 
     <!-- BillingStateOrProvince -->
     <div class="form-group has-feedback">
-      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingStateOrProvince-{{uniqueId}}">{{'AccountSettings.BillingStateOrProvince' | translate}}</label>
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingStateOrProvince-{{uniqueId}}"><div class="required">*</div>{{'AccountSettings.BillingStateOrProvince' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
         <p class="form-control-static">{{sfAccountSettings.billingStateOrProvince}}</p>
       </div>
@@ -125,7 +125,7 @@
 
     <!-- BillingPostalCode -->
     <div class="form-group has-feedback">
-      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingPostalCode-{{uniqueId}}">{{'AccountSettings.BillingPostalCode' | translate}}</label>
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingPostalCode-{{uniqueId}}"><div class="required">*</div>{{'AccountSettings.BillingPostalCode' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
         <p class="form-control-static">{{sfAccountSettings.billingPostalCode}}</p>
       </div>
@@ -147,7 +147,7 @@
 
     <!-- BillingCountry -->
     <div class="form-group has-feedback">
-      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingCountry-{{uniqueId}}">{{'AccountSettings.BillingCountry' | translate}}</label>
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingCountry-{{uniqueId}}"><div class="required">*</div>{{'AccountSettings.BillingCountry' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
         <p class="form-control-static">{{sfAccountSettings.billingCountry}}</p>
       </div>
@@ -169,7 +169,7 @@
 
     <!-- ShippingLine1 -->
     <div class="form-group has-feedback">
-      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingLine1-{{uniqueId}}">{{'AccountSettings.ShippingLine1' | translate}}</label>
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingLine1-{{uniqueId}}"><div class="required">*</div>{{'AccountSettings.ShippingLine1' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
         <p class="form-control-static">{{sfAccountSettings.shippingLine1}}</p>
       </div>
@@ -235,7 +235,7 @@
 
     <!-- ShippingMunicipality -->
     <div class="form-group has-feedback">
-      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingMunicipality-{{uniqueId}}">{{'AccountSettings.ShippingMunicipality' | translate}}</label>
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingMunicipality-{{uniqueId}}"><div class="required">*</div>{{'AccountSettings.ShippingMunicipality' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
         <p class="form-control-static">{{sfAccountSettings.shippingMunicipality}}</p>
       </div>
@@ -257,7 +257,7 @@
 
     <!-- ShippingStateOrProvince -->
     <div class="form-group has-feedback">
-      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingStateOrProvince-{{uniqueId}}">{{'AccountSettings.ShippingStateOrProvince' | translate}}</label>
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingStateOrProvince-{{uniqueId}}"><div class="required">*</div>{{'AccountSettings.ShippingStateOrProvince' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
         <p class="form-control-static">{{sfAccountSettings.shippingStateOrProvince}}</p>
       </div>
@@ -279,7 +279,7 @@
 
     <!-- ShippingPostalCode -->
     <div class="form-group has-feedback">
-      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingPostalCode-{{uniqueId}}">{{'AccountSettings.ShippingPostalCode' | translate}}</label>
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingPostalCode-{{uniqueId}}"><div class="required">*</div>{{'AccountSettings.ShippingPostalCode' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
         <p class="form-control-static">{{sfAccountSettings.shippingPostalCode}}</p>
       </div>
@@ -301,7 +301,7 @@
 
     <!-- ShippingCountry -->
     <div class="form-group has-feedback">
-      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingCountry-{{uniqueId}}">{{'AccountSettings.ShippingCountry' | translate}}</label>
+      <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingCountry-{{uniqueId}}"><div class="required">*</div>{{'AccountSettings.ShippingCountry' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
         <p class="form-control-static">{{sfAccountSettings.shippingCountry}}</p>
       </div>

@@ -39,20 +39,7 @@ input.form-control {
   display: inline-block;
 }
 
-/*.password-well {
-    margin-bottom: 0;
+.required {
+  display: inline-block;
+  color: #ff0000;
 }
-
-.hint-sm {
-    display: block;
-}
-
-.unblock-user {
-    margin-left: 34px;
-}
-
-@media (min-width: 992px) {
-    .user-enabled {
-        margin-left: 40px;
-    }
-}*/
