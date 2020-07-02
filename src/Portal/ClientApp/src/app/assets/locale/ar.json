@@ -219,9 +219,9 @@
       "NewContact": "جهة اتصال جديدة",
       "Edit": "تصحيح",
       "EditContact": "تحرير جهة الاتصال \"{{name}}\"",
-      "Name": "Name",
-      "FirstName": "First Name",
-      "LastName": "Last Name",
+      "Name": "اسم",
+      "FirstName": "الاسم الاول",
+      "LastName": "اسم العائلة",
       "Email": "البريد الإلكتروني",
       "Phone": "رقم الهاتف",
       "Roles": "الأدوار",
@@ -243,12 +243,13 @@
       "DoNotCall": "لا تتصل",
       "DoNotEmail": "لا تقم بريد إلكتروني",
       "Active": "تمكين",
-      "Inactive": "Inactive"
+      "Inactive": "المعطلة"
     },
     "editor": {
-      "NameRequired": "Last Name is required",
+      "NameRequired": "إسم العائلة مطلوب",
       "EmailRequired": "البريد الالكتروني مطلوب",
-      "InvalidEmail": "عنوان البريد الإلكتروني المحدد غير صالح"
+      "InvalidEmail": "عنوان البريد الإلكتروني المحدد غير صالح",
+      "MainContactRequired": "مطلوب جهة اتصال رئيسية واحدة على الأقل (قم بتعيين الدور الرئيسي لجهة اتصال أخرى أولاً)"
     }
   }
 }

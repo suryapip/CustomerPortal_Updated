@@ -24,7 +24,7 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
   loadingIndicator: boolean;
   //numMainContacts: number;
 
-  @ViewChild('indexTemplate') indexTemplate: TemplateRef<any>;
+  //@ViewChild('indexTemplate') indexTemplate: TemplateRef<any>;
   @ViewChild('rolesTemplate') rolesTemplate: TemplateRef<any>;
   @ViewChild('activeTemplate') activeTemplate: TemplateRef<any>;
   @ViewChild('actionsTemplate') actionsTemplate: TemplateRef<any>;
@@ -40,11 +40,11 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
     let gT = (key: string) => this.translationService.getTranslation(key);
 
     this.columns = [
-      { prop: "index", name: '#', width: 40, cellTemplate: this.indexTemplate, canAutoResize: false },
+      //{ prop: "index", name: '#', width: 40, cellTemplate: this.indexTemplate, canAutoResize: false },
       { prop: 'name', name: gT('Contacts.management.Name'), width: 120 },
-      { prop: 'email', name: gT('Contacts.management.Email'), width: 130 },
+      { prop: 'email', name: gT('Contacts.management.Email'), width: 140 },
       { prop: 'phone', name: gT('Contacts.management.Phone'), width: 90 },
-      { prop: 'roles', name: gT('Contacts.management.Roles'), width: 140, cellTemplate: this.rolesTemplate },
+      { prop: 'roles', name: gT('Contacts.management.Roles'), width: 170, cellTemplate: this.rolesTemplate },
       { prop: 'active', name: gT('Contacts.management.Active'), width: 30, cellTemplate: this.activeTemplate },
     ];
 
@@ -99,13 +99,13 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
         Object.assign(sfContact, this.editedContact);
         this.editedContact = null;
 
-        let maxIndex = 0;
-        for (let u of this.rowsCache) {
-          if ((<any>u).index > maxIndex)
-            maxIndex = (<any>u).index;
-        }
+        //let maxIndex = 0;
+        //for (let u of this.rowsCache) {
+        //  if ((<any>u).index > maxIndex)
+        //    maxIndex = (<any>u).index;
+        //}
 
-        (<any>sfContact).index = maxIndex + 1;
+        //(<any>sfContact).index = maxIndex + 1;
 
         this.rowsCache.splice(0, 0, sfContact);
         this.rows.splice(0, 0, sfContact);
@@ -132,7 +132,7 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
     //this.numMainContacts = 0;
 
     sfContacts.forEach((sfContact, index, sfContacts) => {
-      (<any>sfContact).index = index + 1;
+      //(<any>sfContact).index = index + 1;
       this.fillName((<any>sfContact));
       this.fillRoles(<any>sfContact);
       //if ((<any>sfContact).mainContact) this.numMainContacts++;
