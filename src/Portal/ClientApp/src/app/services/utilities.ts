@@ -573,61 +573,45 @@ export class Utilities {
 
   public static moveArrayItem(array: any[], oldIndex, newIndex) {
     try {
-      let debug = true;
-      let t: string;
-      if (debug) t = 'this.length = ' + this.length;
-
       while (oldIndex < 0) {
-        oldIndex += this.length;
+        oldIndex += array.length;
       }
-      if (debug) t += '\noldIndex (before) = ' + oldIndex + ', (after) = ' + oldIndex;
-
       while (newIndex < 0) {
-        newIndex += this.length;
+        newIndex += array.length;
       }
-      if (debug) t += '\nnewIndex (before) = ' + newIndex + ', (after) = ' + newIndex;
-
-      if (newIndex >= this.length) {
-        let k = newIndex - this.length;
-        if (debug) t += '\nCreating ' + k + ' additional array elements...';
+      if (newIndex >= array.length) {
+        let k = newIndex - array.length;
         while ((k--) + 1) {
-          if (debug) t += '\nCreating additional array element # ' + k;
           array.push(undefined);
         }
       }
-
       array.splice(newIndex, 0, array.splice(oldIndex, 1)[0]);
-      if (debug) t += 'array.splice(newIndex = ' + newIndex + ', 0, array.splice(oldIndex = ' + oldIndex + ', 1)[0]);';
-      if (debug) alert(t);
     }
     catch (e) {
-      if (e instanceof Error) {
-        // IDE type hinting now available
-        // properly handle Error e
-        alert(e.message);
-      }
-      else if (typeof e === 'string' || e instanceof String) {
-        // IDE type hinting now available
-        // properly handle e or...stop using libraries that throw naked strings
-        alert(e);
-      }
-      else if (typeof e === 'number' || e instanceof Number) {
-        // IDE type hinting now available
-        // properly handle e or...stop using libraries that throw naked numbers
-        alert(e);
-      }
-      else if (typeof e === 'boolean' || e instanceof Boolean) {
-        // IDE type hinting now available
-        // properly handle e or...stop using libraries that throw naked booleans
-        alert(e);
-      }
-      else {
-        // if we can't figure out what what we are dealing with then
-        // probably cannot recover...therefore, rethrow
-        // Note to Self: Rethink my life choices and choose better libraries to use.
-        throw e;
-      }
+      throw Error(this.getErrorString(e, 'Utilities.moveArrayItem'));
     }
+  }
+
+
+  public static getErrorString(e: any, methodName: string = '') {
+    let msg: string = '';
+    if (methodName) msg = methodName + ': ';
+    if (e instanceof Error) {
+      msg += e.message;
+    }
+    else if (typeof e === 'string' || e instanceof String) {
+      msg += e.toString();
+    }
+    else if (typeof e === 'number' || e instanceof Number) {
+      msg += e.toString();
+    }
+    else if (typeof e === 'boolean' || e instanceof Boolean) {
+      msg += e.toString();
+    }
+    else {
+      msg += e.toString();
+    }
+    return msg;
   }
 
 

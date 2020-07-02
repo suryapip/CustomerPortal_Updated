@@ -584,14 +584,14 @@
       "Email": "Email",
       "Phone": "Phone Number",
       "Roles": "Roles",
-      "RoleMain": "Main",
+      "RoleMain": "MainX",
       "RoleBilling": "Billing",
       "RoleShipping": "Shipping",
       "RoleService": "Service",
       "RoleProperty": "Property",
       "RoleInstallation": "Installation",
       "RoleMarketing": "Marketing",
-      "RoleMainContact": "Main Contact",
+      "RoleMainContact": "Main ContactX",
       "RoleBillingContact": "Billing Contact",
       "RoleShippingContact": "Shipping Contact",
       "RoleServiceContact": "Service Contact",
@@ -601,7 +601,8 @@
       "MarketingPreferences": "Marketing Preferences",
       "DoNotCall": "Do Not Call",
       "DoNotEmail": "Do Not E-mail",
-      "Active": "Active"
+      "Active": "Active",
+      "Inactive": "Inactive"
     },
     "editor": {
       "LastNameRequired": "Last Name is required",

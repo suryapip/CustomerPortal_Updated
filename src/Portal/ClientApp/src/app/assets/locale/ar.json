@@ -242,7 +242,8 @@
       "MarketingPreferences": "Marketing Preferences",
       "DoNotCall": "لا تتصل",
       "DoNotEmail": "لا تقم بريد إلكتروني",
-      "Active": "تمكين"
+      "Active": "تمكين",
+      "Inactive": "Inactive"
     },
     "editor": {
       "NameRequired": "Last Name is required",

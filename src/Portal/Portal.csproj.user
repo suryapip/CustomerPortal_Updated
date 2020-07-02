@@ -5,7 +5,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>Portal</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>DEV30WEB01 %28stop .NET Core app pool first%29</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>Local Release Folder</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>

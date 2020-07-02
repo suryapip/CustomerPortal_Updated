@@ -78,20 +78,22 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
     try {
       this.fillName(this.editedContact);
       this.fillRoles(this.editedContact);
+      // Edit Contact
       if (this.sourceContact) {
         Object.assign(this.sourceContact, this.editedContact);
 
-        let sourceIndex = this.rowsCache.indexOf(this.sourceContact, 0);
-        if (sourceIndex > -1)
-          Utilities.moveArrayItem(this.rowsCache, sourceIndex, 0);
-
-        sourceIndex = this.rows.indexOf(this.sourceContact, 0);
-        if (sourceIndex > -1)
-          Utilities.moveArrayItem(this.rows, sourceIndex, 0);
+        //// Move edited contact to the top of the grid
+        //let sourceIndex = this.rowsCache.indexOf(this.sourceContact, 0);
+        //if (sourceIndex > -1)
+        //  Utilities.moveArrayItem(this.rowsCache, sourceIndex, 0);
+        //sourceIndex = this.rows.indexOf(this.sourceContact, 0);
+        //if (sourceIndex > -1)
+        //  Utilities.moveArrayItem(this.rows, sourceIndex, 0);
 
         this.editedContact = null;
         this.sourceContact = null;
       }
+      // New Contact
       else {
         let sfContact = new SFContact();
         Object.assign(sfContact, this.editedContact);
@@ -99,7 +101,7 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
 
         let maxIndex = 0;
         for (let u of this.rowsCache) {
-          if ((<any>u) && (<any>u).index > maxIndex)
+          if ((<any>u).index > maxIndex)
             maxIndex = (<any>u).index;
         }
 
@@ -111,32 +113,7 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
       }
     }
     catch (e) {
-      if (e instanceof Error) {
-        // IDE type hinting now available
-        // properly handle Error e
-        alert(e.message);
-      }
-      else if (typeof e === 'string' || e instanceof String) {
-        // IDE type hinting now available
-        // properly handle e or...stop using libraries that throw naked strings
-        alert(e);
-      }
-      else if (typeof e === 'number' || e instanceof Number) {
-        // IDE type hinting now available
-        // properly handle e or...stop using libraries that throw naked numbers
-        alert(e);
-      }
-      else if (typeof e === 'boolean' || e instanceof Boolean) {
-        // IDE type hinting now available
-        // properly handle e or...stop using libraries that throw naked booleans
-        alert(e);
-      }
-      else {
-        // if we can't figure out what what we are dealing with then
-        // probably cannot recover...therefore, rethrow
-        // Note to Self: Rethink my life choices and choose better libraries to use.
-        throw e;
-      }
+      throw Error(Utilities.getErrorString(e, 'SFContactsComponent.addNewContactToList'));
     }
 
   }

@@ -240,7 +240,8 @@
       "MarketingPreferences": "Marketing Preferences",
       "DoNotCall": "Do Not Call",
       "DoNotEmail": "Do Not E-mail",
-      "Active": "Active"
+      "Active": "Active",
+      "Inactive": "Inactive"
     },
     "editor": {
       "LastNameRequired": "Last Name is required",

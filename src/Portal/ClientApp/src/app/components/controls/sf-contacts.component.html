@@ -33,22 +33,15 @@
     <strong>{{value}}</strong>
   </ng-template>
 
-  <!--<ng-template #nameTemplate let-row="row" let-value="value">
-    <span [class.inactive]="!row.active">
-      <i *ngIf="!row.active" class="fa fa-exclamation"> </i>
-      {{value}}
-    </span>
-  </ng-template>-->
-
   <ng-template #rolesTemplate let-row="row" let-value="value" let-i="index">
-    <span class="role badge" *ngFor="let role of value">{{role}}</span>
+    <div class="roles">
+      <div class="role badge role-{{role}}" *ngFor="let role of value" title="{{'Contacts.management.Role'+role+'Contact' | translate}}">{{'Contacts.management.Role'+role | translate}}</div>
+    </div>
   </ng-template>
 
   <ng-template #activeTemplate let-row="row" let-value="value">
-    <!--<div class="center">-->
-    <i *ngIf="row.active" class="fa fa-check green"> </i>
-    <i *ngIf="!row.active" class="fa fa-close red"> </i>
-    <!--</div>-->
+    <i *ngIf="row.active" class="fa fa-check green" title="Active"> </i>
+    <i *ngIf="!row.active" class="fa fa-close red" title="Inactive"> </i>
   </ng-template>
 
   <ng-template #actionsTemplate let-row="row" let-value="value" let-i="index">

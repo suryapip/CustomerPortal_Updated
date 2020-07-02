@@ -236,4 +236,8 @@ export class SFAccountSettingsComponent implements OnInit {
     }
   }
 
+  private showErrorAlert(caption: string, message: string) {
+    this.alertService.showMessage(caption, message, MessageSeverity.error);
+  }
+
 }

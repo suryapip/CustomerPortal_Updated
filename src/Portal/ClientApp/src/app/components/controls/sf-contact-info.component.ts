@@ -320,7 +320,8 @@ export class SFContactInfoComponent implements OnInit {
 
   // Populate the contact's full name.
   fillName(sfContact: SFContact) {
-    sfContact.name = (sfContact.firstName + ' ' + sfContact.lastName).trim();
+    let firstName = sfContact.firstName ? (sfContact.firstName.toLowerCase() != 'null' ? sfContact.firstName : '') : '';
+    sfContact.name = (firstName + ' ' + sfContact.lastName).trim();
   }
 
 }
