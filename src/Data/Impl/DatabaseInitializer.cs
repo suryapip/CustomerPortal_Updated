@@ -244,6 +244,7 @@ namespace ScentAir.Payment.Impl
             await ensureLookupAsync(17, new IdentityQuestion { Id = 17, ReferenceEnglishId = 5, Question = "¿Cuál es tu lugar de vacaciones favorito?", Order = 5, Language = "ES" }, cancellationToken);
             await ensureLookupAsync(18, new IdentityQuestion { Id = 18, ReferenceEnglishId = 6, Question = "¿Cuál es el nombre de su primer empleador?", Order = 6, Language = "ES" }, cancellationToken);
 
+			// TODO: Correct the Dutch language code to NL.
             await ensureLookupAsync(19, new IdentityQuestion { Id = 19, ReferenceEnglishId = 1, Question = "Wat is de meisjesnaam van uw moeder?", Order = 1, Language = "DE" }, cancellationToken);
             await ensureLookupAsync(20, new IdentityQuestion { Id = 20, ReferenceEnglishId = 2, Question = "In welke stad bent u geboren?", Order = 2, Language = "DE" }, cancellationToken);
             await ensureLookupAsync(21, new IdentityQuestion { Id = 21, ReferenceEnglishId = 3, Question = "Van welk merk was uw eerste auto?", Order = 3, Language = "DE" }, cancellationToken);

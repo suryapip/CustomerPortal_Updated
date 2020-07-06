@@ -34,34 +34,34 @@ namespace ScentAir.Payment.Models
         [StringLength(15)]                                  // SalesForce column length is 40, but this must match Accounts table column length of 15 for foreign key.
         public string AccountNumber { get; set; }
 
-        [StringLength(255)]                                 // Standard Address Line 1 column length is 50, but the SalesForce column length is 255.
+        [StringLength(255)]                                 // Default Address Line 1 column length is 50, but the SalesForce column length is 255.
         public string BillingLine1 { get; set; }
-        [StringLength(80)]                                  // Standard Address Line 2 column length is 50, but the SalesForce column length is 80.
+        [StringLength(80)]                                  // Default Address Line 2 column length is 50, but the SalesForce column length is 80.
         public string BillingLine2 { get; set; }
-        [StringLength(40)]                                  // Standard Address Line 3 column length is 50, but the SalesForce column length is 40.
+        [StringLength(40)]                                  // Default Address Line 3 column length is 50, but the SalesForce column length is 40.
         public string BillingLine3 { get; set; }
-        [StringLength(40)]                                  // Standard City column length is 100, but the SalesForce column length is 40.
+        [StringLength(40)]                                  // Default City column length is 100, but the SalesForce column length is 40.
         public string BillingMunicipality { get; set; }
-        [StringLength(80)]                                  // Standard State column length is 35, but the SalesForce column length is 80.
+        [StringLength(80)]                                  // Default State column length is 35, but the SalesForce column length is 80.
         public string BillingStateOrProvince { get; set; }
-        [StringLength(20)]                                  // Standard Postal Code column length is 10, but the SalesForce column length is 20.
+        [StringLength(20)]                                  // Default Postal Code column length is 10, but the SalesForce column length is 20.
         public string BillingPostalCode { get; set; }
-        [StringLength(80)]                                  // Standard Country column length is 40, but the SalesForce column length is 80.
+        [StringLength(80)]                                  // Default Country column length is 40, but the SalesForce column length is 80.
         public string BillingCountry { get; set; }
 
-        [StringLength(1300)]                                // Standard Address Line 1 column length is 50, but the SalesForce column length is 1300.
+        [StringLength(1300)]                                // Default Address Line 1 column length is 50, but the SalesForce column length is 1300.
         public string ShippingLine1 { get; set; }
-        [StringLength(1300)]                                // Standard Address Line 2 column length is 50, but the SalesForce column length is 1300.
+        [StringLength(1300)]                                // Default Address Line 2 column length is 50, but the SalesForce column length is 1300.
         public string ShippingLine2 { get; set; }
-        [StringLength(1300)]                                // Standard Address Line 3 column length is 50, but the SalesForce column length is 1300.
+        [StringLength(1300)]                                // Default Address Line 3 column length is 50, but the SalesForce column length is 1300.
         public string ShippingLine3 { get; set; }
-        [StringLength(40)]                                  // Standard City column length is 100, but the SalesForce column length is 40.
+        [StringLength(40)]                                  // Default City column length is 100, but the SalesForce column length is 40.
         public string ShippingMunicipality { get; set; }
-        [StringLength(80)]                                  // Standard State column length is 35, but the SalesForce column length is 80.
+        [StringLength(80)]                                  // Default State column length is 35, but the SalesForce column length is 80.
         public string ShippingStateOrProvince { get; set; }
-        [StringLength(20)]                                  // Standard Postal Code column length is 10, but the SalesForce column length is 20.
+        [StringLength(20)]                                  // Default Postal Code column length is 10, but the SalesForce column length is 20.
         public string ShippingPostalCode { get; set; }
-        [StringLength(80)]                                  // Standard Country column length is 40, but the SalesForce column length is 80.
+        [StringLength(80)]                                  // Default Country column length is 40, but the SalesForce column length is 80.
         public string ShippingCountry { get; set; }
     }
 }

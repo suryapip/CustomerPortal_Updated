@@ -2,15 +2,15 @@
   <form *ngIf="formResetToggle" [attr.autocomplete]="isGeneralEditor ? NaN : null" class="form-horizontal" name="userInfoForm" #f="ngForm" novalidate
         (ngSubmit)="f.form.valid ? save() :
           (!billingLine1.valid && showErrorAlert('Billing address is required', 'Please enter a billing address (maximum of 50 characters)'));
-          (!billingMunicipality.valid && showErrorAlert('Billing city is required', 'Please enter a billing city (maximum of 100 characters)'));
+          (!billingMunicipality.valid && showErrorAlert('Billing city is required', 'Please enter a billing city (maximum of 40 characters)'));
           (!billingStateOrProvince.valid && showErrorAlert('Billing state or province is required', 'Please enter a billing state or province (maximum of 35 characters)'));
           (!billingPostalCode.valid && showErrorAlert('Billing postal code is required', 'Please enter a billing postal code (maximum of 10 characters)'));
-          (!billingCountry.valid && showErrorAlert('Billing country is required', 'Please enter a billing country (maximum of 40 characters)'));
+          (!billingCountry.valid && showErrorAlert('Billing country is required', 'Please select a billing country'));
           (!shippingLine1.valid && showErrorAlert('Shipping address is required', 'Please enter a shipping address (maximum of 50 characters)'));
-          (!shippingMunicipality.valid && showErrorAlert('Shipping city is required', 'Please enter a shipping city (maximum of 100 characters)'));
+          (!shippingMunicipality.valid && showErrorAlert('Shipping city is required', 'Please enter a shipping city (maximum of 40 characters)'));
           (!shippingStateOrProvince.valid && showErrorAlert('Shipping state or province is required', 'Please enter a shipping state or province (maximum of 35 characters)'));
           (!shippingPostalCode.valid && showErrorAlert('Shipping postal code is required', 'Please enter a shipping postal code (maximum of 10 characters)'));
-          (!shippingCountry.valid && showErrorAlert('Shipping country is required', 'Please enter a shipping country (maximum of 40 characters)'));
+          (!shippingCountry.valid && showErrorAlert('Shipping country is required', 'Please select a shipping country'));
         ">
 
     <!-- BillingLine1 -->
@@ -87,7 +87,7 @@
       </div>
       <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && billingMunicipality.valid, 'has-error' : f.submitted && !billingMunicipality.valid}">
         <input type="text" attr.id="BillingMunicipality-{{uniqueId}}" name="billingMunicipality" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Billing City"
-               class="form-control" [(ngModel)]="sfAccountSettings.billingMunicipality" #billingMunicipality="ngModel" required minlength="1" maxlength="100" />
+               class="form-control" [(ngModel)]="sfAccountSettings.billingMunicipality" #billingMunicipality="ngModel" required minlength="1" maxlength="40" />
         <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': billingMunicipality.valid, 'glyphicon-remove' : !billingMunicipality.valid}"></span>
         <span *ngIf="showValidationErrors && f.submitted && !billingMunicipality.valid" class="errorMessage">
           {{'AccountSettings.BillingMunicipalityRequired' | translate}}
@@ -149,11 +149,21 @@
     <div class="form-group has-feedback">
       <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="BillingCountry-{{uniqueId}}"><div class="required">*</div>{{'AccountSettings.BillingCountry' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
-        <p class="form-control-static">{{sfAccountSettings.billingCountry}}</p>
+        <!--<p class="form-control-static">{{sfAccountSettings.billingCountry}}</p>-->
+        <p class="form-control-static">{{this.sfAccountSettingsService.getSFCountry(sfAccountSettings.billingCountry).name}}</p>
+        <!--<p class="form-control-static">(billingCountry && billingCountry.length > 0 ? ('Countries.' + billingCountry.substr(0,3).toUpperCase | translate) : '')</p>-->
       </div>
       <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && billingCountry.valid, 'has-error' : f.submitted && !billingCountry.valid}">
-        <input type="text" attr.id="BillingCountry-{{uniqueId}}" name="billingCountry" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Billing Country"
-               class="form-control" [(ngModel)]="sfAccountSettings.billingCountry" #billingCountry="ngModel" required minlength="1" maxlength="40" />
+        <select attr.id="BillingCountry-{{uniqueId}}" name="billingCountry" [attr.autocomplete]="isGeneralEditor" placeholder="Select Billing Country"
+               class="form-control" [(ngModel)]="sfAccountSettings.billingCountry" #billingCountry="ngModel" required minlength="3" maxlength="3">
+          <option *ngFor="let sfCountry of sfCountries"
+                  [value]="sfCountry.code"
+                  [attr.selected]="sfAccountSettings.billingCountry==sfCountry.code ? true : null">
+            {{sfCountry.name}}
+          </option>
+        </select>
+        <!--<input type="text" attr.id="BillingCountry-{{uniqueId}}" name="billingCountry" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Billing Country"
+               class="form-control" [(ngModel)]="sfAccountSettings.billingCountry" #billingCountry="ngModel" required minlength="1" maxlength="40" />-->
         <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': billingCountry.valid, 'glyphicon-remove' : !billingCountry.valid}"></span>
         <span *ngIf="showValidationErrors && f.submitted && !billingCountry.valid" class="errorMessage">
           {{'AccountSettings.BillingCountryRequired' | translate}}
@@ -241,7 +251,7 @@
       </div>
       <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && shippingMunicipality.valid, 'has-error' : f.submitted && !shippingMunicipality.valid}">
         <input type="text" attr.id="ShippingMunicipality-{{uniqueId}}" name="shippingMunicipality" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Shipping City"
-               class="form-control" [(ngModel)]="sfAccountSettings.shippingMunicipality" #shippingMunicipality="ngModel" required minlength="1" maxlength="100" />
+               class="form-control" [(ngModel)]="sfAccountSettings.shippingMunicipality" #shippingMunicipality="ngModel" required minlength="1" maxlength="40" />
         <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': shippingMunicipality.valid, 'glyphicon-remove' : !shippingMunicipality.valid}"></span>
         <span *ngIf="showValidationErrors && f.submitted && !shippingMunicipality.valid" class="errorMessage">
           {{'AccountSettings.ShippingMunicipalityRequired' | translate}}
@@ -303,11 +313,25 @@
     <div class="form-group has-feedback">
       <label [class.col-md-5]="isViewOnly" [class.col-md-4]="!isViewOnly" class="control-label" for="ShippingCountry-{{uniqueId}}"><div class="required">*</div>{{'AccountSettings.ShippingCountry' | translate}}</label>
       <div *ngIf="!isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly">
-        <p class="form-control-static">{{sfAccountSettings.shippingCountry}}</p>
+        <!--<p class="form-control-static">{{sfAccountSettings.shippingCountry}}</p>-->
+        <p class="form-control-static">{{this.sfAccountSettingsService.getSFCountry(sfAccountSettings.shippingCountry).name}}</p>
+        <!--<p class="form-control-static">this.sfAccountSettingsService.getSFCountry(sfAccountSettings.shippingCountry).name</p>-->
       </div>
       <div *ngIf="isEditMode" [class.col-md-7]="isViewOnly" [class.col-md-8]="!isViewOnly" [ngClass]="{'has-success': f.submitted && shippingCountry.valid, 'has-error' : f.submitted && !shippingCountry.valid}">
-        <input type="text" attr.id="ShippingCountry-{{uniqueId}}" name="shippingCountry" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Shipping Country"
-               class="form-control" [(ngModel)]="sfAccountSettings.shippingCountry" #shippingCountry="ngModel" required minlength="1" maxlength="40" />
+        <select attr.id="ShippingCountry-{{uniqueId}}" name="shippingCountry" [attr.autocomplete]="isGeneralEditor" placeholder="Select Shipping Country"
+                class="form-control" [(ngModel)]="sfAccountSettings.shippingCountry" #shippingCountry="ngModel" required minlength="3" maxlength="3">
+          <!--<option *ngFor="const sfCountryCode in sfCountries"
+                  [value]="sfCountryCode"
+                  [attr.selected]="sfAccountSettings.shippingCountry.toUpperCase()==sfCountryCode ? true : null">
+            sfCountries[sfCountryCode]-->
+          <option *ngFor="let sfCountry of sfCountries"
+                  [value]="sfCountry.code"
+                  [attr.selected]="sfAccountSettings.shippingCountry==sfCountry.code ? true : null">
+            {{sfCountry.name}}
+          </option>
+        </select>
+        <!--<input type="text" attr.id="ShippingCountry-{{uniqueId}}" name="shippingCountry" [attr.autocomplete]="isGeneralEditor" placeholder="Enter Shipping Country"
+         class="form-control" [(ngModel)]="sfAccountSettings.shippingCountry" #shippingCountry="ngModel" required minlength="3" maxlength="3" />-->
         <span *ngIf="showValidationErrors && f.submitted" class="glyphicon form-control-feedback" [ngClass]="{'glyphicon-ok ': shippingCountry.valid, 'glyphicon-remove' : !shippingCountry.valid}"></span>
         <span *ngIf="showValidationErrors && f.submitted && !shippingCountry.valid" class="errorMessage">
           {{'AccountSettings.ShippingCountryRequired' | translate}}

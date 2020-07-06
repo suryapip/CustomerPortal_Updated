@@ -7,7 +7,11 @@
     <ActiveDebugProfile>Portal</ActiveDebugProfile>
     <NameOfLastUsedPublishProfile>Local Release Folder</NameOfLastUsedPublishProfile>
   </PropertyGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\app\models\sf-country.model.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+  </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Update="ClientApp\src\app\models\sf-contact.model.ts">
       <SubType>Code</SubType>

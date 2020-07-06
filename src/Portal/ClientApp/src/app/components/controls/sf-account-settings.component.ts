@@ -8,6 +8,7 @@ import { LanguageObservableService } from '../../services/language-observable.se
 
 import { SFAccountSettings } from '../../models/sf-account-settings.model';
 import { SFAccountSettingsService } from "../../services/sf-account-settings.service";
+import { SFCountry } from '../../models/sf-country.model';
 
 @Component({
   selector: 'sf-account-settings',
@@ -83,12 +84,17 @@ export class SFAccountSettingsComponent implements OnInit {
   @ViewChild('shippingCountry')
   private shippingCountry;
 
+  @ViewChild('sfCountries')
+  private sfCountries: SFCountry[];
+
 
   constructor(private alertService: AlertService, private sfAccountSettingsService: SFAccountSettingsService, private localStorage: LocalStoreManager, public userInfoService: LanguageObservableService) {
   }
 
 
   ngOnInit() {
+
+    this.loadSFCountries();
 
     if (this.localStorage.exists(DBkeys.LANGUAGE)) {
       this.selectedLanguage = this.localStorage.getDataObject<string>(DBkeys.LANGUAGE);
@@ -105,9 +111,32 @@ export class SFAccountSettingsComponent implements OnInit {
         this.selectedLanguage = lang;
       }
     });
+
   }
 
 
+  // SFCountries
+  private loadSFCountries() {
+    this.sfCountries = this.sfAccountSettingsService.getSFCountries();
+    //this.sfAccountSettingsService.getSFCountries()
+    //  .subscribe(results => this.onSFCountriesDataLoadSuccessful(results), error => this.onSFCountriesDataLoadFailed(error));
+  }
+
+  //private onSFCountriesDataLoadSuccessful(sfCountries: any) {
+  //  this.sfCountries = sfCountries;
+  //  //for (const sfCountryCode in sfCountries) {
+  //  //  this.sfCountries.push(new SFCountry(sfCountryCode, sfCountries[sfCountryCode]));
+  //  //}
+  //}
+
+
+  //private onSFCountriesDataLoadFailed(error: any) {
+  //  this.alertService.showStickyMessage("Load Error", `There was a problem parsing the list of countries.\r\nErrors: "${Utilities.getHttpResponseMessage(error)}"`,
+  //    MessageSeverity.error, error);
+  //}
+
+
+  // SFAccountSettings
   private loadSFAccountSettingsData() {
     this.alertService.startLoadingMessage();
     this.sfAccountSettingsService.getSFAccountSettings()
