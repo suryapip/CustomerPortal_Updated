@@ -202,8 +202,7 @@
     "description9": " If the “Payment Type” is “Credit Card,” Subscriber agrees to the General Terms. Subscriber also agrees to all terms of the ACH Authorization, except that the NACHA rules will not apply and these differences will apply: (i) the account will be Subscriber’s credit card account instead of its bank account and if a charge is rejected, ScentAir will not resubmit the charge or seek a returned item fee except as allowed by applicable card brand rules; and (ii) Subscriber acknowledges ScentAir’s cancellation and refund policies regarding ScentAir products.",
     "description10": "This Authorization supplements the ESS by providing the method and terms for payment by Subscriber of amounts due under the ESS.",
     "description11": " Subscriber agrees to the terms contained in ScentAir’s Privacy Policy https://www.scentair.com/legal/privacy as they may be updated from time to time and agrees that it will refer to https://www.scentair.com/legal/privacy.html for all information related to ScentAir’s Privacy Policy and any additional rights Subscriber may have related to these Terms and Conditions and this Authorization, as well as any rights related to Subscriber’s data in general.",
-    "PaymentAlert": "Payments received after 5:00 EST will reflect after 10:00AM EST the next business day.",
-    "CurrentPaymentMethod": "Current AutoPay Payment Method"
+    "PaymentAlert": "Payments received after 5:00 EST will reflect after 10:00AM EST the next business day."
   },
   "PaymentProfile": {
     "PAYMENTPROFILE": "PAYMENT PROFILE",
@@ -251,7 +250,7 @@
     "MANAGEAUTOPAYSETTINGS": "MANAGE AUTOPAY SETTINGS",
     "SecurityReasonDesc": "For security reasons the AUTOPAY enrolled payment method cannot be immediately deleted and it may take up to 72 hours for the deletion request to take place.",
     "PaymentReceivedTimeDesc": "Payments received after 5:00 EST will reflect after 10:00AM EST the next business day.",
-    "CuurentAutoPayMethod": "Current AutoPay Payment Method",
+    "CurrentAutoPayMethod": "Current AutoPay Payment Method",
     "InvalidProfilePaymentName": "Invalid profile payment name",
     "AutoPayDisabledDesc": "Auto Pay is disabled due to outstanding invoices!",
     "AutoPay": "Auto Pay",
@@ -607,8 +606,7 @@
     "editor": {
       "LastNameRequired": "Last Name is required",
       "EmailRequired": "Email is required",
-      "InvalidEmail": "Specified email is not valid",
-      "MainContactRequired": "At least one Main contact is required (assign Main role to another contact first)"
+      "InvalidEmail": "Specified email is not valid"
     }
   },
   "Countries": {
