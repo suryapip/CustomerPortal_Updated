@@ -157,10 +157,13 @@ namespace ScentAir.Payment.Impl
             return data;
         }
 
-        public async Task<ITaskResult> SaveSFContactAsync(SFContact sfContact, CancellationToken cancellationToken = default(CancellationToken))
+        public async Task<ITaskResult<SFContact>> SaveSFContactAsync(SFContact sfContact, CancellationToken cancellationToken = default(CancellationToken))
         {
+            var result = new TaskResultBuilder<SFContact>();
+
             var dbSFContact = null as SFContact;
-            if (sfContact == null) return dbSFContact.AsFailure().Add(nameof(SFContact), "Error saving contact - parameter is null");
+            if (sfContact == null)
+                return result.Add(nameof(SFContact), "Error saving contact - parameter is null").Fail();
 
             dbSFContact = await GetSFContactAsync(sfContact.Id, cancellationToken);
 
@@ -211,9 +214,9 @@ namespace ScentAir.Payment.Impl
             dbSFContact = eSFContact.Entity;
 
             if (count < 0)
-                return dbSFContact.AsFailure().Add(nameof(SFContact), "Error saving account settings");
+                return result.Add(nameof(SFContact), "Error saving account settings").Fail();
 
-            return dbSFContact.AsSuccess();
+            return result.Success(dbSFContact);
         }
 
         #endregion

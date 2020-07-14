@@ -14,7 +14,7 @@ namespace ScentAir.Payment
         Task<IList<SFContact>> GetSFContactsAsync(string accountNumber, CancellationToken cancellationToken = default(CancellationToken));
         Task<IList<SFContact>> GetSFContactsAsync(string accountNumber, int page, int pageSize, CancellationToken cancellationToken = default(CancellationToken));
         Task<SFContact> GetSFContactAsync(int id, CancellationToken cancellationToken = default(CancellationToken));
-        Task<ITaskResult> SaveSFContactAsync(SFContact sfContact, CancellationToken cancellationToken = default(CancellationToken));
+        Task<ITaskResult<SFContact>> SaveSFContactAsync(SFContact sfContact, CancellationToken cancellationToken = default(CancellationToken));
 
     }
 }

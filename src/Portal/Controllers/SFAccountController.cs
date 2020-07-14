@@ -140,7 +140,7 @@ namespace ScentAir.Payment.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
 
-            var vm = await getSFContactViewModelHelper(id).SafeAsync(Log);
+            var vm = await GetSFContactViewModelHelper(id).SafeAsync(Log);
 
             if (vm == null)
                 return NotFound();
@@ -148,7 +148,7 @@ namespace ScentAir.Payment.Controllers
             return Ok(vm);
         }
 
-        private async Task<SFContactViewModel> getSFContactViewModelHelper(int id)
+        private async Task<SFContactViewModel> GetSFContactViewModelHelper(int id)
         {
             SFContact sfContact = await sfAccountSettingsManager.GetSFContactAsync(id).SafeAsync(Log);
             if (sfContact == null)
@@ -159,7 +159,7 @@ namespace ScentAir.Payment.Controllers
             return vm;
         }
 
-        [HttpPut("savesfcontact")]
+        [HttpPost("savesfcontact")]
         [ProducesResponseType(204)]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
@@ -193,7 +193,16 @@ namespace ScentAir.Payment.Controllers
             if (!result.IsSuccessful)
                 return BadRequest("Could not save contact");
 
-            return NoContent();
+            if (isNew)
+            {
+                var vm = await GetSFContactViewModelHelper(result.Result.Id).SafeAsync(Log);
+                return CreatedAtAction(nameof(GetSFContact), new { id = vm.Id }, vm);
+            }
+            else
+            {
+                return NoContent();
+            }
+
         }
 
         #endregion

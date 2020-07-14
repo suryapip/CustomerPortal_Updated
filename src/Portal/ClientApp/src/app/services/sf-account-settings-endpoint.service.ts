@@ -83,7 +83,7 @@ export class SFAccountSettingsEndpoint extends EndpointFactory {
   getSaveSFContactEndpoint<T>(sfContact: SFContact): Observable<T> {
     let endpointUrl = this.sfContactSaveUrl;
     return this.http
-      .put<T>(endpointUrl, JSON.stringify(sfContact), this.getRequestHeaders())
+      .post<T>(endpointUrl, JSON.stringify(sfContact), this.getRequestHeaders())
       .pipe<T>(catchError(error => this.handleError(error)));
   }
 
