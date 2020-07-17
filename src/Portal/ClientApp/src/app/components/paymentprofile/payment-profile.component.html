@@ -56,7 +56,7 @@
           {{ paymentMethod.name }} <span style="font-style: italic">({{paymentMethod.paymentType}}{{'PaymentProfile.EndingWith' | translate}}  {{paymentMethod.accountNumber.substring(paymentMethod.accountNumber.length - 4, paymentMethod.accountNumber.length)}})</span>
 
                                    <span *ngIf="paymentMethod.currentAutoPayMethod" class="sa-auto-pay-text">
-                                     {{ 'PaymentProfile.CuurentAutoPayMethod' | translate }}
+                                     {{ 'PaymentProfile.CurrentAutoPayMethod' | translate }}
                                      <span class="fa fa-question-circle sa-enroll-auto-pay-button-info-icon sa-popup" (mouseenter)="togglePopover($event)" (mouseleave)="togglePopover($event)">
                                        <span class="sa-popuptext-b" [class.sa-show]="isAutoEnrollPopoverVisible" id="autpPayPopover">{{'PaymentProfile.SelectedPaymentValidationMessage' | translate}}</span>
                                      </span>

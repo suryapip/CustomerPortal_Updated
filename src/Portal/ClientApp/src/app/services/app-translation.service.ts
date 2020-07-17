@@ -38,7 +38,8 @@ export class AppTranslationService {
   useBrowserLanguage(): string | void {
     const browserLang = this.getBrowserLanguage();
 
-    if (browserLang.match(/en|fr|de|ar|ko|pt|sp|es|zh/)) {
+    // TODO: Correct Dutch language code to NL; remove DE and SP.
+    if (browserLang.match(/en|fr|de|nl|ar|ko|pt|sp|es|zh/)) {
       this.changeLanguage(browserLang);
       return browserLang;
     }
@@ -87,15 +88,17 @@ export class TranslateLanguageLoader implements TranslateLoader {
         return of(require('../assets/locale/fr.json'));
       case 'es':
         return of(require('../assets/locale/sp.json'));
-      case 'sp':
+      case 'sp':                                          // TODO: Remove incorrect/redundant language code SP.
         return of(require('../assets/locale/sp.json'));
-      case 'de':
+      case 'de':                                          // TODO: Correct the Dutch language code to NL, remove incorrect/redundant DE.
         return of(require('../assets/locale/de.json'));
-      case 'pt':
+      case 'nl':                                          
+        return of(require('../assets/locale/de.json'));
+      case 'pt':                                          // There's currently no option in app.component.html to select Portuguese.
         return of(require('../assets/locale/pt.json'));
-      case 'ar':
+      case 'ar':                                          // There's currently no option in app.component.html to select Arabic.
         return of(require('../assets/locale/ar.json'));
-      case 'ko':
+      case 'ko':                                          // There's currently no option in app.component.html to select Korean.
         return of(require('../assets/locale/ko.json'));
       case 'zh':
         return of(require('../assets/locale/zh.json'));

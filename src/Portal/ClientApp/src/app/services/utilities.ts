@@ -572,23 +572,46 @@ export class Utilities {
 
 
   public static moveArrayItem(array: any[], oldIndex, newIndex) {
-
-    while (oldIndex < 0) {
-      oldIndex += this.length;
-    }
-
-    while (newIndex < 0) {
-      newIndex += this.length;
-    }
-
-    if (newIndex >= this.length) {
-      let k = newIndex - this.length;
-      while ((k--) + 1) {
-        array.push(undefined);
+    try {
+      while (oldIndex < 0) {
+        oldIndex += array.length;
       }
+      while (newIndex < 0) {
+        newIndex += array.length;
+      }
+      if (newIndex >= array.length) {
+        let k = newIndex - array.length;
+        while ((k--) + 1) {
+          array.push(undefined);
+        }
+      }
+      array.splice(newIndex, 0, array.splice(oldIndex, 1)[0]);
     }
+    catch (e) {
+      throw Error(this.getErrorString(e, 'Utilities.moveArrayItem'));
+    }
+  }
 
-    array.splice(newIndex, 0, array.splice(oldIndex, 1)[0]);
+
+  public static getErrorString(e: any, methodName: string = '') {
+    let msg: string = '';
+    if (methodName) msg = methodName + ': ';
+    if (e instanceof Error) {
+      msg += e.message;
+    }
+    else if (typeof e === 'string' || e instanceof String) {
+      msg += e.toString();
+    }
+    else if (typeof e === 'number' || e instanceof Number) {
+      msg += e.toString();
+    }
+    else if (typeof e === 'boolean' || e instanceof Boolean) {
+      msg += e.toString();
+    }
+    else {
+      msg += e.toString();
+    }
+    return msg;
   }
 
 

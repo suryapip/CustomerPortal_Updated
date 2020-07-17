@@ -31,15 +31,10 @@
               <div class="col-xs-10" style="padding-left:5px;">
 
                 <select id="language" [(ngModel)]="configurations.language" (change)="languageChange()" #languageSelector="bootstrap-select" bootstrapSelect class="selectpicker form-control input-sm">
-
-                  <!--<option data-subtext="(Default)" value="en">{{'preferences.English' | translate}}</option>
-  <option value="fr">{{'preferences.French' | translate}}</option>
-  <option value="es">{{'preferences.Spanish' | translate}}</option>
-  <option value="de">{{'preferences.Dutch' | translate}}</option>-->
                   <option data-subtext="(Default)" value="en">English</option>
                   <option value="fr">French</option>
                   <option value="es">Spanish</option>
-                  <option value="de">Dutch</option>
+                  <option value="de">Dutch</option>   <!-- TODO: Correct the Dutch language code to NL. Make sure DatabaseInitializer.cs still works. -->
                   <option value="zh">Chinese</option>
                 </select>
               </div>
