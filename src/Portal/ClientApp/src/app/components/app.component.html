@@ -1,0 +1,177 @@
+<div id="app_container" class="{{configurations.theme | lowercase}}-theme">
+  <ngx-toasta></ngx-toasta>
+  <style>
+    /**
+    select.form-control {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+      **/
+    select.form-control.input-sm {
+      height: 22px;
+      line-height: inherit;
+      text-align: center;
+    }
+
+    .bootstrap-select > .dropdown-toggle {
+      padding: 2px 12px;
+    }
+  </style>
+  <div class="container">
+    <nav id="header" class="app-component navbar navbar-inner navbar-fixed-top">
+      <nav class="container">
+
+        <div class="row" style="max-width:100px;float:right;margin-top:4px;">
+          <div class="row">
+            <div class="row">
+              <div class="col-xs-2 text-right" style="padding:0px;margin-top:1px;">
+                <img [src]="globeImage" class="img-responsive" alt="Globe ICON" />
+              </div>
+              <div class="col-xs-10" style="padding-left:5px;">
+
+                <select id="language" [(ngModel)]="configurations.language" (change)="languageChange()" #languageSelector="bootstrap-select" bootstrapSelect class="selectpicker form-control input-sm">
+                  <option data-subtext="(Default)" value="en">English</option>
+                  <option value="fr">French</option>
+                  <option value="es">Spanish</option>
+                  <option value="de">Dutch</option>   <!-- TODO: Correct the Dutch language code to NL. Make sure DatabaseInitializer.cs still works. -->
+                  <option value="zh">Chinese</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 50px;">
+          <div class="col-xs-6">
+            <div class="navbar-header">
+              <button type="button" class="app-component navbar-toggle collapsed" data-toggle="collapse" data-target=".menuItemsContainer.app-component" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar">a</span>
+                <span class="icon-bar">b</span>
+                <span class="icon-bar">c</span>
+              </button>
+              <a ngPreserveWhitespaces class="app-component navbar-brand" routerLink="/">
+                <img [src]="appLogo" alt="logo">
+              </a>
+            </div>
+          </div>
+
+
+          <div *ngIf="!isUserLoggedIn" class="col-xs-6 text-right">
+            <div style="margin-top: 15px;">
+              <div style="font-size: x-large; color: white; margin-top: 30px; font-weight: 500;">
+                <span>
+                  {{'app.Welcome' | translate}}
+                </span>
+              </div>
+              <div style="font-size: large; color: white; font-weight: 300;">
+                <span>
+                  {{'app.Notifications' | translate}}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="isUserLoggedIn" class="col-xs-6 text-right">
+            <div class="row">
+              <div class="row">
+                <div style="font-size: x-large; color: white; margin-top: 5px; font-weight: 500;">
+                  <div>
+                    {{this.pageAccount?.name}}
+                  </div>
+                </div>
+                <div style="font-size: small; color: white; font-weight: 500; ">
+                  <div>
+                    {{ 'mainMenu.CustomerIdNumber' | translate }}: {{this.pageAccount?.number}}
+                    <br />
+                    {{this.pageAccount?.address?.line1}}
+                    <br />
+                    {{this.pageAccount?.address?.municipality}}, {{this.pageAccount?.address?.stateOrProvince}} {{this.pageAccount?.address?.postalCode}}
+                  </div>
+                </div>
+                <div style="font-size: large; color: white; font-weight: 300;">
+                  <span>
+
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div *ngIf="isUserLoggedIn" style="background-color: #337ab7; top: 150px; right: 0px; position: fixed; width: 100%;">
+          <div class="container">
+            <div class="row">
+              <div class="app-component collapse navbar-collapse menuItemsContainer">
+                <ul class="app-component nav navbar-nav">
+                  <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a class="sa-menu-link" routerLink="/secure" title="{{ 'mainMenu.AccountSummary' | translate }}">{{ 'mainMenu.AccountSummary' | translate }}</a></li>
+                  <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a class="sa-menu-link" routerLink="/secure/payment/profile" title="{{ 'mainMenu.PaymentMethods' | translate }}">{{ 'mainMenu.PaymentMethods' | translate }}</a></li>
+                  <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a class="sa-menu-link" routerLink="/secure/settings" title="{{ 'mainMenu.Settings' | translate }}">{{ 'mainMenu.Settings' | translate }}</a></li>
+                  <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a class="sa-menu-link" routerLink="/secure/contactUs" title="{{ 'mainMenu.ContactUs' | translate }}">{{ 'mainMenu.ContactUs' | translate }}</a></li>
+
+                  <li (click)="logout()"><a class="sa-menu-link" href="javascript:;" title="{{'mainMenu.Logout' | translate}}">{{'mainMenu.Logout' | translate}}</a></li>
+                </ul>
+
+                <div class="app-component navbar-text navbar-right sa-popup" (mouseenter)="togglePopover($event)" (mouseleave)="togglePopover($event)">
+                  <div class="sa-enroll-auto-pay-button" routerLink="/secure/payment/autopay">
+                    {{ 'mainMenu.EnrollInAutoPay' | translate }}
+                    <span class="fa fa-question-circle sa-enroll-auto-pay-button-info-icon"></span>
+                    <span class="sa-popuptext" [class.sa-show]="isAutoEnrollPopoverVisible" id="autpPayPopover" style="margin-right: 20px;">{{'mainMenu.EnrollToolTip' | translate}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </nav>
+
+    <div id="pre-bootstrap" *ngIf="!removePrebootScreen" [class.prebootShow.app-component]="!isAppLoaded" class="app-component prebootStep">
+      <div class="messaging">
+        <h1>
+          Loaded!
+        </h1>
+        <p>
+          <span class="appName" style="font-style:italic">Portal</span>
+        </p>
+
+      </div>
+    </div>
+
+    <div id="mainContent" class="app-component sa-box-shadow">
+      <router-outlet></router-outlet>
+    </div>
+
+    <div id="footer" class=" text-center">
+      <div class="app-component">
+        <div class="sa-footer">
+          <footer>
+            <div style="color: darkgrey; font-weight: bold; font-size: 14px;padding-bottom: 8px;">
+              <span>&copy; {{getYear()}} {{ 'Login.CopyRight' | translate }}</span><span style="margin-left: 8px; margin-right: 8px;">|</span>
+              <span><a href="https://www.scentair.com/legal/privacy.html" target="_blank">{{ 'Login.Privacy' | translate }}</a></span><span style="margin-left: 8px; margin-right: 8px;">|</span>
+              <span><a href="https://www.scentair.com/legal/termsofuse.html" target="_blank">{{ 'Login.TermsofUse' | translate }}</a></span><span style="margin-left: 8px; margin-right: 8px;">|</span>
+
+
+              <span *ngIf="!isUserLoggedIn"><a routerLink="/contactus">{{ 'Login.ContactUsOnFooter' | translate }}</a><span style="margin-left: 8px; margin-right: 8px;">|</span></span>
+              <span *ngIf="isUserLoggedIn"><a routerLink="/secure/contactus">{{ 'Login.ContactUsOnFooter' | translate }}</a><span style="margin-left: 8px; margin-right: 8px;">|</span></span>
+              <span><a href="https://www.scentair.com/customercenter/AccountCenterFAQ.html" target="_blank">{{ 'Login.FAQ' | translate }}</a></span>
+            </div>
+            <div style="color: darkgrey; font-weight: bold; font-size: 12px;">
+              <span>{{ 'Login.Corporate' | translate }}</span>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <br />
+      <br />
+    </div>
+  </div>
+
+  <div *ngIf="shouldShowLoginModal" class="modal fade" bsModal #loginModal="bs-modal" (onShown)="onLoginModalShown()" (onHidden)="onLoginModalHidden()" (onHide)="onLoginModalHide()"
+       [config]="{backdrop: 'static'}" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <app-login #loginControl isModal="true"></app-login>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+﻿<html>
+  <body>
+    <table border="0" >
+      <tr>
+        <td style="background-color:#56B2CB;" align="center" >
+          <img src="https://www2.scentair.com/l/799033/2020-03-12/k8l1/799033/27976/scentair_logo_white_2.png" width="100"></img>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <p>
+              Klantnaam: {customerName}<br/>
+              Kantnummer: {accountNumber}
+            </p>
+            <p> </p>
+            <p> </p>
+            <p>Beste {name},</p>
+            <p> </p>
+            <p>U heeft uw gebruikersnaam opnieuw opgevraagd voor het ScentAir Account Centrum.</p>
+            <p> </p>
+            <p>Uw gebruikersnaam is: {username}</p>
+            <p> </p>
+            <p>
+			 
+              Om in te loggen op uw account gaat u naar <a href="{url}">myaccount.scentair.com</a>.
+            </p>
+            <p> </p>
+            <p>
+		Mocht u nog vragen hebben betreffende uw ScentAir account of online profiel, neem dan <a href="{urlContactUs}">contact met</a> ons op.           
+        </p>
+            <p> </p>
+             <p>
+              Met vriendelijke groet,<br/> ScentAir
+            </p>
+            <p> </p>
+            <div style="font-size: 10px;">
+              <strong>Gelieve niet te reageren op dit bericht. Deze inbox wordt niet gelezen!</strong>
+              <br/>Deze e-mail bevat informatie die alleen is bedoeld voor het gebruik van de hierboven genoemde ontvanger(s). Verder bevat het informatie die misschien vertrouwelijk is. Als u niet de beoogde ontvanger bent, wordt u hierbij op de hoogte gebracht dat elke verspreiding, distributie of kopie van dit bericht (inclusief eventuele bijlagen) ten strengste verboden is.
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <br/>
+          <br/>
+          <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+            <span>
+             2019 ScentAir. Alle rechten voorbehouden
+            </span>
+          </div>
+          <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+            <span>ScentAir Benelux: Westblaak 180, 3012 KN, Rotterdam, Nederland </span><span style="margin-left: 8px; margin-right: 8px;">|</span>+31 (0) 10 223 6264
+          </div>
+          <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+            
+          </div>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>

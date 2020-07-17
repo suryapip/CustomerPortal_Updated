@@ -1,0 +1,63 @@
+﻿<html>
+  <body>
+    <table border="0" >
+      <tr>
+        <td style="background-color:#56B2CB;" align="center" >
+          <img src="https://www2.scentair.com/l/799033/2020-03-12/k8l1/799033/27976/scentair_logo_white_2.png" width="100"></img>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <p>
+              Nombre del Cliente: {customerName}<br/>
+              Número del Suscriptor: {accountNumber}
+            </p>
+            <p> </p>
+            <p> </p>
+            <p>Estimado {name},</p>
+            <p> </p>
+            <p>Recientemente solicitó el nombre de usuario para el Portal de Clientes de ScentAir.</p>
+            <p> </p>
+            <p>Su Nombre de Usuario es: {username}</p>
+            <p> </p>
+            <p>
+              Para acceder a su cuenta, visite <a href="{url}">myaccount.scentair.com</a> e inicie sesión.
+            </p>
+            <p> </p>
+            <p>
+          Si tiene alguna pregunta sobre su cuenta ScentAir o su perfil en línea, <a href="{urlContactUs}">contáctenos</a>.  ¡Gracias por elegir a ScentAir para proporcionarle más a su negocio y a sus clientes!
+        </p>
+            <p> </p>
+             <p>
+              Sinceramente,<br/> ScentAir
+            </p>
+            <p> </p>
+            <div style="font-size: 10px;">
+              <strong>Favor de no responder a este mensaje. Las respuestas a esta dirección de correo electrónico no son monitoreadas.</strong>
+              <br/>Esta transmisión de correo electrónico contiene información destinada únicamente para el uso de los destinatarios mencionados anteriormente. Además, contiene información que puede ser confidencial. Si no es el destinatario deseado, se le notifica por la presente que cualquier difusión, distribución o copia de este mensaje (incluidos los archivos adjuntos) está estrictamente prohibida.
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <br/>
+          <br/>
+          <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+            <span>
+             2019 ScentAir. Todos los derechos reservados.
+            </span>
+          </div>
+          <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+            <span>Corporativo: 3810 Shutterfly Rd., Charlotte, NC 28217</span><span style="margin-left: 8px; margin-right: 8px;"></span>
+          </div>
+          <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+          
+          </div>
+        </td>
+      </tr>
+    </table>
+
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-8">
+</head>
+   <body>
+      <table border="0" >
+         <tr>
+            <td style="background-color:#56B2CB;" align="center" >
+               <img src="https://www2.scentair.com/l/799033/2020-03-12/k8l1/799033/27976/scentair_logo_white_2.png" width="100"></img>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <div style="margin-left:0.5%;">
+                  <p>Estimado Cliente de ScentAir,</p>
+                  <p>Su n&uacute;mero de cuenta ScentAir es {BilledToAccountNumber} </p>
+                  <p> </p>
+                  <p>Tiene usted una nueva factura disponible en el Portal de Clientes de ScentAir:</p>
+                  <p> </p>
+                  <ul style="list-style: none">
+                     <li><b>Fecha de vencimiento: </b> {DateDue} </li>
+                     <li><b>Total factura: </b> {Balance} </li>
+                     <li><b>Saldo en cuenta: </b> {AccountBalance} {BalanceCurrency}</li>
+                  </ul>
+                  <p></p>
+                  <p>Para visualizar su factura, por favor acceda al Portal de Clientes de ScentAir : <a href="https://myaccount.scentair.com">https://myaccount.scentair.com</a> 
+                  </p>
+                  <p> Cliente en EE.UU. y Canad&aacute;: <br/> Si usted se inscribi&oacute; en AutoPay su factura se cobrar&aacute; de manera automatizada. Usted puede gestionar su m&eacute;todo de pago y sus datos de AutoPay en el Portal de Clientes de ScentAir. </p>
+                  <p> Su experiencia de facturaci&oacute;n: <br/>  Su fecha de facturaci&oacute;n es la fecha efectiva de su contrato de servicio ScentAir a lo largo de la vida del mismo. Por favor consulte los T&eacute;rminos e informaci&oacute;n de pago en su factura.</p>
+                  <p> Servicio ScentAir:<br/>  Prestamo de equipo, garantia, envios de fragancia, visitas de mantenimiento (para cuentas en full service), gastos de envio y un equipo dispuesto a atenderles cuando ustedes lo necesiten! </p>
+                   <p>Consultas y pagos:<br/>  Podremos atender sus consultas y pagos de manera m&aacute;s efectiva si nos facilita su n&uacute;mero de cliente. Dicho numero se encuentra reflejado en sus facturas.</p>
+                  <p> Necesita contactarnos? Por favor visite:  <a href="https://myaccount.scentair.com/#/contactus">https://myaccount.scentair.com/#/contactus</a> </p>
+                  <p> Muchas gracias por confiar en nuestros servicios. </p>
+                  <p>
+                     Sincerely,<br/> ScentAir
+                  </p>
+                  
+               </div>
+            </td>
+         </tr>
+         <tr>
+            <td align="center">
+               <br/>
+               <br/>
+               <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+                  <span>
+                  2019 ScentAir. All rights reserved.
+                  </span>
+               </div>
+               <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+                  <span>Corporate: 3810 Shutterfly Rd., Charlotte, NC 28217</span><span style="margin-left: 8px; margin-right: 8px;">|</span>+1 (704) 504-2320
+               </div>
+               <div style="color: silver; font-weight: bold; float: left;font-size: 10px;">
+                  866.723.6824
+               </div>
+            </td>
+         </tr>
+      </table>
+   </body>
+</html>

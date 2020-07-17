@@ -1,0 +1,145 @@
+<div class="container" style="min-height: 500px; margin-top: 35px;">
+  <header class="pageHeader"></header>
+  <br />
+  <div class="row">
+    <div class="col-md-12">
+      <div class="sa-heading-text">
+        {{ 'AccountSummary.ACCOUNTSUMMARY' | translate }}
+        <span style="font-size: x-large; margin-left: 20px;">
+          <button class="btn-primary btn sa-btn-header-color" routerLink="/secure/invoices"> {{ 'AccountSummary.INVOICEHISTORY' | translate }}</button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-12">
+      {{ 'AccountSummary.AccountSummaryDescription' | translate }}
+      <br /><br />
+    </div>
+    <div class="col-md-12 text-left" style="color: red; font-style: italic;">
+      {{ 'AccountSummary.AvailableInUSnCANNote' | translate }}
+    </div>
+  </div>
+
+  <br />
+  <br />
+
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="isBalanceDue" style="font-style: italic; font-weight: bold; margin-bottom: 4px;">
+        {{ 'AccountSummary.InvoicePayTitle' | translate }}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr style="background-color: #D3D3D3;">
+            <th style="text-align: center;">
+              {{ 'AccountSummary.Pay' | translate }}
+            </th>
+            <th style="text-align: center;">
+              {{ 'AccountSummary.Invoice#' | translate }}
+            </th>
+            <th style="text-align: center;">
+              {{ 'AccountSummary.Status' | translate }}
+            </th>
+            <th style="text-align: center;">
+              {{ 'AccountSummary.PaymentTerms' | translate }}
+            </th>
+            <th style="text-align: center;">
+              {{ 'AccountSummary.InvoiceDate' | translate }}
+            </th>
+            <th style="text-align: center;">
+              {{ 'AccountSummary.InvoiceDue' | translate }}
+            </th>
+
+            <th style="text-align: center;">
+              {{ 'AccountSummary.BalanceDue' | translate }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let invoice of getInvoices(), index as i">
+            <tr>
+              <td align="center" valign="middle">
+                <input type="radio" *ngIf="canPayOnSite && !restrictPaymentTerms(invoice)" style="width: 20px; height: 20px" value="row_{{i}}" name="paymentRow_{{i}}" [checked]="getSelectedValue(i)" (click)="setSelectedvalue(i, invoice.balance)" />
+              </td>
+              <td align="center">
+                <div style="margin-top: 5px;" (click)="getInvoicePdf(invoice.invoiceNumber)" class="sa-hover-text">
+                  {{invoice.invoiceNumber}}
+                </div>
+              </td>
+              <td align="center">
+                <div style="margin-top: 5px;" *ngIf="!getInvoiceStatus(invoice)">
+                  {{ 'AccountSummary.PASTDUE' | translate }}
+                </div>
+                <div style="margin-top: 5px;" *ngIf="getInvoiceStatus(invoice)">
+                  {{ 'AccountSummary.DUENOW' | translate }}
+                </div>
+              </td>
+              <td align="center">
+                {{ invoice.paymentTerms}}
+              </td>
+              <td align="center">
+                {{getFormatedDate(invoice.date)}}
+              </td>
+              <td align="center">
+                <div style="margin-top: 5px;">
+                  {{getFormatedDate(invoice.dateDue)}}
+                </div>
+              </td>
+              <td align="right">
+                <div style="margin-top: 5px;">
+                  {{getBalanceDueF(invoice)}} {{invoice.currency}}
+                </div>
+              </td>
+            </tr>
+
+          </ng-container>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <span style="font-size: x-large;">
+        {{ 'AccountSummary.TotalBalanceDue' | translate }} {{ getTotalDueF() }} {{ getCustomerCurrency() }}
+      </span>
+    </div>
+  </div>
+  <br />
+
+  <div class="row" *ngIf="isBalanceDue">
+    <div class="col-md-12 text-right">
+      <span style="font-size: x-large;">
+        {{ 'AccountSummary.TotalPaymentAmount' | translate }} {{ getSelectedPaymentAmountF() }} {{ getCustomerCurrency() }}
+      </span>
+    </div>
+  </div>
+
+  <br />
+  <div *ngIf="isBalanceDue">
+    <div class="row">
+      <div class="col-md-12 text-right">
+        <!--<a routerLink="/secure/payment/paynow" id="buttonPayNow" title="{{ 'Register' | translate }}" class="btn btn-lg btn-primary sa-btn-green-color sa-btn-x-large">{{ 'PAY NOW' | translate }}</a>-->
+        <button *ngIf="canPayOnSite" (click)="paynow();"
+                class="btn-primary btn btn-lg sa-btn-header-color">
+          {{ 'AccountSummary.PAYNOW' | translate }}
+        </button>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-12 text-right" style="color: red; font-style: italic;">
+        {{ 'AccountSummary.PaymentNote' | translate }}
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,119 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.1;netstandard2.0</TargetFrameworks>
+    <Version>2.6.1</Version>
+    <Description>Data Access Layer</Description>
+    <Copyright></Copyright>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <RepositoryUrl></RepositoryUrl>
+    <Company>TekPartners</Company>
+    <AssemblyName>ScentAir.Payment.Data</AssemblyName>
+    <RootNamespace>ScentAir.Payment</RootNamespace>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <FileVersion>0.1.0.0</FileVersion>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\AccountUsers.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MailKit" Version="2.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.Extensions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Localization" Version="2.1.1" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.1.0" />
+    <PackageReference Include="OpenIddict.EntityFrameworkCore" Version="2.0.0-rc3-final" />
+    <PackageReference Include="PDFsharpNetStandard2" Version="1.51.4845" />
+    <PackageReference Include="SendGrid" Version="9.12.7" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.5.3" />
+  </ItemGroup>  <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Abstractions">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.abstractions\2.1.1\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ByteArrayEqualityComparer.cs.d.ts">
+      <DependentUpon>ByteArrayEqualityComparer.cs</DependentUpon>
+    </None>
+    <None Update="Impl\AccountManager.cs.d.ts">
+      <DependentUpon>AccountManager.cs</DependentUpon>
+    </None>
+    <None Update="Impl\PortalDbContext.cs.d.ts">
+      <DependentUpon>PortalDbContext.cs</DependentUpon>
+    </None>
+    <None Update="Impl\X3DbContext.cs.d.ts">
+      <DependentUpon>X3DbContext.cs</DependentUpon>
+    </None>
+    <None Update="Models\Account.cs.d.ts">
+      <DependentUpon>Account.cs</DependentUpon>
+    </None>
+    <None Update="Models\ApplicationRole.cs.d.ts">
+      <DependentUpon>ApplicationRole.cs</DependentUpon>
+    </None>
+    <None Update="Models\ApplicationUser.cs.d.ts">
+      <DependentUpon>ApplicationUser.cs</DependentUpon>
+    </None>
+    <None Update="Models\Company.cs.d.ts">
+      <DependentUpon>Company.cs</DependentUpon>
+    </None>
+    <None Update="Models\IAuditableEntity.cs.d.ts">
+      <DependentUpon>IAuditableEntity.cs</DependentUpon>
+    </None>
+    <None Update="Models\Impl\AuditableEntity.cs.d.ts">
+      <DependentUpon>AuditableEntity.cs</DependentUpon>
+    </None>
+    <None Update="Models\Invoice.cs.d.ts">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </None>
+    <None Update="Models\InvoicePayment.cs.d.ts">
+      <DependentUpon>InvoicePayment.cs</DependentUpon>
+    </None>
+    <None Update="Models\InvoicePaymentStatus.cs.d.ts">
+      <DependentUpon>InvoicePaymentStatus.cs</DependentUpon>
+    </None>
+    <None Update="Models\InvoiceStatus.cs.d.ts">
+      <DependentUpon>InvoiceStatus.cs</DependentUpon>
+    </None>
+    <None Update="Models\X3\Customer.cs.d.ts">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </None>
+    <None Update="Models\X3\Invoice.cs.d.ts">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </None>
+    <None Update="Models\X3\InvoiceDetail.cs.d.ts">
+      <DependentUpon>InvoiceDetail.cs</DependentUpon>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

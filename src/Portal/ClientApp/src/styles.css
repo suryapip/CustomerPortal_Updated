@@ -1,0 +1,618 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import 'app/assets/styles/styles-vendor.css';
+@import 'app/assets/styles/vertical-tabs.css';
+@import 'app/assets/styles/ngx-datatable.css';
+@import 'app/assets/styles/themes.css';
+
+
+.completeButton {
+  background-color: seagreen;
+  padding: 20px 32px;
+}
+
+.cancelButton {
+  background-color: seagreen;
+  padding: 20px 32px;
+}
+
+
+.sa-hover-text {
+  text-decoration: underline;
+}
+
+.sa-hover-text:hover {
+  color: darkgrey;
+  cursor: pointer;
+}
+
+.sa-auto-pay-text {
+  font-style: italic;
+  font-weight: bold;
+  color: red;
+}
+
+.sa-btn-x-large {
+  padding: 20px 32px;
+}
+
+.sa-btn-green-color {
+  background-color: seagreen;
+}
+
+  .sa-btn-green-color:hover {
+    background-color: white;
+    border: 2px solid seagreen;
+    color: seagreen;
+  }
+
+  .sa-enroll-auto-pay-button {
+    padding: 14px;
+    background-color: #ff922b;
+    color: white;
+    margin-top: -15px;
+    height: 100%;
+    margin-bottom: -15px;
+    font-size: medium;
+  }
+
+.sa-enroll-auto-pay-button:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.sa-enroll-auto-pay-button-info-icon {
+  margin-left: 8px;
+  font-size: large;
+
+}
+
+.sa-button-form-spacer {
+  padding-top: 20px;
+}
+
+.sa-header-margin {
+  margin-top: 35px;
+}
+
+.sa-header-margin-loggedin {
+  margin-top: 75px;
+}
+
+.sa-container-minsize {
+  min-height: 500px;
+}
+
+.sa-radio-button {
+  width: 20px;
+  height: 20px;
+}
+
+.sa-radio-button-text-spacer {
+  margin-left: 8px;
+}
+
+.sa-pipe-divider {
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.sa-button-spacer .sa-pipe-divider {
+  margin-right: 15px !important;
+  margin-left: 15px !important;
+}
+
+.sa-inline-field input,
+.sa-inline-field label {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.sa-blue-hr {
+  border-bottom: 1px solid #56B2CB;
+}
+
+.sa-payment-hr {
+  border-bottom: 1px solid #56B2CB;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.sa-menu-link {
+  color: white;
+  font-size: medium;
+  background-color: transparent;
+}
+  .sa-menu-link:hover {
+    color: lightgrey;
+    background-color: transparent;
+  }
+
+
+.bootstrap-select.form-control {
+  /* border: 1px solid #ccc;
+  padding-top: 20px;
+  padding-bottom: 20px;*/
+  margin: auto;
+}
+
+.sa-footer {
+  margin: 10px 0px;
+}
+
+.sa-btn-header-color {
+  background-color: #56B2CB;
+}
+
+.sa-blue-text {
+  color: #56B2CB;
+}
+
+.sa-gray-text {
+  color: darkgray;
+}
+
+.sa-no-margin {
+  margin: 0px;
+}
+
+.control-label {
+  color: darkgray;
+  padding-bottom: 3px;
+}
+
+.sa-link {
+  color: darkgray;
+  text-decoration: underline;
+  font-style: italic;
+  padding: 0px;
+}
+
+.form-control {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: auto;
+}
+.sa-header {
+  height: 150px;
+  background-color: #56B2CB;
+}
+
+.sa-header-menu {
+  height: 70px;
+  background-color: #56B2CB;
+}
+
+.sa-required-text {
+  color: red;
+  margin-left: 3px;
+}
+
+.sa-heading-text {
+  color: slategray;
+  font-size: x-large;
+}
+
+#mainContent.app-component {
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+.navbar .nav li a:hover,
+.navbar.nav li.toolbaritem a:hover,
+.nav.nav-tabsNOTUSE li a:hover {
+  color: lightgray;
+  background-color: transparent;
+}
+
+.navbar .nav li a:focus,
+.navbar.nav li.toolbaritem a:focus,
+.nav.nav-tabsNOTUSE li a:focus {
+  color: lightgray;
+  background-color: transparent;
+}
+
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus {
+  background-color: #56B2CB;
+}
+
+
+.nav.nav-tabsNOTUSED li.active a {
+  color: #555;
+}
+
+
+.disabledContainer {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+
+input.form-control.is-required-status, textarea.form-control.is-required-status, .bootstrap-select.is-required-status > .dropdown-toggle {
+  border-left-width: 5px;
+}
+
+.bootstrap-select.ng-novalidation > .dropdown-toggle {
+  border-left-width: 5px;
+}
+
+
+
+.has-success .bootstrap-select .dropdown-toggle,
+.success .bootstrap-select .dropdown-toggle {
+  border-color: #3c763d;
+}
+
+.has-error .bootstrap-select .dropdown-toggle,
+.error .bootstrap-select .dropdown-toggle {
+  border-color: #a94442;
+}
+
+.bootstrap-select .btn-default .badge {
+  color: #fff;
+  background-color: #777;
+}
+
+
+.pageHeader {
+  margin-bottom: 25px;
+}
+
+
+.errorMessage {
+  padding: 5px 10px;
+  color: #a94442;
+}
+
+.appName {
+  font-family: monospace;
+}
+
+i.page-caption {
+  vertical-align: baseline;
+  font-size: 1.2em;
+}
+
+
+
+.alertify {
+  top: 75px;
+}
+
+.alertify-message {
+  font-size: 1.2em;
+}
+
+
+
+#toasta.toasta-position-top-right {
+  top: 20px;
+  right: 20px;
+}
+
+#toasta .toast.toasta-theme-bootstrap {
+  font-size: 1em;
+}
+
+  #toasta .toast.toasta-theme-bootstrap .toast-text .toast-title {
+    font-size: 1.04em;
+  }
+
+#toasta .toast-text .toast-msg {
+  max-width: 1000px;
+  max-height: 800px;
+  display: inline-block;
+  overflow: auto;
+}
+
+
+
+
+/*-webkit-filter: blur(5px) grayscale(90%);*/
+/*body.modal-open .container {
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+    filter: url("https://gist.githubusercontent.com/amitabhaghosh197/b7865b409e835b5a43b5/raw/1a255b551091924971e7dee8935fd38a7fdf7311/blur".svg#blur);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='1');
+}*/
+
+
+.notifications-popup .popover {
+  color: #333 !important;
+  max-width: 500px;
+  width: 500px;
+}
+
+
+.vertical-center-flex {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+
+/*Hack stop get ngx-datatable width to be full when inside bootstrap tab control*/
+.tab-pane .datatable-scroll {
+  width: 100% !important;
+}
+
+.ngx-datatable.scroll-vertical {
+  height: 64vh;
+}
+
+
+
+.boldFont.app-component {
+  font-weight: bold;
+}
+
+.black-anchor {
+  color: #333;
+}
+
+
+
+.form-group .icon-addon .form-control {
+  border-radius: 25px;
+}
+
+.icon-addon {
+  position: relative;
+  color: #555;
+  display: block;
+}
+
+  .icon-addon:after,
+  .icon-addon:before {
+    display: table;
+    content: " ";
+  }
+
+  .icon-addon:after {
+    clear: both;
+  }
+
+  .icon-addon.addon-md .glyphicon,
+  .icon-addon .glyphicon,
+  .icon-addon.addon-md .fa,
+  .icon-addon .fa {
+    position: absolute;
+    z-index: 2;
+    font-size: 14px;
+    width: 20px;
+    text-align: center;
+    padding: 10px 0;
+    top: 1px;
+  }
+
+    .icon-addon .fa.left-icon {
+      left: 10px;
+      margin-left: -2.5px;
+    }
+
+    .icon-addon .fa.right-icon {
+      right: 10px;
+      margin-right: -2.5px;
+    }
+
+  .icon-addon.addon-lg .form-control {
+    line-height: 1.33;
+    height: 46px;
+    font-size: 18px;
+  }
+
+    .icon-addon.addon-lg .form-control.left-icon {
+      padding-top: 10px;
+      padding-right: 16px;
+      padding-bottom: 10px;
+      padding-left: 40px !important;
+    }
+
+    .icon-addon.addon-lg .form-control.right-icon {
+      padding-top: 10px;
+      padding-right: 40px !important;
+      padding-bottom: 10px;
+      padding-left: 16px;
+    }
+
+
+  .icon-addon.addon-sm .form-control {
+    height: 30px;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+    .icon-addon.addon-sm .form-control.left-icon {
+      padding-top: 5px;
+      padding-right: 10px;
+      padding-bottom: 5px;
+      padding-left: 28px !important;
+    }
+
+    .icon-addon.addon-sm .form-control.right-icon {
+      padding-top: 5px;
+      padding-right: 28px !important;
+      padding-bottom: 5px;
+      padding-left: 10px;
+    }
+
+
+  .icon-addon.addon-lg .fa,
+  .icon-addon.addon-lg .glyphicon {
+    font-size: 18px;
+    top: 4px;
+  }
+
+    .icon-addon.addon-lg .fa.left-icon,
+    .icon-addon.addon-lg .glyphicon.left-icon {
+      margin-left: 0;
+      left: 11px;
+    }
+
+    .icon-addon.addon-lg .fa.right-icon,
+    .icon-addon.addon-lg .glyphicon.right-icon {
+      margin-right: 0;
+      right: 11px;
+    }
+
+
+  .icon-addon.addon-md .form-control,
+  .icon-addon .form-control {
+    font-weight: normal;
+  }
+
+    .icon-addon.addon-md .form-control.left-icon,
+    .icon-addon .form-control.left-icon {
+      float: left;
+      padding-left: 30px;
+    }
+
+    .icon-addon.addon-md .form-control.right-icon,
+    .icon-addon .form-control.right-icon {
+      float: right;
+      padding-right: 30px;
+    }
+
+
+  .icon-addon.addon-sm .fa,
+  .icon-addon.addon-sm .glyphicon {
+    font-size: 12px;
+    top: -1px;
+  }
+
+    .icon-addon.addon-sm .fa.left-icon,
+    .icon-addon.addon-sm .glyphicon.left-icon {
+      margin-left: 0;
+      left: 5px;
+    }
+
+    .icon-addon.addon-sm .fa.right-icon,
+    .icon-addon.addon-sm .glyphicon.right-icon {
+      margin-right: 0;
+      right: 5px;
+    }
+
+
+
+
+  .icon-addon .form-control:focus + .glyphicon,
+  .icon-addon:hover .glyphicon,
+  .icon-addon .form-control:focus + .fa,
+  .icon-addon:hover .fa {
+    color: #2580db;
+  }
+
+.clear-input {
+  text-decoration: none !important;
+  color: #b3b3b3 !important;
+}
+
+  .clear-input:hover {
+    color: #2580db !important;
+  }
+
+.inline-block {
+  display: inline-block;
+}
+
+/* Popup container - can be anything you want */
+.sa-popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+  /* The actual popup */
+  .sa-popup .sa-popuptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+
+    /* Popup arrow */
+    .sa-popup .sa-popuptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+
+
+.sa-popuptext-b {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 12px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  width: 240px;
+  margin-left: -120px;
+}
+
+  .sa-popuptext-b::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+
+
+
+  /* Toggle this class - hide and show the popup */
+  .sa-popup .sa-show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

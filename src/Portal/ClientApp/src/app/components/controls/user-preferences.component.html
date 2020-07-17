@@ -1,0 +1,57 @@
+<div class="form-horizontal">
+  
+
+
+
+  <div class="form-group">
+    <label for="language" class="col-sm-3 control-label">{{'preferences.Language' | translate}} </label>
+    <div class="col-sm-4">
+      <!--<select id="language" [(ngModel)]="configurations.language" #languageSelector="bootstrap-select" bootstrapSelect class="selectpicker form-control">
+        <option data-subtext="(Default)" value="en">{{'preferences.English' | translate}}</option>
+        <option value="fr">{{'preferences.French' | translate}}</option>
+        <option value="sp">{{'preferences.Spanish' | translate}}</option>
+        <option value="de">{{'preferences.Dutch' | translate}}</option>
+      </select>-->
+    </div>
+    <div class="col-sm-5">
+      <p class="form-control-static text-muted small">{{'preferences.LanguageHint' | translate}}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <hr class="separator-hr" />
+    </div>
+  </div>
+
+  
+
+
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <hr class="last-separator-hr" />
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-3">
+
+    </div>
+    <div class="col-sm-9">
+      <div class="row pull-left">
+        <div class="col-sm-6 col-reset-default">
+          <button type="button" (click)="resetDefault()" class="btn btn-success">
+            <i class='fa fa-circle-o-notch'></i> {{'preferences.ResetDefault' | translate}}
+          </button>
+        </div>
+        <div class="col-sm-6 col-set-default">
+          <button type="button" (click)="setAsDefault()" class="btn btn-primary">
+            <i class='fa fa-hdd-o'></i> {{'preferences.SetDefault' | translate}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

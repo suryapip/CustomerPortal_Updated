@@ -1,0 +1,14 @@
+﻿{              
+  "ContextClassName": "X3Context",
+  "DefaultDacpacSchema": null,
+  "IdReplace": false,
+  "IncludeConnectionString": false,
+  "OutputPath": "Models\\X3",
+  "ProjectRootNamespace": "ScentAir.Payment.Models",
+  "SelectedToBeGenerated": 2,
+  "Tables": [ "dbo.CUSTOMER", "dbo.INVOICE_DETAIL", "dbo.INVOICE_HEADER" ],
+  "UseDatabaseNames": false,
+  "UseFluentApiOnly": false,
+  "UseHandleBars": false,
+  "UseInflector": true
+}

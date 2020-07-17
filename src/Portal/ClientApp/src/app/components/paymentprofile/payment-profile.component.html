@@ -1,0 +1,102 @@
+<div class="container sa-container-minsize sa-header-margin-loggedin">
+
+  <header class="pageHeader"></header>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="sa-heading-text">
+        {{'PaymentProfile.PaymentMethods' | translate}}
+      </div>
+    </div>
+  </div>
+
+  <br />
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div style="color:slategray;font-size:large;">
+        {{'PaymentProfile.PaymentMethodsDesc' | translate}}
+      </div>
+    </div>
+  </div>
+
+  <div style="color: red; font-style: italic;">
+    {{'PaymentProfile.USCCANOption' | translate}}
+  </div>
+
+
+
+
+  <div class="row">
+    <div class="col-md-12 has-feedback has-error">
+      <div *ngFor="let err of errors" class="errorMessage">{{ err | translate }}</div>
+    </div>
+  </div>
+
+  <br />
+  <br />
+  <span style="color: blue;font-size:large;border-bottom: 1px solid #56B2CB;margin-top: 3px;margin-bottom: 3px; ">
+    {{'PaymentProfile.CurrentSavedMethod' | translate}}
+  </span>
+  <br /><br />
+
+  <ng-container *ngFor="let paymentMethod of paymentMethods, index as i">
+
+    <div *ngIf="i > 0" class="row">
+      <div class="col-md-12">
+        <hr class="sa-blue-hr" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8" style="font-size: large;">
+        <div>
+
+          {{ paymentMethod.name }} <span style="font-style: italic">({{paymentMethod.paymentType}}{{'PaymentProfile.EndingWith' | translate}}  {{paymentMethod.accountNumber.substring(paymentMethod.accountNumber.length - 4, paymentMethod.accountNumber.length)}})</span>
+
+                                   <span *ngIf="paymentMethod.currentAutoPayMethod" class="sa-auto-pay-text">
+                                     {{ 'PaymentProfile.CurrentAutoPayMethod' | translate }}
+                                     <span class="fa fa-question-circle sa-enroll-auto-pay-button-info-icon sa-popup" (mouseenter)="togglePopover($event)" (mouseleave)="togglePopover($event)">
+                                       <span class="sa-popuptext-b" [class.sa-show]="isAutoEnrollPopoverVisible" id="autpPayPopover">{{'PaymentProfile.SelectedPaymentValidationMessage' | translate}}</span>
+                                     </span>
+                                   </span>
+        </div>
+      </div>
+      <div class="col-md-4 text-right" style="font-size: large;">
+        <a routerLink="/secure/payment/{{paymentMethod.id}}" class="sa-pipe-divider">{{'PaymentProfile.EDIT' | translate}}</a>
+      </div>
+    </div>
+
+  </ng-container>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-md-12" *ngIf="canPayOnSite">
+      <a routerLink="/secure/payment" class="btn-primary btn btn-lg sa-btn-header-color">{{'PaymentProfile.AddNewPaymentMethod' | translate}}</a>
+      <a routerLink="/secure/payment/autopay" class="btn-primary btn btn-lg sa-btn-header-color" style="float: right;">{{'PaymentProfile.MANAGEAUTOPAYSETTINGS' | translate}}</a>
+    </div>
+  </div>
+  <br /><br />
+  <div class="row">
+    <div class="col-md-6">
+      <span style="margin-right: 8px; width: 50px;"><img src="../../../assets/images/visa.png" /></span>
+      <span style="margin-right: 8px; width: 50px;"><img src="../../../assets/images/mastercard.png" /></span>
+      <span style="margin-right: 8px; width: 50px;"><img src="../../../assets/images/discover.png" /></span>
+      <span style="margin-right: 8px; width: 50px;"><img src="../../../assets/images/amex.png" /></span>
+    </div>
+
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-12" style="font-style: italic;">
+      {{'PaymentProfile.SecurityReasonDesc' | translate}}
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-12">
+      {{'PaymentProfile.PaymentReceivedTimeDesc' | translate}}
+    </div>
+  </div>
+</div>
