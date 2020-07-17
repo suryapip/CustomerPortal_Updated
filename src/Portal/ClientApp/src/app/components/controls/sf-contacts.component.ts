@@ -44,11 +44,11 @@ export class SFContactsComponent implements OnInit, AfterViewInit {
       { prop: 'name', name: gT('Contacts.management.Name'), width: 120 },
       { prop: 'email', name: gT('Contacts.management.Email'), width: 140 },
       { prop: 'phone', name: gT('Contacts.management.Phone'), width: 90 },
-      { prop: 'roles', name: gT('Contacts.management.Roles'), width: 170, cellTemplate: this.rolesTemplate },
-      { prop: 'active', name: gT('Contacts.management.Active'), width: 30, cellTemplate: this.activeTemplate },
+      { prop: 'roles', name: gT('Contacts.management.Roles'), width: 160, cellTemplate: this.rolesTemplate },
+      { prop: 'active', name: gT('Contacts.management.Active'), width: 20, cellTemplate: this.activeTemplate },
     ];
 
-    this.columns.push({ name: '', width: 65, cellTemplate: this.actionsTemplate, resizeable: false, canAutoResize: false, sortable: false, draggable: false });
+    this.columns.push({ name: '', width: 85, cellTemplate: this.actionsTemplate, resizeable: false, canAutoResize: false, sortable: false, draggable: false });
 
     this.loadData();
   }
