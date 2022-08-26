@@ -37,7 +37,7 @@
     <PackageReference Include="FluentValidation.AspNetCore" Version="7.6.104" />
     <PackageReference Include="MailKit" Version="2.0.5" />
     <!-- mholmes -->
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4" />  
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.22" />  
     <!--<PackageReference Include="Microsoft.AspNetCore.App" />-->
     <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.DataProtection.Abstractions" Version="2.1.1" />
